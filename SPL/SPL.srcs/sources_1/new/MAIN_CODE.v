@@ -3,10 +3,16 @@
 module SPI_MASTER(
     input clk,reset_p,
     input miso,
-    input irq, //(카드키 데이터)
     output reg sck,
     output mosi,
     output [15:0]led_debug);
+    
+    // 1. NSS 처리
+    // 2, INTERRUPUT발생시키려면 신호에 의해 발생하는건데 그 신호를 어떻게 잡을면 좋을까
+    // 3. parameter 더 보완할거 있나.
+    //4. 찍었을떄 주소값 처리 + 데이터 처리는 ?
+    
+    
     
     
     reg [3:0] state, next_state;
@@ -28,32 +34,31 @@ module SPI_MASTER(
     reg nss;
     always @(posedge clk or posedge reset_p) begin
         if(reset_p) begin
-            next_state = IDLE;
-                nss =0;
+            state = IDLE;
+                nss =1;
         end
         else begin
             case(state)
                  IDLE  : begin // -> 처음엔 interruput    그 이후엔 MOSI로
-                    next_state = INTERRUPUT;
+                    nss= 1;
                  end
                  
                  INTERRUPUT : begin
-                        if(!irq) begin
-                            next_state =SEND_MOSI;
-                        end
+
                  end
                  
                  SEND_MOSI : begin
+                    nss= 0;
                  end
                  
                  SEND_MISO : begin
-                        next_state =IDLE;
+                    nss =0;
                  end
                  
             endcase
         end
     end
     
-    assign led_debug[3:0] = state;
+    
 
 endmodule

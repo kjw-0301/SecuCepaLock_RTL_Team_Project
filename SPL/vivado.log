@@ -2,10 +2,10 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Fri Aug 23 17:55:20 2024
-# Process ID: 2116
+# Start of session at: Fri Aug 23 16:29:27 2024
+# Process ID: 9604
 # Current directory: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19868 C:\Users\kimhk\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6116 C:\Users\kimhk\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.xpr
 # Log file: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.log
 # Journal file: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL\vivado.jou
 #-----------------------------------------------------------
@@ -13,10 +13,240 @@ start_gui
 open_project C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr
 Scanning sources...
 Finished scanning sources
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.ip_user_files'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
-open_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1003.648 ; gain = 333.148
+open_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1004.258 ; gain = 373.965
 update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_div_10' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj clock_div_10_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_div_10
+INFO: [VRFC 10-2458] undeclared symbol clk_div_100, assumed default net type wire [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:24]
+INFO: [VRFC 10-2458] undeclared symbol clk_div_100_nedge, assumed default net type wire [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:25]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+"xelab -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot clock_div_10_behav xil_defaultlib.clock_div_10 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot clock_div_10_behav xil_defaultlib.clock_div_10 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2063] Module <edge_detector> not found while processing module instance <ed1> [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:21]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1068.742 ; gain = 0.000
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_div_10' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj clock_div_10_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+"xelab -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot clock_div_10_behav xil_defaultlib.clock_div_10 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot clock_div_10_behav xil_defaultlib.clock_div_10 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2063] Module <edge_detector> not found while processing module instance <ed1> [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:21]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_div_10' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj clock_div_10_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_div_10
+INFO: [VRFC 10-2458] undeclared symbol clk_div_100, assumed default net type wire [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:24]
+INFO: [VRFC 10-2458] undeclared symbol clk_div_100_nedge, assumed default net type wire [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:25]
+INFO: [VRFC 10-311] analyzing module edge_detector_n
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+"xelab -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot clock_div_10_behav xil_defaultlib.clock_div_10 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot clock_div_10_behav xil_defaultlib.clock_div_10 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-2063] Module <edge_detector> not found while processing module instance <ed1> [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:21]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_div_10' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj clock_div_10_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_div_10
+INFO: [VRFC 10-2458] undeclared symbol clk_div_100, assumed default net type wire [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:24]
+INFO: [VRFC 10-2458] undeclared symbol clk_div_100_nedge, assumed default net type wire [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:25]
+INFO: [VRFC 10-311] analyzing module edge_detector_n
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+"xelab -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot clock_div_10_behav xil_defaultlib.clock_div_10 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot clock_div_10_behav xil_defaultlib.clock_div_10 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.edge_detector_n
+Compiling module xil_defaultlib.clock_div_10
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot clock_div_10_behav
+
+****** Webtalk v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim/xsim.dir/clock_div_10_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Aug 23 16:46:48 2024...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "clock_div_10_behav -key {Behavioral:sim_1:Functional:clock_div_10} -tclbatch {clock_div_10.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source clock_div_10.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'clock_div_10_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1068.742 ; gain = 0.000
+add_force {/clock_div_10/reset_p} -radix hex {1 0ns}
+run 10 ns
+add_force {/clock_div_10/clk} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+add_force {/clock_div_10/reset_p} -radix hex {0 0ns}
+run 10 ns
+run 10 ns
+run 200 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'clock_div_10' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj clock_div_10_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_div_10
+INFO: [VRFC 10-2458] undeclared symbol clk_div_100, assumed default net type wire [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:24]
+INFO: [VRFC 10-2458] undeclared symbol clk_div_100_nedge, assumed default net type wire [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:25]
+INFO: [VRFC 10-311] analyzing module edge_detector_n
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+"xelab -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot clock_div_10_behav xil_defaultlib.clock_div_10 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot clock_div_10_behav xil_defaultlib.clock_div_10 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.edge_detector_n
+Compiling module xil_defaultlib.clock_div_10
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot clock_div_10_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "clock_div_10_behav -key {Behavioral:sim_1:Functional:clock_div_10} -tclbatch {clock_div_10.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+source clock_div_10.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'clock_div_10_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1068.742 ; gain = 0.000
+add_force {/clock_div_10/reset_p} -radix hex {1 0ns}
+run 200 ns
+add_force {/clock_div_10/clk} -radix hex {0 0ns} {1 5000ps} -repeat_every 10000ps
+add_force {/clock_div_10/reset_p} -radix hex {0 0ns}
+run 200 ns
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
 exit
-INFO: [Common 17-206] Exiting Vivado at Fri Aug 23 17:55:46 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 23 17:25:28 2024...
