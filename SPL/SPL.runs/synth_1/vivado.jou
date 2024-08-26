@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Aug 24 10:45:06 2024
+# Process ID: 18412
+# Current directory: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1
+# Command line: vivado.exe -log SPI_MASTER2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_MASTER2.tcl
+# Log file: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/SPI_MASTER2.vds
+# Journal file: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source SPI_MASTER2.tcl -notrace
