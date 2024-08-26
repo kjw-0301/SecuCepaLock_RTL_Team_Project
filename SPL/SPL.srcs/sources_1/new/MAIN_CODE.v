@@ -4,9 +4,9 @@ module SPI_ADDR(
     input clk,reset_p,
     input miso, //MASTER IN SLAVE OUT,
     input irq,
+    input[3:0] btn,
     output reg sck, //SPI Clock
-    output reg[7:0] mosi,    //MASTER OUT SLAVE IN
-    output rst,
+    output reg mosi,    //MASTER OUT SLAVE IN
     output [15:0]led_debug);
    
    
@@ -16,21 +16,21 @@ module SPI_ADDR(
     wire start_stop;
     wire clk_start;
     assign clk_start = start_stop ? clk : 0;
+    button_cntr(.clk(clk), .reset_p(reset_p),.btn(btn[1]),.btn_nedge(start_stop));
         
    //CLOCK US       
-    wire clk_div_10_nedge;  //us초
-    clock_div_10(.clk(clk_start), .reset_p(reset_p),.clk_div_10_nedge(clk_div_10_nedge)); 
-    
-    
+    wire clk_50ns;  //us초
+    clock_div_10(.clk(clk_start), .reset_p(reset_p),.clk_div_10_nedge(clk_50ns)); 
     //SCK
     wire sck_p_edge, sck_n_edge;
-    edge_detector_n(.clk(clk_start), .reset_p(reset_p) ,.cp(sck), .n_edge(sck_n_edge), .p_edge(sck_p_edge));    
+    edge_detector_n(.clk(clk_start), .reset_p(reset_p) ,.cp(clk_50ns), .n_edge(sck_n_edge), .p_edge(sck_p_edge));    
     
     // data_mode + addr값 지정해주기
-    reg[2:0] rc_counter = 0;
+    reg[2:0] rc_counter;
     reg [7:0] addr;
     reg [7:0] data;   
     always @(posedge clk or posedge reset_p) begin
+        if(reset_p) rc_counter = 0;
         case(rc_counter)
             1:begin
                 addr = 8'h11; 

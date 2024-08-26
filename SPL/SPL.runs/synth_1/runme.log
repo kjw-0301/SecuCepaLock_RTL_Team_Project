@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log SPI_MASTER2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_MASTER2.tcl
+    with args -log SPI_ADDR.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_ADDR.tcl
 
 
 ****** Vivado v2019.2 (64-bit)
@@ -8,54 +8,70 @@
   **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
-source SPI_MASTER2.tcl -notrace
-Command: synth_design -top SPI_MASTER2 -part xc7a35tcpg236-1
+source SPI_ADDR.tcl -notrace
+Command: synth_design -top SPI_ADDR -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 17852 
+INFO: Helper process launched with PID 10228 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1043.754 ; gain = 234.605
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 854.945 ; gain = 234.418
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'SPI_MASTER2' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:67]
+INFO: [Synth 8-6157] synthesizing module 'SPI_ADDR' [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:3]
 	Parameter IDLE bound to: 4'b0001 
-	Parameter INTERRUPUT bound to: 4'b0010 
-	Parameter SEND_MOSI bound to: 4'b0100 
-	Parameter SEND_MISO bound to: 4'b1000 
-INFO: [Synth 8-6157] synthesizing module 'clock_div_10' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:3]
-INFO: [Synth 8-6157] synthesizing module 'edge_detector_n' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:31]
-INFO: [Synth 8-6155] done synthesizing module 'edge_detector_n' (1#1) [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:31]
-WARNING: [Synth 8-7023] instance 'ed1' of module 'edge_detector_n' has 5 connections declared, but only 4 given [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:21]
-WARNING: [Synth 8-3848] Net clk_div_10_nedge in module/entity clock_div_10 does not have driver. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:6]
-WARNING: [Synth 8-3848] Net clk_div_100 in module/entity clock_div_10 does not have driver. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'clock_div_10' (2#1) [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:3]
-WARNING: [Synth 8-7023] instance 'nolabel_line85' of module 'clock_div_10' has 4 connections declared, but only 3 given [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:85]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:99]
-WARNING: [Synth 8-6014] Unused sequential element nss_reg was removed.  [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:120]
-WARNING: [Synth 8-5788] Register next_state_reg in module SPI_MASTER2 is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:101]
-WARNING: [Synth 8-3848] Net sck in module/entity SPI_MASTER2 does not have driver. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:71]
-WARNING: [Synth 8-3848] Net mosi in module/entity SPI_MASTER2 does not have driver. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:72]
-INFO: [Synth 8-6155] done synthesizing module 'SPI_MASTER2' (3#1) [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:67]
+	Parameter SEND_ADDR bound to: 4'b0010 
+	Parameter SEND_DATA bound to: 4'b0100 
+	Parameter STOP bound to: 4'b1000 
+INFO: [Synth 8-6157] synthesizing module 'button_cntr' [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:79]
+INFO: [Synth 8-6157] synthesizing module 'edge_detector_n' [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'edge_detector_n' (1#1) [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:31]
+WARNING: [Synth 8-7023] instance 'ed' of module 'edge_detector_n' has 5 connections declared, but only 4 given [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:90]
+INFO: [Synth 8-6155] done synthesizing module 'button_cntr' (2#1) [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:79]
+WARNING: [Synth 8-7023] instance 'nolabel_line19' of module 'button_cntr' has 5 connections declared, but only 4 given [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:19]
+INFO: [Synth 8-6157] synthesizing module 'clock_div_10' [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:3]
+WARNING: [Synth 8-7023] instance 'ed1' of module 'edge_detector_n' has 5 connections declared, but only 4 given [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:21]
+WARNING: [Synth 8-3848] Net clk_div_10_nedge in module/entity clock_div_10 does not have driver. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:6]
+WARNING: [Synth 8-3848] Net clk_div_100 in module/entity clock_div_10 does not have driver. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'clock_div_10' (3#1) [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:3]
+WARNING: [Synth 8-7023] instance 'nolabel_line23' of module 'clock_div_10' has 4 connections declared, but only 3 given [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:34]
+WARNING: [Synth 8-151] case item 4'b1000 is unreachable [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:108]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:75]
+WARNING: [Synth 8-5788] Register next_state_reg in module SPI_ADDR is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:78]
+WARNING: [Synth 8-5788] Register mosi_reg in module SPI_ADDR is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:86]
+WARNING: [Synth 8-5788] Register count_bit_reg in module SPI_ADDR is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:86]
+WARNING: [Synth 8-6014] Unused sequential element rc_counter_reg was removed.  [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:33]
+WARNING: [Synth 8-6014] Unused sequential element rc_counter_reg was removed.  [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:83]
+WARNING: [Synth 8-3848] Net sck in module/entity SPI_ADDR does not have driver. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:8]
+WARNING: [Synth 8-3848] Net led_debug in module/entity SPI_ADDR does not have driver. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'SPI_ADDR' (4#1) [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:3]
 WARNING: [Synth 8-3331] design clock_div_10 has unconnected port clk_div_10_nedge
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port sck
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port mosi
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[15]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[14]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[13]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[12]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[11]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[10]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[9]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[8]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[7]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[6]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[5]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[4]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port miso
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port sck
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[15]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[14]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[13]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[12]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[11]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[10]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[9]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[8]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[7]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[6]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[5]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[4]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[3]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[2]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[1]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[0]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port miso
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port irq
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port btn[3]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port btn[2]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port btn[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1116.430 ; gain = 307.281
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 928.406 ; gain = 307.879
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -68,96 +84,84 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1116.430 ; gain = 307.281
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 928.406 ; gain = 307.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1116.430 ; gain = 307.281
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 928.406 ; gain = 307.879
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1116.430 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 928.406 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'rotation_switch'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:12]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:12]
+Parsing XDC File [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'rotation_switch'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:12]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_7[7]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:50]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:50]
+WARNING: [Vivado 12-584] No ports matched 'seg_7[7]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:50]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_7[6]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:51]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:51]
+WARNING: [Vivado 12-584] No ports matched 'seg_7[6]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:51]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_7[5]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:52]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:52]
+WARNING: [Vivado 12-584] No ports matched 'seg_7[5]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:52]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_7[4]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:53]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:53]
+WARNING: [Vivado 12-584] No ports matched 'seg_7[4]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:53]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_7[3]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:54]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:54]
+WARNING: [Vivado 12-584] No ports matched 'seg_7[3]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:54]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_7[2]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:55]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:55]
+WARNING: [Vivado 12-584] No ports matched 'seg_7[2]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:55]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_7[1]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:56]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:56]
+WARNING: [Vivado 12-584] No ports matched 'seg_7[1]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:56]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_7[0]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:58]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:58]
+WARNING: [Vivado 12-584] No ports matched 'seg_7[0]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:58]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'com[0]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:60]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:60]
+WARNING: [Vivado 12-584] No ports matched 'com[0]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:60]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'com[1]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:61]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:61]
+WARNING: [Vivado 12-584] No ports matched 'com[1]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:61]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'com[2]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:62]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:62]
+WARNING: [Vivado 12-584] No ports matched 'com[2]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:62]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'com[3]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:63]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:63]
+WARNING: [Vivado 12-584] No ports matched 'com[3]'. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:63]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[0]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:68]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:68]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[1]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:69]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:69]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[2]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:70]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:70]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[3]'. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:71]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc:71]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/SPI_MASTER2_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/SPI_MASTER2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Finished Parsing XDC File [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/SPI_ADDR_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/SPI_ADDR_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1191.945 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1025.184 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1191.945 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1025.184 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1191.945 ; gain = 382.797
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1191.945 ; gain = 382.797
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1191.945 ; gain = 382.797
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:13 . Memory (MB): peak = 1191.945 ; gain = 382.797
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -171,14 +175,18 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 10    
 +---Muxes : 
 	   2 Input      4 Bit        Muxes := 1     
-	   6 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
-	   5 Input      1 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -186,19 +194,29 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module SPI_MASTER2 
+Module SPI_ADDR 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	                4 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	   6 Input      4 Bit        Muxes := 1     
-	   5 Input      1 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 2     
 Module edge_detector_n 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 2     
+Module button_cntr 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
 Module clock_div_10 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -223,36 +241,61 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port sck
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port mosi
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[15]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[14]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[13]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[12]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[11]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[10]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[9]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[8]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[7]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[6]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[5]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port led_debug[4]
-WARNING: [Synth 8-3331] design SPI_MASTER2 has unconnected port miso
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\next_state_reg[0] )
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'state_reg[3]/Q' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'state_reg[2]/Q' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'state_reg[1]/Q' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'state_reg[0]/Q' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:96]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port sck
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[15]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[14]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[13]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[12]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[11]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[10]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[9]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[8]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[7]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[6]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[5]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[4]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[3]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[2]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[1]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port led_debug[0]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port miso
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port irq
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port btn[3]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port btn[2]
+WARNING: [Synth 8-3331] design SPI_ADDR has unconnected port btn[0]
+INFO: [Synth 8-3886] merging instance 'data_reg[7]' (FDE) to 'data_reg[6]'
+INFO: [Synth 8-3886] merging instance 'data_reg[6]' (FDE) to 'addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'data_reg[5]' (FDE) to 'data_reg[4]'
+INFO: [Synth 8-3886] merging instance 'data_reg[4]' (FDE) to 'data_reg[3]'
+INFO: [Synth 8-3886] merging instance 'data_reg[3]' (FDE) to 'data_reg[2]'
+INFO: [Synth 8-3886] merging instance 'data_reg[2]' (FDE) to 'data_reg[1]'
+INFO: [Synth 8-3886] merging instance 'data_reg[1]' (FDE) to 'data_reg[0]'
+INFO: [Synth 8-3886] merging instance 'data_reg[0]' (FDE) to 'addr_reg[0]'
+INFO: [Synth 8-3886] merging instance 'addr_reg[7]' (FDE) to 'addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'addr_reg[6]' (FDE) to 'addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'addr_reg[5]' (FDE) to 'addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'addr_reg[4]' (FDE) to 'addr_reg[0]'
+INFO: [Synth 8-3886] merging instance 'addr_reg[3]' (FDE) to 'addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'addr_reg[2]' (FDE) to 'addr_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\addr_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\addr_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nolabel_line26/ff_cur_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\count_bit_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\count_bit_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\count_bit_reg[2] )
+INFO: [Synth 8-3886] merging instance 'addr_reg[1]' (FDE) to 'mosi_reg'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (mosi_reg)
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'state_reg[2]/Q' [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:72]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:72]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:72]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'state_reg[1]/Q' [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:72]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:72]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:72]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'state_reg[0]/Q' [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:72]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:72]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/MAIN_CODE.v:72]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1191.945 ; gain = 382.797
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -264,13 +307,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:23 . Memory (MB): peak = 1191.945 ; gain = 382.797
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:23 . Memory (MB): peak = 1191.945 ; gain = 382.797
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -282,7 +325,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:23 . Memory (MB): peak = 1191.945 ; gain = 382.797
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -306,13 +349,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 1204.730 ; gain = 395.582
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 1204.730 ; gain = 395.582
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -331,25 +374,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 1204.730 ; gain = 395.582
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 1204.730 ; gain = 395.582
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 1204.730 ; gain = 395.582
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 1204.730 ; gain = 395.582
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -365,8 +408,8 @@ Report Cell Usage:
 +------+------+------+
 |      |Cell  |Count |
 +------+------+------+
-|1     |OBUF  |     4|
-|2     |OBUFT |    14|
+|1     |OBUF  |     1|
+|2     |OBUFT |    17|
 +------+------+------+
 
 Report Instance Areas: 
@@ -376,26 +419,26 @@ Report Instance Areas:
 |1     |top      |       |    18|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 1204.730 ; gain = 395.582
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1025.184 ; gain = 404.656
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 12 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:25 . Memory (MB): peak = 1204.730 ; gain = 320.066
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:28 . Memory (MB): peak = 1204.730 ; gain = 395.582
+Synthesis finished with 0 errors, 9 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 1025.184 ; gain = 307.879
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 1025.184 ; gain = 404.656
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1216.789 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1025.184 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1226.891 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1033.230 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-18 Infos, 56 Warnings, 29 Critical Warnings and 0 Errors encountered.
+42 Infos, 72 Warnings, 22 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:32 . Memory (MB): peak = 1226.891 ; gain = 700.621
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1226.891 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 1033.230 ; gain = 708.277
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1033.230 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/SPI_MASTER2.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file SPI_MASTER2_utilization_synth.rpt -pb SPI_MASTER2_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Aug 24 10:45:42 2024...
+INFO: [Common 17-1381] The checkpoint 'C:/Users/user/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/SPI_ADDR.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file SPI_ADDR_utilization_synth.rpt -pb SPI_ADDR_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 26 13:42:51 2024...

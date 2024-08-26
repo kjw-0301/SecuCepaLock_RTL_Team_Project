@@ -8,9 +8,9 @@ var WshShell = new ActiveXObject( "WScript.Shell" );
 var ProcEnv = WshShell.Environment( "Process" );
 var PathVal = ProcEnv("PATH");
 if ( PathVal.length == 0 ) {
-  PathVal = "C:/Xilinx/Vitis/2019.2/bin;C:/Xilinx/Vivado/2019.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2019.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado/2019.2/bin;";
+  PathVal = "C:/Xilinx/Vivado/2019.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2019.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado/2019.2/bin;";
 } else {
-  PathVal = "C:/Xilinx/Vitis/2019.2/bin;C:/Xilinx/Vivado/2019.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2019.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado/2019.2/bin;" + PathVal;
+  PathVal = "C:/Xilinx/Vivado/2019.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2019.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado/2019.2/bin;" + PathVal;
 }
 
 ProcEnv("PATH") = PathVal;
@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log SPI_MASTER2.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_MASTER2.tcl" );
+         "-log SPI_ADDR.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_ADDR.tcl" );
 
 
 
