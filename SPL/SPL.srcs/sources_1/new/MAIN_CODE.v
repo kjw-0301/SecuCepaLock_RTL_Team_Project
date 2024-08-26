@@ -5,7 +5,7 @@ module SPI_ADDR(
     input miso, //MASTER IN SLAVE OUT,
     input irq,
     output reg sck, //SPI Clock
-    output reg mosi,    //MASTER OUT SLAVE IN
+    output reg[7:0] mosi,    //MASTER OUT SLAVE IN
     output rst,
     output [15:0]led_debug);
    
@@ -24,42 +24,41 @@ module SPI_ADDR(
     
     //SCK
     wire sck_p_edge, sck_n_edge;
-    edge_detector_n(.clk(clk_start), .reset_p(reset_p) ,.cp(sck), .n_edge(sck_n_edge), .p_edge(sck_p_edge));
-    
-    
+    edge_detector_n(.clk(clk_start), .reset_p(reset_p) ,.cp(sck), .n_edge(sck_n_edge), .p_edge(sck_p_edge));    
     
     // data_mode + addr값 지정해주기
-
+    reg[2:0] rc_counter = 0;
     reg [7:0] addr;
+    reg [7:0] data;   
     always @(posedge clk or posedge reset_p) begin
-        case(mode)
-
+        case(rc_counter)
+            1:begin
+                addr = 8'h11; 
+                data = 8'h3f;
+            end
+            2:begin
+                addr = 8'h01; 
+                data = 8'h0c;
+            end
+            3:begin
+                addr = 8'h02; 
+                data = 8'h30;
+            end
         endcase
     end
-
-
-
-
 
     reg [2:0] count_bit;
     /*
     reg [3:0] command;
     */
     
-    
-    /*parameter modereg = 8'h11;  */
-     parameter modereg_reset = 8'h3f;
-    
-
-    wire [7:0] data;   
-   
-    
+    /*parameter modereg = 8'h11;  */    
+  
     reg [2:0] state, next_state;
     parameter IDLE = 4'b0_001;       
     parameter SEND_ADDR = 4'b0_010;   //클럭 신호
     parameter SEND_DATA = 4'b0_100;
     parameter STOP = 4'b1_000;
-
 
     //MAIN
     always @(negedge clk or posedge reset_p) begin
@@ -81,13 +80,15 @@ module SPI_ADDR(
                 end
                 
                 SEND_ADDR : begin
+                    if(rc_counter <= 0) rc_counter = rc_counter + 1;
+                    else if(rc_counter > 3) rc_counter = 1;
+                    
                     if(sck_p_edge)  mosi =addr[count_bit]; 
                         if(sck_n_edge) begin
-                            if(count_bit ==0) begin 
-                              count_bit =7;
-                              next_state =SEND_DATA;  
-                              end
-                              
+                            if(count_bit == 0) begin 
+                                count_bit = 7;
+                                next_state = SEND_DATA;  
+                            end   
                         else count_bit = count_bit -1; 
                     end                                         
                 end       
@@ -105,11 +106,9 @@ module SPI_ADDR(
                 end                             
 
                 STOP : begin
-                    if(!start_stop) begin
-                        next_state = IDLE;
-                    end
+                    if(rc_counter < 3) next_state = SEND_ADDR; 
+                    else if(rc_counter > 3) next_state = IDLE;
                 end
-
             endcase
         end
     end
