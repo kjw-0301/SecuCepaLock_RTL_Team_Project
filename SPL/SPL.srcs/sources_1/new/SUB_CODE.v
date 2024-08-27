@@ -872,62 +872,48 @@ endmodule
 //======================================================
 module servo_motor(
     input clk,reset_p,
-    input [2:0] btn,
+    input spi_keypad_data,
+    input ultra_data,
     output servo_motor_pwm,
     output [3:0] com,
     output [7:0] seg_7);
     
-        reg [31:0] clk_div;     //속도조절\
+        reg [31:0] clk_div;    
     always @(posedge clk or posedge reset_p) begin
         if(reset_p)clk_div = 20;
         else clk_div = clk_div +1;
     end
 
-    wire clk_div_26_nedge;    //p edge   //누르면 1 한번더 누르면 0 >> T플립플롭 사용                                          
+    wire clk_div_26_nedge;                                      
     edge_detector_n ed(.clk(clk), .reset_p(reset_p),
-                                                      .cp(clk_div[23]), .n_edge(clk_div_26_nedge));    
-                                                      
-    reg [6:0] duty;       // duty 레지스터의 크기를 8비트로 설정
-    reg up_down;        // 방향 제어를 위한 플래그
-    reg duty_min, duty_max;
- 
- wire btn_0, btn_1, btn_2;
-      button_cntr btn0(.clk(clk), .reset_p(reset_p), .btn(btn[0]), .btn_pedge(btn_0));
-      button_cntr btn1(.clk(clk), .reset_p(reset_p), .btn(btn[1]), .btn_pedge(btn_1));
-      button_cntr btn2(.clk(clk), .reset_p(reset_p), .btn(btn[2]), .btn_pedge(btn_2));
- 
-    
-    always @(posedge clk or posedge reset_p) begin
-        if (reset_p) begin
-            duty = 12 ;       // 초기화 1ms (5% 듀티 사이클)
-            up_down = 1;  // 초기 방향 설정 (0: 증가, 1: 감소)
-            duty_min =12;
-            duty_max = 50;
-        end
-        else if (clk_div_26_nedge) begin // 20ms 주기
-            if (up_down) begin
-                if (duty <50)  // 2ms (10%)에 도달하지 않았다면 증가
-                    duty = duty + 1;
-                else
-                    up_down = 0;  // 2ms에 도달하면 방향을 감소로 변경
-            end
-            else begin
-                if (duty > 12)  // 1ms (5%)에 도달하지 않았다면 감소
-                    duty = duty - 1;
-                else
-                    up_down = 1;  // 1ms에 도달하면 방향을 증가로 변경
-            end
-        end
-            else if(btn_0)up_down = ~up_down;
-            else if(btn_1)duty_min = duty;
-            else if(btn_2)duty_max = duty;
-     end   
+                                                      .cp(clk_div[22]), .n_edge(clk_div_26_nedge));    
 
-    pwm_Nstep_freq #(.duty_step(400), .pwm_freq(50))
-    pwm_b(.clk(clk), .reset_p(reset_p), .duty(duty), .pwm(servo_motor_pwm));
+    reg[6:0] duty;
+    reg up_down;
+    always @(posedge clk or posedge reset_p) begin
+        if(reset_p) begin
+        duty =12;
+        end
+        
+       else if(spi_keypad_data) begin 
+            if(clk_div_26_nedge) begin
+               if(duty<50)
+                  duty =duty +1;
+            end
+       end
+                          
+        else if(ultra_data) begin
+            if(clk_div_26_nedge) begin
+               if(duty >12)
+                  duty =duty -1;
+            end
+        end   
+     end
+   
+
                                                                         
     wire [15:0] duty_bcd;  
-    bin_to_dec bcd_humi(.bin({6'b0, duty}),  .bcd(duty_bcd));
+    bin_to_dec bcd_humi(.bin({5'b0, duty}),  .bcd(duty_bcd));
     fnd_cntr fnd(.clk(clk), .reset_p(reset_p), .value(duty_bcd),
                                                                         .com(com), .seg_7(seg_7)); 
 endmodule
@@ -1139,7 +1125,8 @@ module keypad_cntr_FSM(
     input [3:0] row,        //줄
     output reg [3:0] col,      //열
     output reg [3:0] key_value,
-    output reg key_valid);     
+    output reg key_valid,
+    output reg [3:0] key_number);     
     
     parameter SCAN0               = 5'b00001;
     parameter SCAN1               = 5'b00010;
@@ -1189,6 +1176,7 @@ module keypad_cntr_FSM(
             endcase
         end
         
+
         always@(posedge clk or posedge reset_p) begin
             if(reset_p) begin
                 key_value = 0;
@@ -1235,9 +1223,33 @@ module keypad_cntr_FSM(
                                     8'b1000_1000 : key_value = 4'hf;        
                                     endcase             
                         end
+
                     endcase
               end
         end
+        
+    
+        always @(posedge clk or posedge reset_p) begin
+            case(key_number) 
+                1 :  key_value = 4'h0; 
+                2 : key_value = 4'h4;
+                3 : key_value = 4'h8;
+                4 : key_value = 4'hc;
+                5 : key_value = 4'h1;
+                6 : key_value = 4'h5;
+                7 : key_value = 4'h9;
+                8 : key_value = 4'hd;
+                9 : key_value = 4'h2;
+              10 : key_value = 4'h6;
+              11 : key_value = 4'ha;
+              12 : key_value = 4'he;
+              13 : key_value = 4'h3;
+              14 : key_value = 4'h7;
+              15 : key_value = 4'hb;
+              16 : key_value = 4'hf;                                    
+              endcase
+        end
+        
 endmodule
 
 
@@ -1253,6 +1265,8 @@ endmodule
 //======================================================================
 module timer_1m(
     input clk, reset_p,
+    input out_data,
+    output reg [5:0] count,
     output [3:0] com,
     output [7:0] seg_7);
     
@@ -1269,15 +1283,16 @@ module timer_1m(
     wire clk_sec_n;
    edge_detector_n ed_clk(.clk(clk), .reset_p(reset_p),   
                                           .cp(clk_sec),  .n_edge(clk_sec_n));
-    
-    reg [5:0] count;
+
     always @(posedge clk or posedge reset_p) begin
         if(reset_p) count=60; 
-        else if(clk_sec_n) begin
-            if(count == 0) count = 0;
-           else count = count -1;
-       end
-     end
+        else if(out_data) begin
+            if(clk_sec_n)  begin
+                if(count == 0) count = 0;
+                else count = count -1;
+            end
+         end
+      end
     
     
     //count와 timer의 비트수는 건드리지않으며 fnd 오른쪽 2개만 값을 보여주고싶을때

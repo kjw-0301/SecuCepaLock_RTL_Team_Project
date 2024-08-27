@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log timer_1m.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source timer_1m.tcl
+EAStep vivado -log servo_motor.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source servo_motor.tcl
