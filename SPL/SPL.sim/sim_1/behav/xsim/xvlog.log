@@ -3,3 +3,23 @@ INFO: [VRFC 10-311] analyzing module clock_div_10
 INFO: [VRFC 10-2458] undeclared symbol clk_div_100, assumed default net type wire [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:24]
 INFO: [VRFC 10-2458] undeclared symbol clk_div_100_nedge, assumed default net type wire [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:25]
 INFO: [VRFC 10-311] analyzing module edge_detector_n
+INFO: [VRFC 10-311] analyzing module fnd_cntr
+INFO: [VRFC 10-311] analyzing module button_cntr
+INFO: [VRFC 10-311] analyzing module ring_counter_fnd
+INFO: [VRFC 10-311] analyzing module bin_to_dec
+INFO: [VRFC 10-311] analyzing module decoder_7seg
+INFO: [VRFC 10-311] analyzing module T_flip_flop_positive
+INFO: [VRFC 10-311] analyzing module clock_div_100
+INFO: [VRFC 10-311] analyzing module clock_div_60
+INFO: [VRFC 10-311] analyzing module clock_div_1000
+INFO: [VRFC 10-311] analyzing module loadable_counter_bcd_60
+INFO: [VRFC 10-311] analyzing module I2C_controller
+INFO: [VRFC 10-311] analyzing module I2C_lcd_send_byte
+INFO: [VRFC 10-311] analyzing module I2C_txtlcd_top
+INFO: [VRFC 10-311] analyzing module servo_motor
+INFO: [VRFC 10-311] analyzing module pwm_Nstep_freq
+INFO: [VRFC 10-311] analyzing module ultrasonic_sensor_cntr
+INFO: [VRFC 10-311] analyzing module clock_div_58
+INFO: [VRFC 10-311] analyzing module keypad_cntr_FSM
+INFO: [VRFC 10-311] analyzing module down_counter60
+INFO: [VRFC 10-311] analyzing module timer_1m
