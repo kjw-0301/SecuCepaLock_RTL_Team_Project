@@ -9,7 +9,7 @@ create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk
 
 
 # Switches
-set_property -dict { PACKAGE_PIN V17   IOSTANDARD LVCMOS33 } [get_ports {rotation_switch}]
+set_property -dict { PACKAGE_PIN V17   IOSTANDARD LVCMOS33 } [get_ports {sw}]
 #set_property -dict { PACKAGE_PIN V16   IOSTANDARD LVCMOS33 } [get_ports {duty[1]}]
 #set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS33 } [get_ports {duty[2]}]
 #set_property -dict { PACKAGE_PIN W17   IOSTANDARD LVCMOS33 } [get_ports {duty[3]}]
@@ -65,7 +65,7 @@ set_property -dict { PACKAGE_PIN L1    IOSTANDARD LVCMOS33 } [get_ports {led_deb
 
 ##Buttons
 set_property -dict { PACKAGE_PIN U18   IOSTANDARD LVCMOS33 } [get_ports reset_p]
-set_property -dict { PACKAGE_PIN T18   IOSTANDARD LVCMOS33 } [get_ports btn[0]]
+set_property -dict { PACKAGE_PIN T18   IOSTANDARD LVCMOS33 } [get_ports btn]
 set_property -dict { PACKAGE_PIN W19   IOSTANDARD LVCMOS33} [get_ports btn[1]]
 set_property -dict { PACKAGE_PIN T17   IOSTANDARD LVCMOS33 } [get_ports btn[2]]
 set_property -dict { PACKAGE_PIN U17   IOSTANDARD LVCMOS33 } [get_ports btn[3]]
@@ -76,9 +76,9 @@ set_property -dict { PACKAGE_PIN J1   IOSTANDARD LVCMOS33 } [get_ports {sck}];#S
 set_property -dict { PACKAGE_PIN L2   IOSTANDARD LVCMOS33 } [get_ports {mosi}];#Sch name = JA2
 set_property -dict { PACKAGE_PIN J2   IOSTANDARD LVCMOS33 } [get_ports {miso}];#Sch name = JA3
 set_property -dict { PACKAGE_PIN G2   IOSTANDARD LVCMOS33 } [get_ports {irq}];#Sch name = JA4
-#set_property -dict { PACKAGE_PIN H1   IOSTANDARD LVCMOS33 } [get_ports {clk_time}];#Sch name = JA7
-#set_property -dict { PACKAGE_PIN K2   IOSTANDARD LVCMOS33 } [get_ports {duty_div_33[0]}];#Sch name = JA8
-#set_property -dict { PACKAGE_PIN H2   IOSTANDARD LVCMOS33 } [get_ports {duty_div_33[1]}];#Sch name = JA9
+#set_property -dict { PACKAGE_PIN H1   IOSTANDARD LVCMOS33 } [get_ports {rst}];#Sch name = JA7
+set_property -dict { PACKAGE_PIN K2   IOSTANDARD LVCMOS33 } [get_ports {nss}];#Sch name = JA8
+set_property -dict { PACKAGE_PIN H2   IOSTANDARD LVCMOS33 } [get_ports {cs}];#Sch name = JA9
 #set_property -dict { PACKAGE_PIN G3   IOSTANDARD LVCMOS33 } [get_ports {duty_div_33[2]}];#Sch name = JA10
 
 ##Pmod Header JB
