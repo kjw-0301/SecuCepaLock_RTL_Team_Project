@@ -85,7 +85,7 @@ module SPI_ADDR(
 
 
     reg [2:0] count_bit;
-    reg [1:0] addr_data_count;
+    reg [3:0] addr_data_count;
 
      
     //MAIN
@@ -109,18 +109,15 @@ module SPI_ADDR(
             case(state)
                 IDLE : begin
                 nss =0;
-                sck_clk_enable =0;
-                if(start_sck) begin
-                    led_debug[0] =1;               
+                sck_clk_enable =1;              
                     next_state =  COUNT_ADDR_DATA;  
                     end
-                end    
+  
                 
                 COUNT_ADDR_DATA : begin
-                sck_clk_enable =1;
                 led_debug[1] =1;
-                    if(addr_data_count<3) next_state = SEND_ADDR;
-                    else next_state = READ_DATA;
+                    if(addr_data_count<9) next_state = SEND_ADDR;
+                    else next_state = STOP;
                 end
                 
                 SEND_ADDR : begin
@@ -197,7 +194,7 @@ module SPI_ADDR(
                 STOP : begin
                         led_debug[5] =1;
                         nss =1;
-                        sck_clk_enable =0;
+                        sck_clk_enable =1;
                         next_state = IDLE;
                     end
 
