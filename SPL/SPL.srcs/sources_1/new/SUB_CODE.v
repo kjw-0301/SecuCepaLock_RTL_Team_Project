@@ -1265,11 +1265,10 @@ endmodule
 //======================================================================
 module timer_1m(
     input clk, reset_p,
-    input out_data,
-    output reg [5:0] count,
+    output lock,
     output [3:0] com,
     output [7:0] seg_7);
-    
+    reg [5:0] count;
     wire btn_pedge;
     button_cntr btn0(.clk(clk), .reset_p(reset_p), .btn(btn), .btn_pedge(btn_pedge));
    
@@ -1286,7 +1285,7 @@ module timer_1m(
 
     always @(posedge clk or posedge reset_p) begin
         if(reset_p) count=60; 
-        else if(out_data) begin
+        else if(lock) begin
             if(clk_sec_n)  begin
                 if(count == 0) count = 0;
                 else count = count -1;
