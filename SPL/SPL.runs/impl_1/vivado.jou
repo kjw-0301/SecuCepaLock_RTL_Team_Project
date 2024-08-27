@@ -2,11 +2,11 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Tue Aug 27 15:01:30 2024
-# Process ID: 10368
-# Current directory: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1
-# Command line: vivado.exe -log timer_1m.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source timer_1m.tcl -notrace
-# Log file: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/timer_1m.vdi
-# Journal file: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1\vivado.jou
+# Start of session at: Tue Aug 27 16:28:55 2024
+# Process ID: 6972
+# Current directory: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1
+# Command line: vivado.exe -log SPI_ADDR.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source SPI_ADDR.tcl -notrace
+# Log file: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/SPI_ADDR.vdi
+# Journal file: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source timer_1m.tcl -notrace
+source SPI_ADDR.tcl -notrace

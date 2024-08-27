@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1724738424">
-  <File Type="BITSTR-BMM" Name="timer_1m_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="timer_1m_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="timer_1m_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="timer_1m_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="timer_1m.tcl"/>
-  <File Type="OPT-TIMING" Name="timer_1m_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="timer_1m_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="timer_1m_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="timer_1m_reports.tcl"/>
-  <File Type="OPT-DRC" Name="timer_1m_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="timer_1m.hwdef"/>
-  <File Type="PWROPT-DCP" Name="timer_1m_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="timer_1m_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="timer_1m_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="timer_1m_placed.dcp"/>
-  <File Type="PLACE-IO" Name="timer_1m_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="timer_1m_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="timer_1m_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="timer_1m_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="timer_1m_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="timer_1m_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="timer_1m_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="timer_1m_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="timer_1m_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="timer_1m.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="timer_1m_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="timer_1m_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="timer_1m_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="timer_1m.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="timer_1m_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="timer_1m_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="timer_1m_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="timer_1m_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="timer_1m_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="timer_1m_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="timer_1m_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="timer_1m.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="timer_1m_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="timer_1m_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="timer_1m_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="timer_1m_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="timer_1m_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="timer_1m_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="timer_1m_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="timer_1m_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="timer_1m_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="timer_1m_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="timer_1m_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="timer_1m_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="timer_1m_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="timer_1m_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="timer_1m_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="timer_1m_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="timer_1m_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="timer_1m_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="timer_1m_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="timer_1m_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="timer_1m_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="timer_1m.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="timer_1m_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="timer_1m.rbt"/>
-  <File Type="BITSTR-NKY" Name="timer_1m.nky"/>
-  <File Type="PDI-FILE" Name="timer_1m.pdi"/>
-  <File Type="RCFI_FILE" Name="timer_1m.rcfi"/>
-  <File Type="CFI_FILE" Name="timer_1m.cfi"/>
-  <File Type="RNPI_FILE" Name="timer_1m.rnpi"/>
-  <File Type="NPI_FILE" Name="timer_1m.npi"/>
-  <File Type="RBD_FILE" Name="timer_1m.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1724743667">
+  <File Type="BITSTR-BMM" Name="SPI_ADDR_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="SPI_ADDR_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="SPI_ADDR_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="SPI_ADDR_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="SPI_ADDR.tcl"/>
+  <File Type="OPT-TIMING" Name="SPI_ADDR_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="SPI_ADDR_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="SPI_ADDR_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="SPI_ADDR_reports.tcl"/>
+  <File Type="OPT-DRC" Name="SPI_ADDR_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="SPI_ADDR.hwdef"/>
+  <File Type="PWROPT-DCP" Name="SPI_ADDR_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="SPI_ADDR_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="SPI_ADDR_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="SPI_ADDR_placed.dcp"/>
+  <File Type="PLACE-IO" Name="SPI_ADDR_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="SPI_ADDR_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="SPI_ADDR_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="SPI_ADDR_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="SPI_ADDR_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="SPI_ADDR_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="SPI_ADDR_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="SPI_ADDR_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="SPI_ADDR_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="SPI_ADDR.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="SPI_ADDR_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="SPI_ADDR_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="SPI_ADDR_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="SPI_ADDR.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="SPI_ADDR_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="SPI_ADDR_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="SPI_ADDR_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="SPI_ADDR_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="SPI_ADDR_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="SPI_ADDR_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="SPI_ADDR_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="SPI_ADDR.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="SPI_ADDR_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="SPI_ADDR_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="SPI_ADDR_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="SPI_ADDR_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="SPI_ADDR_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="SPI_ADDR_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="SPI_ADDR_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="SPI_ADDR_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="SPI_ADDR_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="SPI_ADDR_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="SPI_ADDR_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="SPI_ADDR_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="SPI_ADDR_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="SPI_ADDR_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="SPI_ADDR_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="SPI_ADDR_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="SPI_ADDR_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="SPI_ADDR_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="SPI_ADDR_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="SPI_ADDR_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="SPI_ADDR_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="SPI_ADDR.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="SPI_ADDR_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="SPI_ADDR.rbt"/>
+  <File Type="BITSTR-NKY" Name="SPI_ADDR.nky"/>
+  <File Type="PDI-FILE" Name="SPI_ADDR.pdi"/>
+  <File Type="RCFI_FILE" Name="SPI_ADDR.rcfi"/>
+  <File Type="CFI_FILE" Name="SPI_ADDR.cfi"/>
+  <File Type="RNPI_FILE" Name="SPI_ADDR.rnpi"/>
+  <File Type="NPI_FILE" Name="SPI_ADDR.npi"/>
+  <File Type="RBD_FILE" Name="SPI_ADDR.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="timer_1m.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="timer_1m.sysdef"/>
-  <File Type="BG-BGN" Name="timer_1m.bgn"/>
-  <File Type="BG-DRC" Name="timer_1m.drc"/>
-  <File Type="RDI-RDI" Name="timer_1m.vdi"/>
+  <File Type="BITSTR-LTX" Name="SPI_ADDR.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="SPI_ADDR.sysdef"/>
+  <File Type="BG-BGN" Name="SPI_ADDR.bgn"/>
+  <File Type="BG-DRC" Name="SPI_ADDR.drc"/>
+  <File Type="RDI-RDI" Name="SPI_ADDR.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -85,6 +85,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/MAIN_CODE.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/SPI_3RD.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -116,17 +123,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/SPI_3RD.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="timer_1m"/>
+      <Option Name="TopModule" Val="SPI_ADDR"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

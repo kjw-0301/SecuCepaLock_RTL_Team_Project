@@ -1,10 +1,10 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Tue Aug 27 15:02:12 2024
-| Host         : DESKTOP-KKVBLF0 running 64-bit major release  (build 9200)
-| Command      : report_control_sets -verbose -file timer_1m_control_sets_placed.rpt
-| Design       : timer_1m
+| Date         : Tue Aug 27 16:29:43 2024
+| Host         : DESKTOP-VQQPT2C running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file SPI_ADDR_control_sets_placed.rpt
+| Design       : SPI_ADDR
 | Device       : xc7a35t
 -------------------------------------------------------------------------------------
 
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     7 |
-|    Minimum number of control sets                        |     7 |
+| Total control sets                                       |    15 |
+|    Minimum number of control sets                        |    15 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    35 |
+| Unused register locations in slices containing registers |    82 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,12 +39,12 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     7 |
-| >= 0 to < 4        |     0 |
+| Total control sets |    15 |
+| >= 0 to < 4        |     8 |
 | >= 4 to < 6        |     2 |
-| >= 6 to < 8        |     1 |
+| >= 6 to < 8        |     2 |
 | >= 8 to < 10       |     0 |
-| >= 10 to < 12      |     2 |
+| >= 10 to < 12      |     1 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     2 |
@@ -59,27 +59,35 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |              17 |            5 |
-| No           | No                    | Yes                    |              17 |           10 |
+| No           | No                    | Yes                    |              32 |            8 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              31 |           12 |
-| Yes          | Yes                   | No                     |               4 |            3 |
+| Yes          | No                    | No                     |              12 |            4 |
+| Yes          | No                    | Yes                    |              17 |           11 |
+| Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+----------------------------+---------------------+------------------+----------------+
-|  Clock Signal  |        Enable Signal       |   Set/Reset Signal  | Slice Load Count | Bel Load Count |
-+----------------+----------------------------+---------------------+------------------+----------------+
-|  clk_IBUF_BUFG | fnd/rc/com_reg[3]_0        | fnd/rc/com_reg[0]_0 |                3 |              4 |
-|  clk_IBUF_BUFG | btn0/ed/E[0]               | reset_p_IBUF        |                2 |              5 |
-|  clk_IBUF_BUFG | ed_clk/E[0]                | reset_p_IBUF        |                2 |              6 |
-| ~clk_IBUF_BUFG | clk_us/ed1/ff_old_reg_0[0] | reset_p_IBUF        |                4 |             10 |
-| ~clk_IBUF_BUFG | clk_ms/ed2/E[0]            | reset_p_IBUF        |                4 |             10 |
-|  clk_IBUF_BUFG |                            |                     |                5 |             17 |
-| ~clk_IBUF_BUFG |                            | reset_p_IBUF        |               10 |             17 |
-+----------------+----------------------------+---------------------+------------------+----------------+
++----------------+------------------------------------+------------------+------------------+----------------+
+|  Clock Signal  |            Enable Signal           | Set/Reset Signal | Slice Load Count | Bel Load Count |
++----------------+------------------------------------+------------------+------------------+----------------+
+|  clk_IBUF_BUFG | led_debug[2]_i_1_n_0               | rst_OBUF         |                1 |              1 |
+|  clk_IBUF_BUFG | led_debug[4]_i_1_n_0               | rst_OBUF         |                1 |              1 |
+|  clk_IBUF_BUFG | led_debug[1]_i_1_n_0               | rst_OBUF         |                1 |              1 |
+|  clk_IBUF_BUFG | led_debug[3]_i_1_n_0               | rst_OBUF         |                1 |              1 |
+|  clk_IBUF_BUFG | nss_i_1_n_0                        | rst_OBUF         |                1 |              1 |
+|  clk_IBUF_BUFG | btn_sck/btn1/E[0]                  | rst_OBUF         |                1 |              1 |
+|  clk_IBUF_BUFG | btn_sck/ed/ff_old_reg_0            | rst_OBUF         |                1 |              1 |
+|  clk_IBUF_BUFG | usec_clk/ed1/mosi1_out             |                  |                1 |              1 |
+|  clk_IBUF_BUFG | nolabel_line83/count_bit_reg[2][0] | rst_OBUF         |                2 |              4 |
+|  clk_IBUF_BUFG | addr[5]_i_1_n_0                    |                  |                1 |              5 |
+|  clk_IBUF_BUFG | data[7]_i_1_n_0                    |                  |                2 |              6 |
+|  clk_IBUF_BUFG | nolabel_line83/E[0]                | rst_OBUF         |                2 |              6 |
+|  clk_IBUF_BUFG |                                    | rst_OBUF         |                3 |             11 |
+|  clk_IBUF_BUFG |                                    |                  |                5 |             17 |
+| ~clk_IBUF_BUFG |                                    | rst_OBUF         |                5 |             21 |
++----------------+------------------------------------+------------------+------------------+----------------+
 
 

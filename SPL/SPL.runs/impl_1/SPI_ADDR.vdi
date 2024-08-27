@@ -1,13 +1,14 @@
-
-*** Running vivado
-    with args -log SPI_ADDR.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source SPI_ADDR.tcl -notrace
-
-
-****** Vivado v2019.2 (64-bit)
-  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
-  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue Aug 27 16:28:55 2024
+# Process ID: 6972
+# Current directory: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1
+# Command line: vivado.exe -log SPI_ADDR.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source SPI_ADDR.tcl -notrace
+# Log file: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/SPI_ADDR.vdi
+# Journal file: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
 source SPI_ADDR.tcl -notrace
 Command: link_design -top SPI_ADDR -part xc7a35tcpg236-1
 Design is defaulting to srcset: sources_1
