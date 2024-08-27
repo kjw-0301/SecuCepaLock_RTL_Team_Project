@@ -2,11 +2,11 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Tue Aug 27 09:25:13 2024
-# Process ID: 2540
+# Start of session at: Tue Aug 27 10:38:02 2024
+# Process ID: 11120
 # Current directory: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1
-# Command line: vivado.exe -log timer_1m.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source timer_1m.tcl -notrace
-# Log file: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/timer_1m.vdi
+# Command line: vivado.exe -log servo_motor.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source servo_motor.tcl -notrace
+# Log file: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/servo_motor.vdi
 # Journal file: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source timer_1m.tcl -notrace
+source servo_motor.tcl -notrace
