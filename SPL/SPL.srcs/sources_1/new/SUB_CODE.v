@@ -910,7 +910,8 @@ module servo_motor(
         end   
      end
    
-
+    pwm_Nstep_freq #(.duty_step(400), .pwm_freq(50))
+    pwm_b(.clk(clk), .reset_p(reset_p), .duty(duty), .pwm(motor_pwm));
                                                                         
     wire [15:0] duty_bcd;  
     bin_to_dec bcd_humi(.bin({5'b0, duty}),  .bcd(duty_bcd));

@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1724743667">
-  <File Type="BITSTR-BMM" Name="SPI_ADDR_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="SPI_ADDR_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="SPI_ADDR_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="SPI_ADDR_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="SPI_ADDR.tcl"/>
-  <File Type="OPT-TIMING" Name="SPI_ADDR_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="SPI_ADDR_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="SPI_ADDR_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="SPI_ADDR_reports.tcl"/>
-  <File Type="OPT-DRC" Name="SPI_ADDR_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="SPI_ADDR.hwdef"/>
-  <File Type="PWROPT-DCP" Name="SPI_ADDR_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="SPI_ADDR_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="SPI_ADDR_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="SPI_ADDR_placed.dcp"/>
-  <File Type="PLACE-IO" Name="SPI_ADDR_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="SPI_ADDR_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="SPI_ADDR_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="SPI_ADDR_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="SPI_ADDR_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="SPI_ADDR_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="SPI_ADDR_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="SPI_ADDR_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="SPI_ADDR_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="SPI_ADDR.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="SPI_ADDR_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="SPI_ADDR_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="SPI_ADDR_drc_physopted.rpt"/>
-  <File Type="BITSTR-MSK" Name="SPI_ADDR.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="SPI_ADDR_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="SPI_ADDR_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="SPI_ADDR_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="SPI_ADDR_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="SPI_ADDR_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="SPI_ADDR_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="SPI_ADDR_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="SPI_ADDR.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="SPI_ADDR_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="SPI_ADDR_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="SPI_ADDR_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="SPI_ADDR_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="SPI_ADDR_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="SPI_ADDR_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="SPI_ADDR_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="SPI_ADDR_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="SPI_ADDR_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="SPI_ADDR_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="SPI_ADDR_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="SPI_ADDR_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="SPI_ADDR_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="SPI_ADDR_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="SPI_ADDR_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="SPI_ADDR_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="SPI_ADDR_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="SPI_ADDR_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="SPI_ADDR_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="SPI_ADDR_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="SPI_ADDR_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="SPI_ADDR.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="SPI_ADDR_bus_skew_postroute_physopted.rpx"/>
-  <File Type="BITSTR-RBT" Name="SPI_ADDR.rbt"/>
-  <File Type="BITSTR-NKY" Name="SPI_ADDR.nky"/>
-  <File Type="PDI-FILE" Name="SPI_ADDR.pdi"/>
-  <File Type="RCFI_FILE" Name="SPI_ADDR.rcfi"/>
-  <File Type="CFI_FILE" Name="SPI_ADDR.cfi"/>
-  <File Type="RNPI_FILE" Name="SPI_ADDR.rnpi"/>
-  <File Type="NPI_FILE" Name="SPI_ADDR.npi"/>
-  <File Type="RBD_FILE" Name="SPI_ADDR.rbd"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1724752366">
+  <File Type="BITSTR-BMM" Name="SPI_ADDR_DATA_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="SPI_ADDR_DATA_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="SPI_ADDR_DATA_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="SPI_ADDR_DATA_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="SPI_ADDR_DATA.tcl"/>
+  <File Type="OPT-TIMING" Name="SPI_ADDR_DATA_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="SPI_ADDR_DATA_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="SPI_ADDR_DATA_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="SPI_ADDR_DATA_reports.tcl"/>
+  <File Type="OPT-DRC" Name="SPI_ADDR_DATA_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="SPI_ADDR_DATA.hwdef"/>
+  <File Type="PWROPT-DCP" Name="SPI_ADDR_DATA_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="SPI_ADDR_DATA_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="SPI_ADDR_DATA_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="SPI_ADDR_DATA_placed.dcp"/>
+  <File Type="PLACE-IO" Name="SPI_ADDR_DATA_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="SPI_ADDR_DATA_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="SPI_ADDR_DATA_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="SPI_ADDR_DATA_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="SPI_ADDR_DATA_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="SPI_ADDR_DATA_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="SPI_ADDR_DATA_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="SPI_ADDR_DATA_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="SPI_ADDR_DATA_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="SPI_ADDR_DATA.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="SPI_ADDR_DATA_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="SPI_ADDR_DATA_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="SPI_ADDR_DATA_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="SPI_ADDR_DATA.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="SPI_ADDR_DATA_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="SPI_ADDR_DATA_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="SPI_ADDR_DATA_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="SPI_ADDR_DATA_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="SPI_ADDR_DATA_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="SPI_ADDR_DATA_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="SPI_ADDR_DATA_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="SPI_ADDR_DATA.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="SPI_ADDR_DATA_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="SPI_ADDR_DATA_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="SPI_ADDR_DATA_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="SPI_ADDR_DATA_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="SPI_ADDR_DATA_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="SPI_ADDR_DATA_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="SPI_ADDR_DATA_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="SPI_ADDR_DATA_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="SPI_ADDR_DATA_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="SPI_ADDR_DATA_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="SPI_ADDR_DATA_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="SPI_ADDR_DATA_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="SPI_ADDR_DATA_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="SPI_ADDR_DATA_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="SPI_ADDR_DATA_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="SPI_ADDR_DATA_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="SPI_ADDR_DATA_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="SPI_ADDR_DATA_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="SPI_ADDR_DATA_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="SPI_ADDR_DATA_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="SPI_ADDR_DATA_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="SPI_ADDR_DATA.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="SPI_ADDR_DATA_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="SPI_ADDR_DATA.rbt"/>
+  <File Type="BITSTR-NKY" Name="SPI_ADDR_DATA.nky"/>
+  <File Type="PDI-FILE" Name="SPI_ADDR_DATA.pdi"/>
+  <File Type="RCFI_FILE" Name="SPI_ADDR_DATA.rcfi"/>
+  <File Type="CFI_FILE" Name="SPI_ADDR_DATA.cfi"/>
+  <File Type="RNPI_FILE" Name="SPI_ADDR_DATA.rnpi"/>
+  <File Type="NPI_FILE" Name="SPI_ADDR_DATA.npi"/>
+  <File Type="RBD_FILE" Name="SPI_ADDR_DATA.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="SPI_ADDR.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="SPI_ADDR.sysdef"/>
-  <File Type="BG-BGN" Name="SPI_ADDR.bgn"/>
-  <File Type="BG-DRC" Name="SPI_ADDR.drc"/>
-  <File Type="RDI-RDI" Name="SPI_ADDR.vdi"/>
+  <File Type="BITSTR-LTX" Name="SPI_ADDR_DATA.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="SPI_ADDR_DATA.sysdef"/>
+  <File Type="BG-BGN" Name="SPI_ADDR_DATA.bgn"/>
+  <File Type="BG-DRC" Name="SPI_ADDR_DATA.drc"/>
+  <File Type="RDI-RDI" Name="SPI_ADDR_DATA.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -84,7 +84,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/MAIN_CODE.v">
+    <File Path="$PSRCDIR/sources_1/new/SPI_MODE.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -115,17 +115,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/PRIVATE.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="SPI_ADDR"/>
+      <Option Name="TopModule" Val="SPI_ADDR_DATA"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

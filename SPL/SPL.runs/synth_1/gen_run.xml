@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1724743667">
-  <File Type="PA-TCL" Name="SPI_ADDR.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="SPI_ADDR_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="SPI_ADDR_reports.tcl"/>
-  <File Type="RDS-RDS" Name="SPI_ADDR.vds"/>
-  <File Type="RDS-UTIL" Name="SPI_ADDR_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="SPI_ADDR_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="SPI_ADDR.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="SPI_ADDR_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="SPI_ADDR_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1724752366">
+  <File Type="PA-TCL" Name="SPI_ADDR_DATA.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="SPI_ADDR_DATA_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="SPI_ADDR_DATA_reports.tcl"/>
+  <File Type="RDS-RDS" Name="SPI_ADDR_DATA.vds"/>
+  <File Type="RDS-UTIL" Name="SPI_ADDR_DATA_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="SPI_ADDR_DATA_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="SPI_ADDR_DATA.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="SPI_ADDR_DATA_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="SPI_ADDR_DATA_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/SUB_CODE.v">
@@ -18,7 +18,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/MAIN_CODE.v">
+    <File Path="$PSRCDIR/sources_1/new/SPI_MODE.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -49,17 +49,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/PRIVATE.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="SPI_ADDR"/>
+      <Option Name="TopModule" Val="SPI_ADDR_DATA"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

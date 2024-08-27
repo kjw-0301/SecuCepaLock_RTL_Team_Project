@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log timer_1m.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source timer_1m.tcl" );
+         "-log SPI_ADDR_DATA.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_ADDR_DATA.tcl" );
 
 
 

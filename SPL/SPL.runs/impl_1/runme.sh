@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1'
+HD_PWD='C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
-EAStep vivado -log timer_1m.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source timer_1m.tcl -notrace
+/bin/touch .place_design.begin.rst
+EAStep vivado -log SPI_ADDR_DATA.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source SPI_ADDR_DATA.tcl -notrace
 
 

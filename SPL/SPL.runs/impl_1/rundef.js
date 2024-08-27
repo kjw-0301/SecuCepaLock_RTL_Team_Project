@@ -23,9 +23,9 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 // pre-commands:
-ISETouchFile( "init_design", "begin" );
+ISETouchFile( "place_design", "begin" );
 ISEStep( "vivado",
-         "-log timer_1m.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source timer_1m.tcl -notrace" );
+         "-log SPI_ADDR_DATA.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source SPI_ADDR_DATA.tcl -notrace" );
 
 
 
