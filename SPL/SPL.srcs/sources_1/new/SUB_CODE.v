@@ -1119,140 +1119,97 @@ module clock_div_58(
 endmodule
 
 //===========================================================
-
-module keypad_cntr_FSM(
-    input clk,reset_p,
-    input [3:0] row,        //줄
-    output reg [3:0] col,      //열
-    output reg [3:0] key_value,
-    output reg key_valid,
-    output reg [3:0] key_number);     
+module key_pad_cntr_FSM(
+        input clk, reset_p,
+        input [3:0] row,
+        output reg [3:0] col,
+        output reg [3:0] key_value,
+        output reg key_valid);
     
-    parameter SCAN0               = 5'b00001;
-    parameter SCAN1               = 5'b00010;
-    parameter SCAN2               = 5'b00100;
-    parameter SCAN3               = 5'b01000;
-    parameter KEY_PROCESS = 5'b10000;
+        parameter SCAN0          = 5'b00001; 
+        parameter SCAN1          = 5'b00010; 
+        parameter SCAN2          = 5'b00100; 
+        parameter SCAN3          = 5'b01000; 
+        parameter KEY_PROCESS    = 5'b10000; 
+        
+        reg [19:0] clk_div;
+        
+        always @(posedge clk) clk_div = clk_div +1;
+        wire clk_8msec_p, clk_8msec_n;
+        edge_detector_p ed(.clk(clk), .reset_p(reset_p), .cp(clk_div[19]), .p_edge(clk_8msec_p), .n_edge(clk_8msec_n));
     
-
-        reg[19:0] clk_div;
-    always @(posedge clk)clk_div = clk_div +1;      //순서회로
-  
-    wire clk_8msec_n, clk_8msec_p;
-    edge_detector_n ed(.clk(clk), .reset_p(reset_p), .cp(clk_div[19]), 
-                                                  .p_edge(clk_8msec_p), .n_edge(clk_8msec_n)); 
-      
-      reg[4:0] state, next_state;
-
-        always@(posedge clk or posedge reset_p)begin      
-            if(reset_p)state =SCAN0;
-            else if(clk_8msec_p)state =next_state;
+    
+        reg [4:0] state , next_state;
+        always @(posedge clk or posedge reset_p)begin
+            if(reset_p) state = SCAN0;
+            else if(clk_8msec_n)state = next_state;
         end
-
-        always@(*)begin     //조합회로    FSM
-            case(state) 
-                SCAN0 : begin
-                        if(row ==0) next_state =  SCAN1;    //키입력이 있으면 키 프로세스
-                        else next_state = KEY_PROCESS;          //next_state같은 = 앞은 레지스터(플립플롭)으로 사용된다.
+        always@ *begin
+            case(state)
+                SCAN0: begin
+                    if(row == 0)next_state =SCAN1;
+                    else next_state =KEY_PROCESS;
+                         end
+                SCAN1: begin
+                        if(row == 0)next_state =SCAN2;
+                        else next_state =KEY_PROCESS;
                         end
-                SCAN1 : begin
-                        if(row ==0) next_state = SCAN2;
-                        else next_state = KEY_PROCESS;
+               SCAN2: begin
+                        if(row == 0)next_state =SCAN3;
+                        else next_state =KEY_PROCESS;
                         end
-                SCAN2 : begin
-                        if(row ==0) next_state = SCAN3;
-                        else next_state = KEY_PROCESS;          
-                        end
-                SCAN3 : begin
-                        if(row ==0) next_state = SCAN0;
-                        else next_state = KEY_PROCESS;
-                  end       
-                 KEY_PROCESS : begin
-                        if(row ==0) next_state = SCAN0;
-                        else next_state = KEY_PROCESS;                 
-                     end
+                SCAN3: begin
+                        if(row == 0)next_state =SCAN0;
+                        else next_state =KEY_PROCESS;
+                        end        
+                KEY_PROCESS: begin
+                        if(row == 0)next_state =SCAN0;
+                        else next_state =KEY_PROCESS;
+                        end                                             
+                default : next_state = SCAN0;        
                         
-                  default : next_state = SCAN0;                                 
             endcase
         end
         
-
-        always@(posedge clk or posedge reset_p) begin
-            if(reset_p) begin
-                key_value = 0;
-                key_valid = 0;
-                col =0;
-              end
-              else if(clk_8msec_n)begin
-                    case(state)     //각각의 상태 구현
-                        SCAN0 : begin 
-                                 col= 4'b0001; 
-                                 key_valid = 0; 
-                           end
-                        SCAN1 : begin
-                                 col= 4'b0010; 
-                                 key_valid = 0; 
-                            end
-                        SCAN2 : begin
-                                 col= 4'b0100; 
-                                 key_valid = 0; 
-                            end
-                        SCAN3 : begin
-                                 col= 4'b1000; 
-                                 key_valid = 0; 
-                            end
-                            
-                        KEY_PROCESS : begin
-                                key_valid = 1;
-                                case({col, row})    
-                                    8'b0001_0001 : key_value = 4'h0;        //값을 바꾸고 바로 읽음
-                                    8'b0001_0010 : key_value = 4'h4;
-                                    8'b0001_0100 : key_value = 4'h8;
-                                    8'b0001_1000 : key_value = 4'hc;
-                                    8'b0010_0001 : key_value = 4'h1;
-                                    8'b0010_0010 : key_value = 4'h5;
-                                    8'b0010_0100 : key_value = 4'h9;
-                                    8'b0010_1000 : key_value = 4'hd;
-                                    8'b0100_0001 : key_value = 4'h2;
-                                    8'b0100_0010 : key_value = 4'h6;
-                                    8'b0100_0100 : key_value = 4'ha;
-                                    8'b0100_1000 : key_value = 4'he;
-                                    8'b1000_0001 : key_value = 4'h3;
-                                    8'b1000_0010 : key_value = 4'h7;
-                                    8'b1000_0100 : key_value = 4'hb;
-                                    8'b1000_1000 : key_value = 4'hf;        
-                                    endcase             
-                        end
-
-                    endcase
-              end
-        end
-        
-    
-        always @(posedge clk or posedge reset_p) begin
-            case(key_number) 
-                1 :  key_value = 4'h0; 
-                2 : key_value = 4'h4;
-                3 : key_value = 4'h8;
-                4 : key_value = 4'hc;
-                5 : key_value = 4'h1;
-                6 : key_value = 4'h5;
-                7 : key_value = 4'h9;
-                8 : key_value = 4'hd;
-                9 : key_value = 4'h2;
-              10 : key_value = 4'h6;
-              11 : key_value = 4'ha;
-              12 : key_value = 4'he;
-              13 : key_value = 4'h3;
-              14 : key_value = 4'h7;
-              15 : key_value = 4'hb;
-              16 : key_value = 4'hf;                                    
-              endcase
-        end
-        
-endmodule
-
-
+        always @(posedge clk or posedge reset_p)begin
+            if(reset_p)begin
+                key_value =0;
+                key_valid =0;
+                col = 0;
+            end
+            else if(clk_8msec_p)begin
+               case(state)
+                    SCAN0:begin col = 4'b0001; key_valid = 0; end
+                    SCAN1:begin col = 4'b0010; key_valid = 0; end
+                    SCAN2:begin col = 4'b0100; key_valid = 0; end
+                    SCAN3:begin col = 4'b1000; key_valid = 0; end
+                    KEY_PROCESS: begin
+                        key_valid = 1;
+                        case({col,row})
+                        8'b0001_0001: key_value = 4'h1;
+                        8'b0001_0010: key_value = 4'h5;
+                        8'b0001_0100: key_value = 4'h9;
+                        8'b0001_1000: key_value = 4'hc;
+                        8'b0010_0001: key_value = 4'h2;
+                        8'b0010_0010: key_value = 4'h6;
+                        8'b0010_0100: key_value = 4'h0;
+                        8'b0010_1000: key_value = 4'hd;
+                        8'b0100_0001: key_value = 4'h3;
+                        8'b0100_0010: key_value = 4'h7;
+                        8'b0100_0100: key_value = 4'ha;
+                        8'b0100_1000: key_value = 4'he;
+                        8'b1000_0001: key_value = 4'h4;
+                        8'b1000_0010: key_value = 4'h8;
+                        8'b1000_0100: key_value = 4'hb;
+                        8'b1000_1000: 
+key_value = 4'hf;
+                       
+                        endcase
+                    end
+                endcase
+            end
+       end
+   endmodule
 //==============================================================
 module down_counter60(
     input clk,reset_p,
