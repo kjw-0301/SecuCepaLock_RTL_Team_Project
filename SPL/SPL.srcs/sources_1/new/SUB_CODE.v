@@ -1253,7 +1253,6 @@ endmodule
 //======================================================================
 module timer_1m(
     input clk, reset_p,
-    input out_data,
     output [3:0] com,
     output [7:0] seg_7);
     
@@ -1273,21 +1272,18 @@ module timer_1m(
     
     reg [5:0] count;
     always @(posedge clk or posedge reset_p) begin
-        if(reset_p) count=60;
-        else if(out_data) begin
-            if(clk_sec_n) begin
-                if(count == 0) count = 0;
-                else count = count -1;
-            end
-        end
-    end 
+        if(reset_p) count=60; 
+        else if(clk_sec_n) begin
+            if(count == 0) count = 0;
+           else count = count -1;
+       end
+     end
     
     
     //count와 timer의 비트수는 건드리지않으며 fnd 오른쪽 2개만 값을 보여주고싶을때
-   wire [15:0] timer_value;
+    wire [15:0] timer_value;
     bin_to_dec timer(.bin({6'b0, count[5:0]}), .bcd(timer_value)); 
     fnd_cntr fnd(.clk(clk), .reset_p(reset_p), .value(timer_value),
-
-                                         .com(com), .seg_7(seg_7));
+                                      .com(com), .seg_7(seg_7));
 
 endmodule
