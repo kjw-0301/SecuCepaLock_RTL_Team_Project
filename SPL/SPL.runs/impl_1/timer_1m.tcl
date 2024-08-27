@@ -69,17 +69,17 @@ set rc [catch {
   set_param chipscope.maxJobs 1
   set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
-  set_property board_part_repo_paths {C:/Users/minkyu/AppData/Roaming/Xilinx/Vivado/2019.2/xhub/board_store} [current_project]
+  set_property board_part_repo_paths {C:/Users/kcci/AppData/Roaming/Xilinx/Vivado/2019.2/xhub/board_store} [current_project]
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.cache/wt [current_project]
-  set_property parent.project_path C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr [current_project]
-  set_property ip_output_repo C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.cache/wt [current_project]
+  set_property parent.project_path C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr [current_project]
+  set_property ip_output_repo C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/SPI_ADDR.dcp
-  read_xdc C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc
-  link_design -top SPI_ADDR -part xc7a35tcpg236-1
+  add_files -quiet C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/timer_1m.dcp
+  read_xdc C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc
+  link_design -top timer_1m -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -95,8 +95,8 @@ set ACTIVE_STEP opt_design
 set rc [catch {
   create_msg_db opt_design.pb
   opt_design 
-  write_checkpoint -force SPI_ADDR_opt.dcp
-  create_report "impl_1_opt_report_drc_0" "report_drc -file SPI_ADDR_drc_opted.rpt -pb SPI_ADDR_drc_opted.pb -rpx SPI_ADDR_drc_opted.rpx"
+  write_checkpoint -force timer_1m_opt.dcp
+  create_report "impl_1_opt_report_drc_0" "report_drc -file timer_1m_drc_opted.rpt -pb timer_1m_drc_opted.pb -rpx timer_1m_drc_opted.rpx"
   close_msg_db -file opt_design.pb
 } RESULT]
 if {$rc} {
@@ -115,10 +115,10 @@ set rc [catch {
     implement_debug_core 
   } 
   place_design 
-  write_checkpoint -force SPI_ADDR_placed.dcp
-  create_report "impl_1_place_report_io_0" "report_io -file SPI_ADDR_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file SPI_ADDR_utilization_placed.rpt -pb SPI_ADDR_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file SPI_ADDR_control_sets_placed.rpt"
+  write_checkpoint -force timer_1m_placed.dcp
+  create_report "impl_1_place_report_io_0" "report_io -file timer_1m_io_placed.rpt"
+  create_report "impl_1_place_report_utilization_0" "report_utilization -file timer_1m_utilization_placed.rpt -pb timer_1m_utilization_placed.pb"
+  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file timer_1m_control_sets_placed.rpt"
   close_msg_db -file place_design.pb
 } RESULT]
 if {$rc} {
@@ -134,7 +134,7 @@ set ACTIVE_STEP phys_opt_design
 set rc [catch {
   create_msg_db phys_opt_design.pb
   phys_opt_design 
-  write_checkpoint -force SPI_ADDR_physopt.dcp
+  write_checkpoint -force timer_1m_physopt.dcp
   close_msg_db -file phys_opt_design.pb
 } RESULT]
 if {$rc} {
@@ -150,19 +150,19 @@ set ACTIVE_STEP route_design
 set rc [catch {
   create_msg_db route_design.pb
   route_design 
-  write_checkpoint -force SPI_ADDR_routed.dcp
-  create_report "impl_1_route_report_drc_0" "report_drc -file SPI_ADDR_drc_routed.rpt -pb SPI_ADDR_drc_routed.pb -rpx SPI_ADDR_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file SPI_ADDR_methodology_drc_routed.rpt -pb SPI_ADDR_methodology_drc_routed.pb -rpx SPI_ADDR_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file SPI_ADDR_power_routed.rpt -pb SPI_ADDR_power_summary_routed.pb -rpx SPI_ADDR_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file SPI_ADDR_route_status.rpt -pb SPI_ADDR_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file SPI_ADDR_timing_summary_routed.rpt -pb SPI_ADDR_timing_summary_routed.pb -rpx SPI_ADDR_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file SPI_ADDR_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file SPI_ADDR_clock_utilization_routed.rpt"
-  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file SPI_ADDR_bus_skew_routed.rpt -pb SPI_ADDR_bus_skew_routed.pb -rpx SPI_ADDR_bus_skew_routed.rpx"
+  write_checkpoint -force timer_1m_routed.dcp
+  create_report "impl_1_route_report_drc_0" "report_drc -file timer_1m_drc_routed.rpt -pb timer_1m_drc_routed.pb -rpx timer_1m_drc_routed.rpx"
+  create_report "impl_1_route_report_methodology_0" "report_methodology -file timer_1m_methodology_drc_routed.rpt -pb timer_1m_methodology_drc_routed.pb -rpx timer_1m_methodology_drc_routed.rpx"
+  create_report "impl_1_route_report_power_0" "report_power -file timer_1m_power_routed.rpt -pb timer_1m_power_summary_routed.pb -rpx timer_1m_power_routed.rpx"
+  create_report "impl_1_route_report_route_status_0" "report_route_status -file timer_1m_route_status.rpt -pb timer_1m_route_status.pb"
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file timer_1m_timing_summary_routed.rpt -pb timer_1m_timing_summary_routed.pb -rpx timer_1m_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file timer_1m_incremental_reuse_routed.rpt"
+  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file timer_1m_clock_utilization_routed.rpt"
+  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file timer_1m_bus_skew_routed.rpt -pb timer_1m_bus_skew_routed.pb -rpx timer_1m_bus_skew_routed.rpx"
   close_msg_db -file route_design.pb
 } RESULT]
 if {$rc} {
-  write_checkpoint -force SPI_ADDR_routed_error.dcp
+  write_checkpoint -force timer_1m_routed_error.dcp
   step_failed route_design
   return -code error $RESULT
 } else {
@@ -174,10 +174,10 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  catch { write_mem_info -force SPI_ADDR.mmi }
-  write_bitstream -force SPI_ADDR.bit 
-  catch {write_debug_probes -quiet -force SPI_ADDR}
-  catch {file copy -force SPI_ADDR.ltx debug_nets.ltx}
+  catch { write_mem_info -force timer_1m.mmi }
+  write_bitstream -force timer_1m.bit 
+  catch {write_debug_probes -quiet -force timer_1m}
+  catch {file copy -force timer_1m.ltx debug_nets.ltx}
   close_msg_db -file write_bitstream.pb
 } RESULT]
 if {$rc} {
