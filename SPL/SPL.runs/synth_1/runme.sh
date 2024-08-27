@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log SPI_ADDR_DATA.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_ADDR_DATA.tcl
+EAStep vivado -log safe_box.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source safe_box.tcl

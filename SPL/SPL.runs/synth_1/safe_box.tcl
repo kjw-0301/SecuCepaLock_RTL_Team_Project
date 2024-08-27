@@ -18,6 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -33,7 +34,7 @@ set_property ip_output_repo c:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Tea
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v
-  C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SPI_MODE.v
+  C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/TEST_TOP.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -49,12 +50,12 @@ set_property used_in_implementation false [get_files C:/Users/kimhk/Documents/Gi
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top SPI_ADDR_DATA -part xc7a35tcpg236-1
+synth_design -top safe_box -part xc7a35tcpg236-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef SPI_ADDR_DATA.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file SPI_ADDR_DATA_utilization_synth.rpt -pb SPI_ADDR_DATA_utilization_synth.pb"
+write_checkpoint -force -noxdef safe_box.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file safe_box_utilization_synth.rpt -pb safe_box_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

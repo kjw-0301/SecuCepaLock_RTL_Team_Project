@@ -1,13 +1,14 @@
-
-*** Running vivado
-    with args -log safe_box.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source safe_box.tcl -notrace
-
-
-****** Vivado v2019.2 (64-bit)
-  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
-  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue Aug 27 20:17:59 2024
+# Process ID: 21788
+# Current directory: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1
+# Command line: vivado.exe -log safe_box.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source safe_box.tcl -notrace
+# Log file: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/safe_box.vdi
+# Journal file: C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
 source safe_box.tcl -notrace
 Command: link_design -top safe_box -part xc7a35tcpg236-1
 Design is defaulting to srcset: sources_1

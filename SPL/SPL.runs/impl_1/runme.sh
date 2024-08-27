@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .place_design.begin.rst
-EAStep vivado -log SPI_ADDR_DATA.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source SPI_ADDR_DATA.tcl -notrace
+/bin/touch .init_design.begin.rst
+EAStep vivado -log safe_box.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source safe_box.tcl -notrace
 
 
