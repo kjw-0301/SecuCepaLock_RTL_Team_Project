@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Tue Aug 27 11:22:19 2024
-# Process ID: 9356
+# Start of session at: Tue Aug 27 16:27:47 2024
+# Process ID: 12836
 # Current directory: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1
 # Command line: vivado.exe -log SPI_ADDR.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_ADDR.tcl
 # Log file: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/SPI_ADDR.vds
