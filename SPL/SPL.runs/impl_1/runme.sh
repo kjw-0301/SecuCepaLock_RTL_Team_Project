@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log SPI_MASTER2.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source SPI_MASTER2.tcl -notrace
+EAStep vivado -log servo_motor.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source servo_motor.tcl -notrace
 
 

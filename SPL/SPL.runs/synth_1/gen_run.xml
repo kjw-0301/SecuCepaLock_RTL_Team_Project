@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1724463904">
-  <File Type="PA-TCL" Name="SPI_MASTER2.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="SPI_MASTER2_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="SPI_MASTER2_reports.tcl"/>
-  <File Type="RDS-RDS" Name="SPI_MASTER2.vds"/>
-  <File Type="RDS-UTIL" Name="SPI_MASTER2_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="SPI_MASTER2_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="SPI_MASTER2.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="SPI_MASTER2_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="SPI_MASTER2_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1724722650">
+  <File Type="PA-TCL" Name="servo_motor.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="servo_motor_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="servo_motor_reports.tcl"/>
+  <File Type="RDS-RDS" Name="servo_motor.vds"/>
+  <File Type="RDS-UTIL" Name="servo_motor_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="servo_motor_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="servo_motor.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="servo_motor_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="servo_motor_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/SUB_CODE.v">
@@ -20,6 +20,15 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/MAIN_CODE.v">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/SPI_TOP.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -43,7 +52,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="SPI_MASTER2"/>
+      <Option Name="TopModule" Val="servo_motor"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

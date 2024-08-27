@@ -1,14 +1,21 @@
 Vivado Simulator 2019.2
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot clock_div_10_behav xil_defaultlib.clock_div_10 xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto cc87fec1a930426eab29a595061c9a8d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot timer_1m_behav xil_defaultlib.timer_1m xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 6 differs from formal bit length 16 for port 'value' [C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:1293]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.edge_detector_n
-Compiling module xil_defaultlib.clock_div_10
+Compiling module xil_defaultlib.button_cntr
+Compiling module xil_defaultlib.clock_div_100
+Compiling module xil_defaultlib.clock_div_1000
+Compiling module xil_defaultlib.ring_counter_fnd
+Compiling module xil_defaultlib.decoder_7seg
+Compiling module xil_defaultlib.fnd_cntr
+Compiling module xil_defaultlib.timer_1m
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot clock_div_10_behav
+Built simulation snapshot timer_1m_behav
