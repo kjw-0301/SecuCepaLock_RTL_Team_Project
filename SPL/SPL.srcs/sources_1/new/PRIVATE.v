@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-   module keypad_test_top(
+module keypad_test_top(
         input clk, reset_p,
         input [3:0] row,
         output [3:0] col,
@@ -56,12 +56,14 @@ always @(posedge clk or posedge reset_p) begin
     end else if (key_valid_p) begin
         case (state)
             3'd0: begin
-                
+                lock <= 0;
+                ERROR <= 0;
+                count = 60;
+                state <= 3'd1;
             end
             
             3'd1: begin
                 if (key_value == 1)begin
-                    lock = 0 ;
                     state <= 3'd2;
                 end
                 else 
@@ -69,8 +71,9 @@ always @(posedge clk or posedge reset_p) begin
             end
 
             3'd2: begin
-                if (key_value == 2)
+                if (key_value == 2)begin
                     state <= 3'd3;
+                end
                 else begin
                     state <= 3'd0;
                     ERROR <= 1;
@@ -78,8 +81,9 @@ always @(posedge clk or posedge reset_p) begin
             end
 
             3'd3: begin
-                if (key_value == 3)
+                if (key_value == 3)begin
                     state <= 3'd4;
+                end
                 else begin
                     state <= 3'd0;
                     ERROR <= 1;
@@ -89,9 +93,11 @@ always @(posedge clk or posedge reset_p) begin
             3'd4: begin
                 if (key_value == 4) begin
                     lock <= 1;   // 올바른 시퀀스 완료 시 lock 설정
-                    
-                    state <= 3'd0; // 상태 초기화
-                end else begin
+                    if(count == 0)begin
+                        state = 3'd0   ;                 
+                    end
+                end 
+                else begin
                     state <= 3'd0;
                     ERROR <= 1;
                 end
@@ -106,4 +112,5 @@ end
     bin_to_dec timer(.bin({6'b0, count[5:0]}), .bcd(timer_value)); 
     fnd_cntr fnd(.clk(clk), .reset_p(reset_p), .value(timer_value),
                                       .com(com), .seg_7(seg_7));
+
     endmodule
