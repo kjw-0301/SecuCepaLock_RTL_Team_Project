@@ -1,0 +1,187 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 3984
+License: Customer
+
+Current time: 	Tue Aug 27 16:53:44 KST 2024
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 70 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	minkyu
+User home directory: C:/Users/minkyu
+User working directory: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL
+User country: 	KR
+User language: 	ko
+User locale: 	ko_KR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/minkyu/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/minkyu/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/minkyu/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.log
+Vivado journal file location: 	C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.jou
+Engine tmp dir: 	C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/.Xil/Vivado-3984-DESKTOP-VQQPT2C
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_SDK: C:/Xilinx/Vitis/2019.2
+XILINX_VITIS: C:/Xilinx/Vitis/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	299 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 812 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\minkyu\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 892 MB. GUI used memory: 50 MB. Current time: 8/27/24, 4:53:46 PM KST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 62 MB (+62555kb) [00:00:19]
+// [Engine Memory]: 1,021 MB (+919091kb) [00:00:19]
+// [GUI Memory]: 81 MB (+16117kb) [00:00:20]
+// [GUI Memory]: 107 MB (+23015kb) [00:00:21]
+// [Engine Memory]: 1,083 MB (+11502kb) [00:00:21]
+// WARNING: HEventQueue.dispatchEvent() is taking  3230 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 1133.746 ; gain = 352.766 
+// Project name: SPL; location: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bB (cr)
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (MAIN_CODE.v) elapsed time: 0.2s
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SPI_ADDR (MAIN_CODE.v)]", 2, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SPI_ADDR (MAIN_CODE.v)]", 2, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// WARNING: HTimer (StateMonitor Timer) is taking 711ms to process. Increasing delay to 4000 ms.
+// [GUI Memory]: 114 MB (+1793kb) [00:08:45]
+// Elapsed time: 1000 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "MAIN_CODE.v", 1); // i (h, cr)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "MAIN_CODE.v", 1, false, true); // i (h, cr) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // P (aI, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "MAIN_CODE.v", 1); // i (h, cr)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "MAIN_CODE.v", 1, false, true); // i (h, cr) - Double Click
+unmaximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // P (aI, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SPI_ADDR (MAIN_CODE.v), btn_sck : button_cntr (SUB_CODE.v)]", 3, true); // B (F, cr) - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SPI_ADDR (MAIN_CODE.v)]", 2); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtlcd_top (SUB_CODE.v)]", 3, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtlcd_top (SUB_CODE.v)]", 3, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtlcd_top (SUB_CODE.v)]", 3); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_end (TEST_TOP.v)]", 4, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_end (TEST_TOP.v), timer : timer_1m (SUB_CODE.v)]", 5, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// Elapsed time: 88 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // i (h, cr)
+// Elapsed time: 19 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_end (TEST_TOP.v)]", 4); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_end (TEST_TOP.v)]", 4, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_end (TEST_TOP.v)]", 4, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// Elapsed time: 163 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 2); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "MAIN_CODE.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 2); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 3); // i (h, cr)
+// Elapsed time: 49 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SPI_ADDR (MAIN_CODE.v)]", 2, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SPI_ADDR (MAIN_CODE.v)]", 2, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// Elapsed time: 185 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SPI_ADDR (MAIN_CODE.v)]", 2); // B (F, cr)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Compile Order", 2); // i (N, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Unreferenced]", 3, true); // B (F, cr) - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Unreferenced]", 3); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Unreferenced, PRIVATE.v]", 7, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Unreferenced, PRIVATE.v]", 7, false, false, false, false, false, true); // B (F, cr) - Double Click
+// Elapsed time: 13 seconds
+selectCodeEditor("PRIVATE.v", 242, 84); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 745, 25); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 2); // i (h, cr)
+selectCodeEditor("SUB_CODE.v", 225, 220); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// Elapsed time: 15 seconds
+selectCodeEditor("SUB_CODE.v", 91, 185); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 91, 185, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 99, 171); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 98, 170, false, false, false, false, true); // ch (w, cr) - Double Click
+// [GUI Memory]: 121 MB (+2324kb) [00:26:49]
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 3); // i (h, cr)
+selectCodeEditor("TEST_TOP.v", 368, 239); // ch (w, cr)
+typeControlKey((HResource) null, "TEST_TOP.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 2); // i (h, cr)
+selectCodeEditor("SUB_CODE.v", 213, 232); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 12 seconds
+selectButton(RDIResource.AbstractSearchablePanel_SHOW_SEARCH, "Sources_search"); // x (f, cr): TRUE
+setText("PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE_SEARCH_FIELD", "xdc", true); // OverlayTextField (C, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, Basys-3-Master.xdc]", 1, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, Basys-3-Master.xdc]", 1, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectCodeEditor("Basys-3-Master.xdc", 260, 183); // ch (w, cr)
+typeControlKey((HResource) null, "Basys-3-Master.xdc", 'v'); // ch (w, cr)
+// TclEventType: FILE_SET_CHANGE
