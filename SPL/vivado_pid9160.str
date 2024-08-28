@@ -1,0 +1,1624 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 9160
+License: Customer
+
+Current time: 	Wed Aug 28 09:09:23 KST 2024
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 70 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	kcci
+User home directory: C:/Users/kcci
+User working directory: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL
+User country: 	KR
+User language: 	ko
+User locale: 	ko_KR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/kcci/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/kcci/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/kcci/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.log
+Vivado journal file location: 	C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.jou
+Engine tmp dir: 	C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/.Xil/Vivado-9160-DESKTOP-KKVBLF0
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_SDK: C:/Xilinx/Vitis/2019.2
+XILINX_VITIS: C:/Xilinx/Vitis/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 664 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\kcci\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 702 MB. GUI used memory: 49 MB. Current time: 8/28/24, 9:09:25 AM KST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 63 MB (+63611kb) [00:00:23]
+// [Engine Memory]: 984 MB (+880167kb) [00:00:23]
+// [GUI Memory]: 82 MB (+16592kb) [00:00:24]
+// [GUI Memory]: 92 MB (+6367kb) [00:00:26]
+// WARNING: HEventQueue.dispatchEvent() is taking  3691 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,040 MB. GUI used memory: 55 MB. Current time: 8/28/24, 9:09:41 AM KST
+// [Engine Memory]: 1,040 MB (+7234kb) [00:00:27]
+// Tcl Message: open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:18 . Memory (MB): peak = 1068.766 ; gain = 429.855 
+// Project name: SPL; location: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bB (cr)
+// [GUI Memory]: 113 MB (+17194kb) [00:00:31]
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 23 seconds
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Compile Order", 2); // i (N, cr)
+// PAPropertyPanels.initPanels (SUB_CODE.v) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SUB_CODE.v]", 1, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SUB_CODE.v]", 1, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MAIN_CODE.v]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MAIN_CODE.v]", 2, false, false, false, false, false, true); // B (F, cr) - Double Click
+// [Engine Memory]: 1,093 MB (+1228kb) [00:00:58]
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Unreferenced]", 3); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Unreferenced, PRIVATE.v]", 7, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Unreferenced, PRIVATE.v]", 7, false, false, false, false, false, true); // B (F, cr) - Double Click
+// Elapsed time: 12 seconds
+selectCodeEditor("PRIVATE.v", 80, 356); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 80, 356, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 80, 356, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ai (ao, Popup.HeavyWeightWindow)
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "MAIN_CODE.v", 2); // i (h, cr)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "PRIVATE.v", 2); // i (h, cr)
+selectCodeEditor("PRIVATE.v", 333, 183); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 140, 233); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 140, 233, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 97, 214); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 97, 214, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 162, 182); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 163, 182, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 119, 180); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 119, 180, false, false, false, false, true); // ch (w, cr) - Double Click
+// WARNING: HTimer (StateMonitor Timer) is taking 734ms to process. Increasing delay to 4000 ms.
+// Elapsed time: 86 seconds
+selectCodeEditor("PRIVATE.v", 140, 271); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 140, 271, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("PRIVATE.v", 312, 279); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+// Elapsed time: 18 seconds
+selectCodeEditor("PRIVATE.v", 134, 358); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 134, 358, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 134, 368); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 134, 368, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 134, 368); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 134, 368, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 86, 358); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 86, 358, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 87, 366); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 87, 366, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 87, 366, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ai (ao, Popup.HeavyWeightWindow)
+// Elapsed time: 22 seconds
+selectCodeEditor("SUB_CODE.v", 0, 47); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "PRIVATE.v", 1); // i (h, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 276, 160); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 88, 8); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 88, 8, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectCodeEditor("PRIVATE.v", 79, 9); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 79, 9, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+selectButton(RDIResource.AbstractSearchablePanel_SHOW_SEARCH, "Sources_search"); // x (f, cr): TRUE
+setText("PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE_SEARCH_FIELD", "keypad_test_top"); // OverlayTextField (C, cr)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cr)
+// [GUI Memory]: 119 MB (+69kb) [00:04:45]
+selectButton(RDIResource.AbstractSearchablePanel_SHOW_SEARCH, "Sources_search"); // x (f, cr): TRUE
+setText("PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE_SEARCH_FIELD", "keypad_test_top"); // OverlayTextField (C, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, keypad_test_top (PRIVATE.v)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, keypad_test_top (PRIVATE.v)]", 1, true, false, false, false, true, false); // B (F, cr) - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // af (ao, cr)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // af (ao, cr)
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top keypad_test_top [current_fileset] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// TclEventType: RUN_MODIFY
+// bB (cr):  Generate Bitstream : addNotify
+// Tcl Message: [Wed Aug 28 09:14:11 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 09:14:11 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bB (cr)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// aj (cr): Synthesis Failed: addNotify
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 41 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // aj (cr)
+selectCodeEditor("PRIVATE.v", 76, 367); // ch (w, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-439] module 'edge_detector_p' not found [C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/SUB_CODE.v:1139]. ]", 1, false); // ah (O, cr)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\kcci\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.srcs\sources_1\new\SUB_CODE.v;-;;-;16;-;line;-;1139;-;;-;16;-;"); // ah (O, cr)
+selectCodeEditor("SUB_CODE.v", 104, 202); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 104, 202, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 104, 202, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectCodeEditor("SUB_CODE.v", 69, 231); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 89, 200); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 89, 200, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 87, 220); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 92, 204); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 521, 199); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 521, 199, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 20 seconds
+selectCodeEditor("SUB_CODE.v", 138, 311); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 283, 156); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 96, 371); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 96, 371, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 96, 371, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ai (ao, Popup.HeavyWeightWindow)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectCodeEditor("PRIVATE.v", 242, 269); // ch (w, cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("No Implementation Results Available"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 09:15:46 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 09:15:46 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Synthesis Failed: addNotify
+// Elapsed time: 145 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // aj (cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-439] module 'edge_detector_p' not found [C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/PRIVATE.v:30]. ]", 1, false); // ah (O, cr)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\kcci\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.srcs\sources_1\new\PRIVATE.v;-;;-;16;-;line;-;30;-;;-;16;-;"); // ah (O, cr)
+selectCodeEditor("PRIVATE.v", 98, 201); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 98, 201, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 98, 201, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectCodeEditor("PRIVATE.v", 70, 198); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 116, 200); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 89, 267); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 89, 267, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 87, 257); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 87, 257, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 87, 257, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ai (ao, Popup.HeavyWeightWindow)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "PRIVATE.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "PRIVATE.v", 1); // i (h, cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("No Implementation Results Available"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_LAUNCH
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 09:18:36 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 09:18:36 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// aj (cr): Implementation Failed: addNotify
+// Elapsed time: 100 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // aj (cr)
+selectCheckBox(PAResourceItoN.MsgView_CRITICAL_WARNINGS, (String) null, false); // g (aR, cr): FALSE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. ]", 5, true); // ah (O, cr) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. , [DRC MDRV-1] Multiple Driver Nets: Net count[4] has multiple drivers: count_reg[4]/Q, and count_reg[4]__0/Q.. ]", 9, false, false, false, false, false, true); // ah (O, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 432, 287); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 112, 52); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 112, 52, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 34 seconds
+selectCodeEditor("PRIVATE.v", 184, 85); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 258, 371); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 308, 286); // ch (w, cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 09:21:27 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 09:21:27 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 12 seconds
+selectCodeEditor("PRIVATE.v", 166, 320); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 201, 316); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 98, 263); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 98, 263, false, false, false, false, true); // ch (w, cr) - Double Click
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// aj (cr): Implementation Failed: addNotify
+// Elapsed time: 118 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // aj (cr)
+selectCheckBox(PAResourceItoN.MsgView_CRITICAL_WARNINGS, (String) null, false); // g (aR, cr): FALSE
+selectCheckBox(PAResourceItoN.MsgView_CRITICAL_WARNINGS, (String) null, false); // g (aR, cr): FALSE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. ]", 5, true); // ah (O, cr) - Node
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. , [DRC MDRV-1] Multiple Driver Nets: Net count[4] has multiple drivers: count_reg[4]__0/Q, and count_reg[4]/Q.. ]", 9, false, false, false, false, false, true); // ah (O, cr) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. , [DRC MDRV-1] Multiple Driver Nets: Net count[1] has multiple drivers: count_reg[1]/Q, and count_reg[1]__0/Q.. ]", 6, false); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. , [DRC MDRV-1] Multiple Driver Nets: Net count[1] has multiple drivers: count_reg[1]/Q, and count_reg[1]__0/Q.. ]", 6, false, false, false, false, false, true); // ah (O, cr) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. , [DRC MDRV-1] Multiple Driver Nets: Net count[2] has multiple drivers: count_reg[2]/Q, and count_reg[2]__0/Q.. ]", 7, false); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. , [DRC MDRV-1] Multiple Driver Nets: Net count[1] has multiple drivers: count_reg[1]/Q, and count_reg[1]__0/Q.. ]", 6, false); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. , [DRC MDRV-1] Multiple Driver Nets: Net count[2] has multiple drivers: count_reg[2]/Q, and count_reg[2]__0/Q.. ]", 7, false); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. , [DRC MDRV-1] Multiple Driver Nets: Net count[1] has multiple drivers: count_reg[1]/Q, and count_reg[1]__0/Q.. ]", 6, false); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. , [DRC MDRV-1] Multiple Driver Nets: Net count[2] has multiple drivers: count_reg[2]/Q, and count_reg[2]__0/Q.. ]", 7, false); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.. ]", 11, false); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.. ]", 11, false, false, false, false, false, true); // ah (O, cr) - Double Click
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Opt Design, DRC, Netlist, Net, [DRC MDRV-1] Multiple Driver Nets: Net count[0] has multiple drivers: count_reg[0]__0/Q, and count_reg[0]/Q.. ]", 5, true); // ah (O, cr) - Node
+selectTab((HResource) null, (HResource) null, "Log", 2); // aL (aI, cr)
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aL (aI, cr)
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aL (aI, cr)
+// [GUI Memory]: 125 MB (+340kb) [00:14:53]
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aL (aI, cr)
+selectCodeEditor("PRIVATE.v", 109, 172); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 109, 172, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 27 seconds
+selectCodeEditor("PRIVATE.v", 208, 108); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 3, 107); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 160, 400); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 149, 409); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 152, 408, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 158, 406); // ch (w, cr)
+// Elapsed time: 39 seconds
+selectCodeEditor("PRIVATE.v", 127, 220); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 150, 290); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 282, 205); // ch (w, cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_LAUNCH
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 09:25:55 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 09:25:55 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 73 seconds
+selectCodeEditor("PRIVATE.v", 430, 258); // ch (w, cr)
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 89 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a (Q, aj)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bB (cr):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+dismissDialog("Open Hardware Manager"); // bB (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (ds, cr)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// bB (cr):  Auto Connect : addNotify
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2019.2   **** Build date : Nov  6 2019 at 22:12:23     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042 
+// Tcl Message: INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ****** Xilinx cs_server v2019.2.0   **** Build date : Nov 07 2019-14:28:22     ** Copyright 2017-2019 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 1166.633 ; gain = 13.930 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  6244 ms.
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BB7568A 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,327 MB. GUI used memory: 67 MB. Current time: 8/28/24, 9:28:58 AM KST
+// Tcl Message: open_hw_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2407.559 ; gain = 1240.926 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 2,328 MB (+1237103kb) [00:19:45]
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Elapsed time: 15 seconds
+dismissDialog("Auto Connect"); // bB (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 76 seconds
+selectCodeEditor("PRIVATE.v", 613, 316); // ch (w, cr)
+// Elapsed time: 179 seconds
+selectCodeEditor("PRIVATE.v", 338, 314); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 335, 330); // ch (w, cr)
+// Elapsed time: 37 seconds
+selectCodeEditor("PRIVATE.v", 61, 130); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 61, 130, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 12 seconds
+selectCodeEditor("PRIVATE.v", 98, 263); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 171, 257); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 106, 261); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 156, 259); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 156, 259, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 109, 260); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 109, 260, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 109, 232); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 109, 232, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 103, 256); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 103, 256, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 156, 256); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 156, 256, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 119, 287); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 119, 287, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 229, 287); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 229, 287, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 217, 292); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 217, 292, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 217, 292); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 216, 293); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 217, 277); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 202, 296); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 159, 286); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 155, 294); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 136, 222); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 193, 296); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 161, 428); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 161, 428, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 221, 431); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 145, 391); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 171, 389); // ch (w, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("PRIVATE.v", 160, 291); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 160, 291, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 187, 291); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 288); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 288, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 187, 272); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 161, 218); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 161, 218, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 159, 248); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 159, 212); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 159, 212, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 99 seconds
+selectCodeEditor("PRIVATE.v", 141, 231); // ch (w, cr)
+// Elapsed time: 22 seconds
+selectCodeEditor("PRIVATE.v", 164, 218); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 164, 218, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 25 seconds
+selectCodeEditor("PRIVATE.v", 181, 284); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 182, 288); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 152, 290); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 170, 290); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 290); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 147, 293); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 132, 297); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 143, 297); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 155, 291); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 169, 287); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 160, 289); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 151, 292); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 142, 299); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+// Elapsed time: 76 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "PRIVATE.v", 0); // i (h, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,346 MB. GUI used memory: 67 MB. Current time: 8/28/24, 9:38:46 AM KST
+selectCodeEditor("PRIVATE.v", 0, 137); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+// Elapsed time: 58 seconds
+selectCodeEditor("PRIVATE.v", 327, 216); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 159, 212); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 159, 212, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 291, 242); // ch (w, cr)
+// Elapsed time: 27 seconds
+selectCodeEditor("PRIVATE.v", 73, 214); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 116, 195); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 105, 196); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 73, 216); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 83, 215); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 231, 242); // ch (w, cr)
+// Elapsed time: 15 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 333, 281); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 147, 196); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 147, 196, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 198, 202); // ch (w, cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_LAUNCH
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 09:40:57 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 09:40:57 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 57 seconds
+selectCodeEditor("PRIVATE.v", 235, 369); // ch (w, cr)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 18 seconds
+selectCodeEditor("PRIVATE.v", 274, 311); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 2, 86); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 506, 215); // ch (w, cr)
+// TclEventType: RUN_STEP_COMPLETED
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 493, 171); // ch (w, cr)
+selectButton(PAResourceQtoS.SyntheticaStateMonitor_CANCEL, "Cancel"); // h (Q, cr)
+// aW (cr): Cancel Implementation: addNotify
+selectButton(PAResourceQtoS.StateMonitor_RESET_STEP, "Reset Step"); // a (aW)
+// bB (cr):  Reset to Previous Step : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Cancel Implementation"); // aW (cr)
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run impl_1 -prev_step  
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Reset to Previous Step"); // bB (cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_LAUNCH
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 09:42:43 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 09:42:43 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 230 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 13 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aA, cr)
+closeTask("Program and Debug", "Hardware Manager", "DesignTask.PROGRAM_DEBUG");
+// bB (cr):  Close Hardware Manager : addNotify
+// TclEventType: HW_OBJECT_DELETE
+// TclEventType: HW_SERVER_CLOSE
+// TclEventType: HW_SYSMON_DELETE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_TARGET_UPDATE
+// TclEventType: DEBUG_PROBE_DELETE
+// TclEventType: HW_SESSION_CLOSE
+// Tcl Message: close_hw_manager 
+dismissDialog("Close Hardware Manager"); // bB (cr)
+setText("PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE_SEARCH_FIELD", "servo"); // OverlayTextField (C, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_end (TEST_TOP.v), door : servo_motor (SUB_CODE.v)]", 3, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_end (TEST_TOP.v), door : servo_motor (SUB_CODE.v)]", 3, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+selectCodeEditor("SUB_CODE.v", 146, 362); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 191, 99); // ch (w, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_end (TEST_TOP.v), safe_box : servo_motor (SUB_CODE.v)]", 2, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_end (TEST_TOP.v), safe_box : servo_motor (SUB_CODE.v)]", 2, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_end (TEST_TOP.v)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_end (TEST_TOP.v)]", 1, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+selectCodeEditor("TEST_TOP.v", 23, 213); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 438, 322); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 452, 315); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 204, 292); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 441, 315); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 124, 304, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_CUT, "Cut"); // ai (ao, Popup.HeavyWeightWindow)
+selectCodeEditor("TEST_TOP.v", 61, 221); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 79, 214, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ai (ao, Popup.HeavyWeightWindow)
+selectCodeEditor("SUB_CODE.v", 38, 278); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 36, 274, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // ai (ao, Popup.HeavyWeightWindow)
+selectCodeEditor("SUB_CODE.v", 154, 236); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 67, 284); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 70, 291); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 100, 278); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 149, 292); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 193, 281); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 229, 306); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 253, 293); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 274, 280); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 279, 292); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 386, 302); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 282, 276); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 274, 284); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 208, 285); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 176, 269); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 167, 291); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 126, 276); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 185, 288); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "PRIVATE.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 3); // i (h, cr)
+selectCodeEditor("TEST_TOP.v", 58, 332, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ai (ao, Popup.HeavyWeightWindow)
+selectCodeEditor("SUB_CODE.v", 129, 298); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 129, 298, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 130, 307); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 130, 307, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 93, 186); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 190, 364); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 210, 360); // ch (w, cr)
+// Elapsed time: 29 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "PRIVATE.v", 1); // i (h, cr)
+selectCodeEditor("PRIVATE.v", 102, 195); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 185, 195); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 249, 200); // ch (w, cr)
+// Elapsed time: 139 seconds
+selectCodeEditor("PRIVATE.v", 109, 79); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 156, 197); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 290, 232); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 163, 238); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 259, 225); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 260, 210); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 327, 209); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 355, 192); // ch (w, cr)
+// Elapsed time: 20 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 350, 176); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 312, 487); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+// Elapsed time: 99 seconds
+selectCodeEditor("PRIVATE.v", 449, 223); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 178, 231); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 247, 93); // ch (w, cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// al (cr): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_DONT_SAVE, "Don't Save"); // a (al)
+// A (cr): Synthesis is Out-of-date: addNotify
+dismissDialog("Save Project"); // al (cr)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_LAUNCH
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 09:54:10 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 09:54:11 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 544 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a (Q, aj)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// bB (cr):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// [GUI Memory]: 133 MB (+1859kb) [00:54:03]
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+dismissDialog("Open Hardware Manager"); // bB (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (ds, cr)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// bB (cr):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2019.2   **** Build date : Nov  6 2019 at 22:12:23     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042 
+// Tcl Message: INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ****** Xilinx cs_server v2019.2.0   **** Build date : Nov 07 2019-14:28:22     ** Copyright 2017-2019 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2447.164 ; gain = 0.000 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BB7568A 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Auto Connect"); // bB (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 15 seconds
+selectCodeEditor("PRIVATE.v", 107, 138); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 111, 141); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 403, 282); // ch (w, cr)
+// Elapsed time: 52 seconds
+selectCodeEditor("PRIVATE.v", 477, 295); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 741, 255); // ch (w, cr)
+// Elapsed time: 76 seconds
+selectCodeEditor("PRIVATE.v", 342, 364); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 352, 349); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 352, 365); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 354, 355); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 165, 201); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 290, 237); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 288, 274); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 301, 246); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 295, 273); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 328, 238); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 328, 257); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 344, 236); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 344, 253); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 356, 241); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 358, 254); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 373, 235); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 364, 254); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 375, 232); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 372, 245); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 374, 232); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 372, 252); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 378, 237); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 375, 255); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 374, 275); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 377, 264); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 382, 252); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 383, 250); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 380, 266); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 388, 252); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 389, 246); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 381, 256); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 373, 284); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 377, 265); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 386, 245); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 375, 271); // ch (w, cr)
+// Elapsed time: 36 seconds
+selectCodeEditor("PRIVATE.v", 150, 96); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 155, 107); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 155, 107, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 212, 160); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 149, 111); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 149, 111, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 164, 135); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 158, 108); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 108, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 158, 121); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 159, 106); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 159, 106, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 159, 125); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 101); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 101, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 157, 120); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 103); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 103, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 157, 122); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 105); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 105, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 158, 125); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 105); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 105, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 158, 126); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 98); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 98, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 146, 441); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 145, 441, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 116, 105); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 116, 105, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 392, 248); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 428, 192); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 189, 311); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 185, 281); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 196, 273); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 128, 214); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 128, 214); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 128, 214, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 102, 346); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 52, 370); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 51, 370); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 51, 370, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 5, 372); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 37, 372); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("PRIVATE.v", 198, 165); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 168, 144); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 226, 167); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 224, 167, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 76, 168); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 210, 164); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 129, 165); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 129, 165, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 252, 159); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 252, 159, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 256, 164); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 245, 164); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 41, 164); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 52, 162); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 366, 164); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 239, 162); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 96, 160); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 97, 160, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 328, 159); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 163, 136); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 163, 136, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 192, 138); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 192, 138, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 455, 244); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 468, 251); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 386, 230); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 452, 250); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 406, 242); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 431, 254); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 399, 238); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 412, 245); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 248, 202); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 299, 135); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 262, 178); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 3, 124); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 310, 238); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 27, 199); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 43, 95); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 266, 150); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 136, 158); // ch (w, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,362 MB. GUI used memory: 69 MB. Current time: 8/28/24, 10:08:46 AM KST
+// Elapsed time: 24 seconds
+selectCodeEditor("PRIVATE.v", 132, 176); // ch (w, cr)
+// Elapsed time: 37 seconds
+selectCodeEditor("PRIVATE.v", 188, 259); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 188, 259, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 158, 257); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 158, 257, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 162, 281); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 162, 281, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 198, 279); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 198, 279, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 207, 295); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 207, 295, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 13 seconds
+selectCodeEditor("PRIVATE.v", 183, 204); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 191, 203); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 156, 218); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 194, 218); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 147, 104); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 147, 104, false, false, false, false, true); // ch (w, cr) - Double Click
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectCodeEditor("PRIVATE.v", 278, 169); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 94, 219); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 260, 237); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 262, 237, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 249, 235); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 104, 226); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 97, 231); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 264, 238); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 179, 239); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 251, 239); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 218, 233); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 238, 215); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 149, 220); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 236, 222); // ch (w, cr)
+// Elapsed time: 29 seconds
+selectCodeEditor("PRIVATE.v", 45, 84); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 146, 431); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 79, 97); // ch (w, cr)
+// Elapsed time: 20 seconds
+selectCodeEditor("PRIVATE.v", 77, 44); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 77, 44); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 81, 43); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 48, 293); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 50, 123); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 49, 357); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 47, 177); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 204, 256); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 47, 274); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 340, 237); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 411, 244); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 128, 362); // ch (w, cr)
+// Elapsed time: 52 seconds
+selectCodeEditor("PRIVATE.v", 176, 178); // ch (w, cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("PRIVATE.v", 291, 166); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 307, 203); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 222, 179); // ch (w, cr)
+// Elapsed time: 14 seconds
+selectCodeEditor("PRIVATE.v", 328, 195); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// al (cr): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_DONT_SAVE, "Don't Save"); // a (al)
+// A (cr): Synthesis is Out-of-date: addNotify
+dismissDialog("Save Project"); // al (cr)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 10:14:13 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 10:14:13 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Synthesis Failed: addNotify
+// Elapsed time: 45 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // aj (cr)
+selectCheckBox(PAResourceItoN.MsgView_CRITICAL_WARNINGS, (String) null, false); // g (aR, cr): FALSE
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2715] syntax error near end [C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/PRIVATE.v:108]. ]", 1, false); // ah (O, cr)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\kcci\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.srcs\sources_1\new\PRIVATE.v;-;;-;16;-;line;-;108;-;;-;16;-;"); // ah (O, cr)
+selectCodeEditor("PRIVATE.v", 187, 328); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 114, 143); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 2); // i (h, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+selectCodeEditor("TEST_TOP.v", 140, 112); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "PRIVATE.v", 0); // i (h, cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("No Implementation Results Available"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 10:15:25 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 10:15:25 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Synthesis Failed: addNotify
+// Elapsed time: 979 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // aj (cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-91] ambiguous clock in event control [C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/PRIVATE.v:36]. ]", 1, false); // ah (O, cr)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\kcci\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.srcs\sources_1\new\PRIVATE.v;-;;-;16;-;line;-;36;-;;-;16;-;"); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-91] ambiguous clock in event control [C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/PRIVATE.v:36]. ]", 1, false); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-6156] failed synthesizing module 'keypad_test_top' [C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/PRIVATE.v:1]. ]", 2, false); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-91] ambiguous clock in event control [C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/PRIVATE.v:36]. ]", 1, false); // ah (O, cr)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\kcci\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.srcs\sources_1\new\PRIVATE.v;-;;-;16;-;line;-;36;-;;-;16;-;"); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-91] ambiguous clock in event control [C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/PRIVATE.v:36]. ]", 1, false); // ah (O, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("PRIVATE.v", 142, 410); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 168, 270); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 137, 403); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 137, 403, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 145, 348); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 104, 351); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 104, 351, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 504, 106); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 504, 106, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 637, 102); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 637, 102, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 517, 57); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 523, 126); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 617, 101); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 617, 101, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 516, 106); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 515, 106, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 20 seconds
+selectCodeEditor("PRIVATE.v", 651, 50); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 651, 50, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 101, 297); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 101, 297, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 266, 267); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 165, 113); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 503, 49); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 503, 49, false, false, false, false, true); // ch (w, cr) - Double Click
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("No Implementation Results Available"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 10:33:14 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 10:33:14 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+selectCodeEditor("PRIVATE.v", 759, 372); // ch (w, cr)
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// aj (cr): Synthesis Failed: addNotify
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 33 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // aj (cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-91] ambiguous clock in event control [C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/PRIVATE.v:36]. ]", 1, false); // ah (O, cr)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\kcci\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.srcs\sources_1\new\PRIVATE.v;-;;-;16;-;line;-;36;-;;-;16;-;"); // ah (O, cr)
+selectCodeEditor("PRIVATE.v", 339, 257); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-91] ambiguous clock in event control [C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/PRIVATE.v:36]. ]", 1, false); // ah (O, cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-91] ambiguous clock in event control [C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/PRIVATE.v:36]. ]", 1, false, false, false, false, true, false); // ah (O, cr) - Popup Trigger
+// Elapsed time: 74 seconds
+selectCodeEditor("PRIVATE.v", 503, 202); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 505, 211); // ch (w, cr)
+// Elapsed time: 24 seconds
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+// Elapsed time: 14 seconds
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // E (f, cr)
+selectCodeEditor("PRIVATE.v", 141, 137); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 153, 141); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("PRIVATE.v", 271, 178); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 127, 217); // ch (w, cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+dismissDialog("No Implementation Results Available"); // A (cr)
+selectCodeEditor("PRIVATE.v", 181, 406); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 161, 406); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 161, 406, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 161, 406); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 428, 394); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 497, 400); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 488, 385); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 274, 177); // ch (w, cr)
+// Elapsed time: 11 seconds
+selectCodeEditor("PRIVATE.v", 79, 178); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 130, 183); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 102, 180); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 102, 180, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 122, 407); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 87, 428); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 87, 428, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("PRIVATE.v", 198, 123); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 127, 102); // ch (w, cr)
+// Elapsed time: 23 seconds
+selectCodeEditor("PRIVATE.v", 188, 143); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 188, 143, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 157, 139); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 139, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 279, 163); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 283, 173); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 280, 161); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 280, 172); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 279, 161); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 279, 174); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 229, 138); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 286, 176); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 184, 140); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 184, 140, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 180, 135); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,362 MB. GUI used memory: 67 MB. Current time: 8/28/24, 10:38:46 AM KST
+// Elapsed time: 23 seconds
+selectCodeEditor("PRIVATE.v", 218, 122); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+// Elapsed time: 87 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 131, 160); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 167, 184); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 174, 193); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 216, 246); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 245, 256); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 220, 258); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 224, 299); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 218, 255); // ch (w, cr)
+// Elapsed time: 18 seconds
+selectCodeEditor("PRIVATE.v", 116, 257); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 93, 255); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 87, 257); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 78, 256); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 270, 277); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 261, 301); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("No Implementation Results Available"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 10:41:32 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 10:41:32 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+selectCodeEditor("PRIVATE.v", 572, 293); // ch (w, cr)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 164 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 40 seconds
+selectCodeEditor("PRIVATE.v", 429, 328); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 350, 355); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 349, 368); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 349, 393); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 355, 369); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 362, 349); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 132, 333); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 178, 336); // ch (w, cr)
+// Elapsed time: 34 seconds
+selectCodeEditor("PRIVATE.v", 157, 372); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 157, 372, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("PRIVATE.v", 73, 222); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 73, 222, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 33 seconds
+selectCodeEditor("PRIVATE.v", 130, 234); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 220, 238); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 124, 104); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 304, 177); // ch (w, cr)
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 10:46:54 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 10:46:54 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 158 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 39 seconds
+selectCodeEditor("PRIVATE.v", 377, 305); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 364, 282); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 363, 270); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 369, 257); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 371, 274); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 375, 262); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 378, 244); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 340, 257); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 338, 277); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 337, 254); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 347, 242); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 333, 264); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 340, 285); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 324, 265); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 300, 239); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 257, 264); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 272, 257); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 288, 245); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 263, 272); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 272, 267); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 155, 237); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 155, 237, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("PRIVATE.v", 298, 333); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'c'); // ch (w, cr)
+// Elapsed time: 152 seconds
+selectCodeEditor("PRIVATE.v", 230, 339); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 0, 219); // ch (w, cr)
+typeControlKey((HResource) null, "PRIVATE.v", 'v'); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 316, 332); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 245, 305); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("PRIVATE.v", 405, 299); // ch (w, cr)
+// Elapsed time: 51 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A (cr)
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_LAUNCH
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 10:54:11 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 10:54:11 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 160 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 27 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 2); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "PRIVATE.v", 0); // i (h, cr)
+selectCodeEditor("PRIVATE.v", 319, 294); // ch (w, cr)
+selectCodeEditor("PRIVATE.v", 881, 113); // ch (w, cr)

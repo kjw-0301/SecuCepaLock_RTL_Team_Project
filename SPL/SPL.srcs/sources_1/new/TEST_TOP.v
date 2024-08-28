@@ -19,8 +19,7 @@ module safe_box_end(
                                  .ultra_data(), .servo_motor_pwm(pwm));                               
 
     
-    pwm_Nstep_freq #(.duty_step(400), .pwm_freq(50))
-    pwm_b(.clk(clk), .reset_p(reset_p), .duty(duty), .pwm(motor_pwm));
+
 
 
 
