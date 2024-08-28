@@ -1,15 +1,18 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
   module keypad_test_top(
-        input clk, reset_p,
+       input clk, reset_p,
         input [3:0] row,
         output [3:0] col,
         output [3:0] com,
         output [7:0] seg_7,
         output led_key_valid,
+        output scl,sda,
         output reg open , ERROR,
-        output servo_motor_pwm);
- 
+        output servo_motor_pwm,
+        input close);
+        
+     reg stop_start;
      reg [5:0] count;
      wire [15:0]timer_value;
      wire [3:0] key_value;
@@ -25,7 +28,7 @@
     edge_detector_n ed_clk(.clk(clk), .reset_p(reset_p),   
                                           .cp(clk_sec),  .n_edge(clk_sec_n)); 
                                                                    
-    servo_motor smmt(.clk(clk), .reset_p(reset_p), .open(open),  .close(open),  .servo_motor_pwm(servo_motor_pwm));
+    servo_motor smmt(.clk(clk), .reset_p(reset_p), .open(open),  .close(close),  .servo_motor_pwm(servo_motor_pwm));
                                                             
                                                                    
                                                                    
@@ -38,7 +41,6 @@
     ////////////////////////
     //서보모터
     wire  pwm ;
-    reg [2:0] state; 
     //서보모터에 임의로 state를 넣었으니까 나중에 수정하기
    
      
@@ -50,12 +52,11 @@
     reg [15:0] key_count;
     
     //I2C 
-//    I2C_txtLCD_top(clk, reset_p,btn,scl,sda,led);
+    I2C_txtLCD_top lcd(.clk(clk),.reset_p(reset_p),.scl(scl),.sda(sda),.key_valid(key_valid_p),.start_stop(stop_start));
     
     
     
    reg [2:0] state; 
-    reg stop_start;
     
     always @(posedge clk or posedge reset_p) begin
         if (reset_p) begin
@@ -66,7 +67,11 @@
                 if (count > 0 && !stop_start) begin
                     stop_start <= 0;
                     count <= count - 1;
-                end else begin
+                end
+                else if (close)begin
+                    count = 10;
+                end
+                 else begin
                     stop_start <= 1;  // count가 0이 될 때 stop_start 설정
                     count <= 0;  // count가 0이 되면 10으로 초기화
                     
@@ -117,7 +122,7 @@ always @(negedge clk or posedge reset_p) begin
                 3'd4: begin
                     if (key_value == 4) begin
                         open <= 1;   // 올바른 시퀀스 완료 시 open 설정
-                        if(stop_start == 1 || distance > 30) begin
+                        if(close) begin
                             open <= 0;                        
                             state <= 3'd0;                 
                         end
