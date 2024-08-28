@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1'
+HD_PWD='C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log keypad_test_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source keypad_test_top.tcl -notrace
+EAStep vivado -log safe_box_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source safe_box_top.tcl -notrace
 
 

@@ -646,7 +646,8 @@ endmodule
 module servo_motor(
     input clk,reset_p,
     input open,
-    input close, 
+    input btn_close,
+    input close,    
     output servo_motor_pwm);
 
 
@@ -663,12 +664,12 @@ module servo_motor(
         duty =12;
         end
 
-        else if(open) begin
-            duty =35;
+        else if(open) begin //open
+            duty =12;
         end
 
-        else if(close) begin
-            duty =12;
+        else if(close | btn_close) begin    //close
+            duty =27;
         end
       end
 
@@ -730,7 +731,7 @@ endmodule
 //===========================================================
 module ultrasonic_sensor_cntr(
         input clk,reset_p,
-        input echo1,
+        input echo,
         output reg trig,
         output reg [50:0] distance,
         output [7:0] led_debug);
@@ -758,7 +759,7 @@ module ultrasonic_sensor_cntr(
                                            .count_en(count_en), .cm(cm));                                                          
                                                                
      wire echo_p_edge, echo_n_edge;
-    edge_detector_n ed13(.clk(clk), .reset_p(reset_p), .cp(echo1), 
+    edge_detector_n ed13(.clk(clk), .reset_p(reset_p), .cp(echo), 
                                                   .p_edge(echo_p_edge), .n_edge(echo_n_edge));   
       
          reg[21:0] count_usec;  //3ì´? ì¹´ìš´?Š¸?•˜ê¸? ?œ„?•´ 22ë¹„íŠ¸
