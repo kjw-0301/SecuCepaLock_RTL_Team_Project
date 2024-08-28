@@ -76,7 +76,7 @@ set_property -dict { PACKAGE_PIN T17   IOSTANDARD LVCMOS33 } [get_ports btn[2]]
 set_property src_info {type:XDC file:1 line:71 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN U17   IOSTANDARD LVCMOS33 } [get_ports btn[3]]
 set_property src_info {type:XDC file:1 line:75 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN J1   IOSTANDARD LVCMOS33 } [get_ports {miso}];#Sch name = JA1
+set_property -dict { PACKAGE_PIN J1   IOSTANDARD LVCMOS33 } [get_ports {close}];#Sch name = JA1
 set_property src_info {type:XDC file:1 line:76 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN L2   IOSTANDARD LVCMOS33 } [get_ports {mosi}];#Sch name = JA2
 set_property src_info {type:XDC file:1 line:77 export:INPUT save:INPUT read:READ} [current_design]
@@ -104,7 +104,7 @@ set_property -dict { PACKAGE_PIN C15   IOSTANDARD LVCMOS33 PULLDOWN TRUE} [get_p
 set_property src_info {type:XDC file:1 line:92 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN C16   IOSTANDARD LVCMOS33 PULLDOWN TRUE} [get_ports {row[3]}];#Sch name = JB10
 set_property src_info {type:XDC file:1 line:95 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN K17   IOSTANDARD LVCMOS33 } [get_ports {pwm}];#Sch name = JC1
+set_property -dict { PACKAGE_PIN K17   IOSTANDARD LVCMOS33 } [get_ports {servo_motor_pwm}];#Sch name = JC1
 set_property src_info {type:XDC file:1 line:96 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN M18   IOSTANDARD LVCMOS33 } [get_ports {dc_motor_pwm}];#Sch name = JC2
 set_property src_info {type:XDC file:1 line:105 export:INPUT save:INPUT read:READ} [current_design]

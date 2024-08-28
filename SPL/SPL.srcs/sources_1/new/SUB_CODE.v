@@ -867,21 +867,16 @@ endmodule
 //======================================================
 module servo_motor(
     input clk,reset_p,
-    input spi_keypad_data,
-    input ultra_data,
-    output servo_motor_pwm,
-    output [3:0] com,
-    output [7:0] seg_7);
-    
-        reg [31:0] clk_div;    
-    always @(posedge clk or posedge reset_p) begin
-        if(reset_p)clk_div = 20;
-        else clk_div = clk_div +1;
-    end
+    input open,
+    input close, 
+    output servo_motor_pwm);
 
-    wire clk_div_26_n;                                      
-    edge_detector_n ed(.clk(clk), .reset_p(reset_p),
-                                                      .cp(clk_div[22]), .n_edge(clk_div_26_n));    
+
+    reg [30:0] clk_div;
+    wire clk_div_n;
+    always @(posedge clk) clk_div = clk_div +1;
+    edge_detector_n n(.clk(clk), .reset_p(reset_p), .cp(clk_div[23]), .n_edge(clk_div_n));
+
 
     reg[6:0] duty;
     reg up_down;
@@ -889,29 +884,22 @@ module servo_motor(
         if(reset_p) begin
         duty =12;
         end
-        
-       else if(spi_keypad_data) begin 
-            if(clk_div_26_n) begin
-               if(duty<50)
-                  duty =duty +1;
-            end
-       end
-                          
-        else if(ultra_data) begin
-            if(clk_div_26_n) begin
-               if(duty >12)
-                  duty =duty -1;
-            end
-        end   
-     end
-   
+
+        else if(open) begin
+            duty =50;
+        end
+
+        else if(close) begin
+            duty =12;
+        end
+      end
+
     pwm_Nstep_freq #(.duty_step(400), .pwm_freq(50))
-    pwm_b(.clk(clk), .reset_p(reset_p), .duty(duty), .pwm(motor_pwm));
-                                                                        
-    wire [15:0] duty_bcd;  
-    bin_to_dec bcd_humi(.bin({5'b0, duty}),  .bcd(duty_bcd));
-    fnd_cntr fnd(.clk(clk), .reset_p(reset_p), .value(duty_bcd),
-                                                                        .com(com), .seg_7(seg_7)); 
+    pwm_b(.clk(clk), .reset_p(reset_p), .duty(duty), .pwm(servo_motor_pwm));
+
+    wire [15:0] duty_bcd;
+ 
+
 endmodule
 
 

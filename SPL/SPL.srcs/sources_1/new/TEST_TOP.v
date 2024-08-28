@@ -7,7 +7,8 @@
         output [3:0] com,
         output [7:0] seg_7,
         output led_key_valid,
-        output reg open , ERROR);
+        output reg open , ERROR,
+        output servo_motor_pwm);
  
      reg [5:0] count;
      wire [15:0]timer_value;
@@ -24,6 +25,10 @@
     edge_detector_n ed_clk(.clk(clk), .reset_p(reset_p),   
                                           .cp(clk_sec),  .n_edge(clk_sec_n)); 
                                                                    
+    servo_motor smmt(.clk(clk), .reset_p(reset_p), .open(open),  .close(open),  .servo_motor_pwm(servo_motor_pwm));
+                                                            
+                                                                   
+                                                                   
      
           /////////////////////
      //초음파
@@ -35,7 +40,7 @@
     wire  pwm ;
     reg [2:0] state; 
     //서보모터에 임의로 state를 넣었으니까 나중에 수정하기
-    servo_motor lock(.clk(clk), .reset_p(reset_p), .spi_keypad_data(open == 1), .ultra_data(count == 0), .servo_motor_pwm(pwm));
+   
      
      key_pad_cntr_FSM keypad(.clk(clk), .reset_p(reset_p),
     .row(row), .col(col), .key_value(key_value), .key_valid(key_valid));
