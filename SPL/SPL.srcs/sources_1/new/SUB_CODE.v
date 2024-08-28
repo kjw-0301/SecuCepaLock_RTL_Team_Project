@@ -644,225 +644,236 @@ endmodule
 
 //================================================================================
 
-module I2C_txtlcd_top(
-    input clk,reset_p,
-    input [3:0] btn,
-    output scl,sda,
-    output [15:0] led_debug);
+//================================================================
+module I2C_txtLCD_top(
+    input clk, reset_p,
+    input key_valid,
+    input key_value,
+    input start_stop,
+    output scl,sda);
     
-    //PARAMETER
-    reg [5:0] state, next_state;
-    parameter IDLE                       = 6'b00_0001;
-    parameter INIT                       = 6'b00_0010;
-    parameter SEND_DATA           = 6'b00_0100;
-    parameter SEND_COMMAND   = 6'b00_1000;
-    parameter SEND_STRING        = 6'b01_0000;
-    parameter SEND_COMMAND2 = 6'b10_0000;
-
-
-    //CLOCK_USEC
-    wire clk_usec;  
-    clock_div_100 usec_clk( .clk(clk), .reset_p(reset_p),.clk_div_100(clk_usec));
+    parameter IDLE = 5'b0_0001;
+    parameter INIT = 5'b0_0010;
+    parameter SEND_PASSWARD = 5'b0_0100;
+    parameter SEND_ENTER = 5'b0_1000;
+    parameter SEND_ERROR = 5'b1_0000;
     
-    //COUNT_USEC
-    reg[21:0] count_usec;
-    reg count_usec_e;   //enable
-     always @(negedge clk or posedge reset_p)begin
-        if(reset_p) count_usec =0;
-          else if(clk_usec && count_usec_e) count_usec = count_usec +1;
-          else if(!count_usec_e) count_usec = 0;               
-     end  
+    wire clk_microsec;
+    clock_div_100 microsec_clk(.clk(clk), .reset_p(reset_p),.clk_div_100_nedge(clk_microsec));
     
-    //BTN 
-    wire [3:0] btn_pedge;
-    button_cntr btn0(.clk(clk), .reset_p(reset_p), .btn(btn[0]), .btn_pedge(btn_pedge[0]));
-    button_cntr btn1(.clk(clk), .reset_p(reset_p), .btn(btn[1]), .btn_pedge(btn_pedge[1]));   
-    button_cntr btn2(.clk(clk), .reset_p(reset_p), .btn(btn[2]), .btn_pedge(btn_pedge[2]));   
-    button_cntr btn3(.clk(clk), .reset_p(reset_p), .btn(btn[3]), .btn_pedge(btn_pedge[3]));   
+    reg[21:0] count_microsec;
+    reg count_microsec_enable;
+    always@(negedge clk or posedge reset_p)begin
+        if(reset_p) count_microsec = 0;
+        else if(clk_microsec && count_microsec_enable) count_microsec = count_microsec + 1;
+        else if(!count_microsec_enable)count_microsec = 0;
+    end
     
+//    wire[3:0]btn_pedge;
+//    button_cntr btn0(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_posedge(btn_pedge[0]));
+//    button_cntr btn1(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_posedge(btn_pedge[1]));
+//    button_cntr btn2(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_posedge(btn_pedge[2]));
+//    button_cntr btn3(.clk(clk), .reset_p(reset_p),.btn(btn[3]), .btn_posedge(btn_pedge[3]));
     
-    //INST
-    reg [7:0] send_buffer;      //input이니까 reg 로 선언해서 받음(데이터받는 레지스터)
+    reg[7:0] send_buffer;
     reg rs,send;
-    wire busy;
-    I2C_lcd_send_byte(.clk(clk) , .reset_p(reset_p) , .addr(7'h27) ,.rs(rs), .send(send), .send_buffer(send_buffer), 
-                                  .scl(scl), .sda(sda), .busy(busy),.led_debug(led_debug));
+    
+    wire busy; 
+    I2C_lcd_send_byte lcd(.clk(clk),.reset_p(reset_p), .addr(7'h27), .send_buffer(send_buffer),.rs(rs),.send(send),.scl(scl),.sda(sda), .busy(busy));
     
     
-    always @(negedge clk or posedge reset_p) begin
-        if(reset_p) state = IDLE;
+    reg[5:0] state, next_state;
+    always@(negedge clk or posedge reset_p)begin
+        if(reset_p) state = IDLE; 
         else state = next_state;
     end
     
-    
-    reg INIT_flag;  //했는지 안했는지 확인용
-    reg [2:0]cnt_data;
-    reg [5*8-1 :0] hello; //5글자(8비트)짜리 변수 (-1은  0부터 시작하니까 뺌)([] 안은 다 상수다)
-    reg [3:0] cnt_string; //글자수를 세는 변수(여기선 hello 5개를 셈)
-    reg [2:0]command2_cnt_data;
-    reg [1*8-1 :0]h;
-    
-    always @(posedge clk or posedge reset_p) begin
-        if(reset_p) begin
-            next_state = IDLE;    
-            INIT_flag =0;
-            count_usec_e =0;
-            cnt_data =0;
-            hello = "HELLO";    //글자는 이런식으로 초기화( ""안에 hello의 아스키 코드 값이 들어간다)
-            h = "H";
-            cnt_string =5;
-            command2_cnt_data =0;
+    reg init_flag;
+    reg[5:0] data_count;
+    reg[8*14-1:0]  init_word;
+    reg[8*8-1:0]   open_word;
+    reg[8*7-1:0]   error_word;
+    reg[8*14-1:0]  error2_word;
+    reg[3:0] cnt_string;
+    always@(posedge clk or posedge reset_p)begin
+        if(reset_p)begin
+            next_state = IDLE;
+            init_flag = 0;
+            data_count = 0;
+            count_microsec_enable = 0;
+            init_word = "Enter Passward";
+            open_word = "Welcome!";
+            error_word = "ERROR!!";
+            error2_word = "Check Passward";
+            cnt_string = 14;
         end
         else begin
             case(state)
-                IDLE : begin            
-                    if(INIT_flag) begin
-                        if(btn_pedge[0]) next_state = SEND_DATA; //(INIT_flag)가 1이면 버튼0번 눌러서SEND_BYTE
-                        if(btn_pedge[1]) next_state = SEND_COMMAND;
-                        if(btn_pedge[2]) next_state = SEND_STRING;
-                        if(btn_pedge[3]) next_state = SEND_COMMAND2;
+                IDLE:begin
+                    if(init_flag)begin
+                        if(!busy)begin
+                            if(key_valid)begin
+                                next_state = SEND_PASSWARD;
+                                //if(start_stop == 1) next_state = SEND_ENTER;
+                                //else if(start_stop == 0) next_state = SEND_ENTER;
+                            end
+                            
+                        end
                     end
                     else begin
-                        if(count_usec <= 22'd80_000) begin      //80ms
-                            count_usec_e =1;
+                        if(count_microsec <= 22'd80_000)begin
+                            count_microsec_enable = 1;
                         end
                         else begin
-                             next_state = INIT;     // INIT_flag가 0이면 INIT으로 가기
-                                                             // 처음 한번만 INIT으로 가고 다시 갈일 없다.
-                             count_usec_e =0;
+                            next_state = INIT;    
+                            count_microsec_enable = 0;
                         end
                     end
                 end
-                
-                INIT : begin    //처음 한번만 하면 상관없다.(INIT_flag 로 체크)
-                                        //처음엔 busy가 0이니까 else문에서 6번에 거쳐서 cnt
-                    if(busy) begin  // busy는 send_pedge가 들어올떄 1이된다.
-                          send =0;
-                          if(cnt_data >= 6) begin
-                              next_state = IDLE;
-                              INIT_flag = 1;  // 초기화 
-                              cnt_data =0;
-                              rs =0;
-                          end
-                      end
-                      else if(!send)begin 
-                      //send가 0이 아닌경우엔 1부터 들어올수도있음
-                      //busy는 send의 상승엣지 에서 발생하고 clk도 n_edge에 의해 동작하기 때문에 
-                      // 클럭 차이가 생길수 있다. 그렇게 때문에 send가 1부터 시작하는 경우가 생길수 있고
-                      //그걸 막기 위해서 !send라는 조건을 붙혀서 send가 1로 왔을때를 방지한다. 
-                                 //즉 send =0, busy =0 일떄
-                          case(cnt_data)  //초기화 코드 6개 보냄
-                              0 : send_buffer = 8'h33;  //rs =0;send를 endcase에서 1을 주면 sned_buffer
-                              1 : send_buffer = 8'h32;  //그 다음 상태로 넘어가는게 send_pedge를 보고 넘어가기때문에 1클럭 뒤에 넘어감
-                                                                    // 그러므로 send = 0 을 주면 일단 busy가 1이 아니므로 아래부터 날라가게 된다.
-                              2 : send_buffer = 8'h28;  //NF N: 1 F: 0  0011
-                              3 : send_buffer = 8'h0f;    //display on
-                              4 : send_buffer = 8'h01; // display clear 
-                              5 : send_buffer = 8'h06;
-                         endcase
-                        rs =0;  //초기화 코드를 입력하는것이기에 rs =0을 해준다.
-                        send =1;    //보내기
-                        cnt_data = cnt_data +1;
-                    end                 
+                INIT:begin
+                     if(busy)begin
+                        send = 0;
+                        if(data_count > 21)begin
+                            next_state = IDLE;
+                            init_flag = 1;        
+                            data_count = 0;    
+                            rs = 0;     
+                        end
+                    end
+                    else if(!send) begin //s
+                        case(data_count)
+                            0: send_buffer = 8'h33;
+                            1: send_buffer = 8'h32;
+                            2: send_buffer = 8'h28;
+                            3: send_buffer = 8'h0F;
+                            4: send_buffer = 8'h01;
+                            5: send_buffer = 8'h06;
+                            6: send_buffer =  init_word[111:104];
+                            7: send_buffer =  init_word[103:96]; 
+                            8: send_buffer =  init_word[95:88];  
+                            9: send_buffer =  init_word[87:80];  
+                            10: send_buffer = init_word[79:72];  
+                            11: send_buffer = init_word[71:64];  
+                            12: send_buffer = init_word[63:56];  
+                            13: send_buffer = init_word[55:48];  
+                            14: send_buffer = init_word[47:40];  
+                            15: send_buffer = init_word[39:32];  
+                            16: send_buffer = init_word[31:24];  
+                            17: send_buffer = init_word[23:16];  
+                            18: send_buffer = init_word[15:8];   
+                            19: send_buffer = init_word[7:0];                             
+                            20: send_buffer = 8'h06;                             
+                            21: send_buffer = 8'hC0;                             
+                        endcase
+                        if(data_count <= 5) rs=0;
+                        else if(data_count > 5 && data_count < 20)rs = 1;
+                        else if(data_count > 19)rs = 0;
+                        send = 1;
+                        data_count = data_count + 1;
+                    end
+                end
+                    SEND_PASSWARD:begin
+                    if(busy)begin
+                        next_state = IDLE;
+                        send = 0;
+                        if(data_count >= 9) data_count = 0;
+                        else data_count = data_count + 1;
+                    end
+                    else begin
+                        send_buffer = 8'h2A;
+                        rs = 1;
+                        send = 1;
+                    end
                 end
                 
-                
-                SEND_DATA : begin   //idle에서 btn0누르면 바이트 보낸다.
-                    if(busy) begin //busy상태에서 넘어가므로 busy를 체크하는 코드를 생성한다.
-                        next_state = IDLE;  // send가 1되어서 busy가 1되면 이쪽으로 넘어온다.
+                SEND_ENTER:begin
+                    if(busy)begin
                         send = 0;
-                        if(cnt_data >= 9) cnt_data =0;
-                        else cnt_data =cnt_data +1;
+                        if(data_count > 8)begin
+                            if(count_microsec <=23'd5_000_000)
+                                count_microsec_enable = 1;
+                            else begin
+                                next_state = IDLE;
+                                init_flag = 0;
+                                data_count = 0;
+                            end
+                        end
                     end
-                    else begin
-                        send_buffer = "A" + cnt_data;  //대문자 A의 아스키 값으로 간다.
-                            //A를 0으로 바꾸면 숫자들이 출력
-                        rs =1; //데이터 보낼것이므로 rs =1;
-                        send =1;    //busy가 1될거임 
-                    end
-                end               
-                    
-                    
-     //SEND_DATA에서 RS를 0주고(데이터 저장작업) SEND_BUFFER에 shift에 작업 코드 생성
-                    SEND_COMMAND : begin   //idle에서 btn0누르면 바이트 보낸다.
-                    if(busy) begin //busy상태에서 넘어가므로 busy를 체크하는 코드를 생성한다.
-                        next_state = IDLE;  // send가 1되어서 busy가 1되면 이쪽으로 넘어온다.
+                    else if(!send)begin
+                        case(data_count)
+                            0: send_buffer = 8'h01;
+                            1: send_buffer = open_word[63:56];
+                            2: send_buffer = open_word[55:48];
+                            3: send_buffer = open_word[47:40];
+                            4: send_buffer = open_word[39:32];
+                            5: send_buffer = open_word[31:24];
+                            6: send_buffer = open_word[23:16];
+                            7: send_buffer = open_word[15:8];
+                            8: send_buffer = open_word[7:0];
+                        endcase
+                        if(data_count == 0) rs = 0;
+                        else if(data_count > 0)rs = 1;
+                        send = 1;
+                        data_count = data_count + 1;
+                    end 
+                end
+                
+                SEND_ERROR:begin
+                     if(busy)begin
                         send = 0;
+                        if(data_count > 23)begin
+                            if(count_microsec <=23'd5_000_000)
+                                count_microsec_enable = 1;
+                            else begin
+                                next_state = IDLE;
+                                init_flag = 0;
+                                data_count = 0;
+                            end
+                        end
                     end
-                    else begin
-                        send_buffer =  8'h18;  //좌 시프트 
-                          //cursor on display shift에서 (1(DB5)/ 1000(DB4321))
-                        rs =0;  //RS가 0이면 쓰거나 데이터를 저장하는 작업을 수행하고 보내는것이 아님 
-                        send =1;    
-                    end
-                end           
-                
-                
-                
-                    // 마이너스(-)로 할거면 IDLE 초기값을 cnt_string=5로 정하고 기준값을 바꿔준다.
-                    SEND_STRING : begin    
-                    if(busy) begin  
-                          send =0;
-                          if(cnt_string <= 0) begin
-                              next_state = IDLE;
-                              cnt_string =5;
-                          end
-                      end
-                      else if(!send)begin 
-                          case(cnt_string)  
-                              5 : send_buffer = hello[39: 32];
-                                              // [8*cnt_string-1: 8*(cnt_string-1);이건데 변수를 못써서 상수를 써야함  
-                                              // 즉 위에서 만든 cnt_string의 변수값으로 상수 설정
-                              4 : send_buffer = hello[31: 24];  
-                              3 : send_buffer = hello[23: 16];  
-                              2 : send_buffer = hello[15: 8];   
-                              1 : send_buffer = hello[7: 0]; 
-                         endcase
-                             rs =1;     //여긴 LCD에 보낼꺼니가 rs=1한다.
-                             send =1;    //보내기
-                             cnt_string = cnt_string - 1;
-                      end                 
-                     end             
-
-                //SEND_COMMAND를 case문으로 변경후 다음상태를 SEND_DATA로 보내는 과정
-               SEND_COMMAND2 : begin   
-               if(busy) begin 
-                   send = 0;
-                   if(command2_cnt_data >= 3) begin
-                       next_state = IDLE;  
-                       command2_cnt_data =0;
-                   end
-               end
-                else if(!send) begin
-                    case(command2_cnt_data)
-                        0 : begin
-                            send_buffer =  8'hc0;
-                            rs = 0;
-                        end
-                       
-                        1 : begin
-                            send_buffer =  8'h0e;  //0 . 1110 >> display :on / cursor :on /blink:off
-                            rs =0;
-                         
-                        end
-                        
-                        2 : begin
-                            send_buffer = h[7:0];
-                            rs =1;
-                        end
-                        
-                    endcase
-                   /*  rs =0; */
-                     send =1;    
-                     command2_cnt_data = command2_cnt_data +1;
-                 end
-               end      
-                                       
-         endcase
-      end
-  end                                             
+                    else if(!send)begin
+                        case(data_count)
+                            0: send_buffer = 8'h01;
+                            1: send_buffer = error_word[55:48];
+                            2: send_buffer = error_word[47:40];
+                            3: send_buffer = error_word[39:32];
+                            4: send_buffer = error_word[31:24];
+                            5: send_buffer = error_word[23:16];
+                            6: send_buffer = error_word[15:8];
+                            7: send_buffer = error_word[7:0];
+                            8: send_buffer = 8'hc0;
+                            9: send_buffer =  init_word[111:104];
+                            10: send_buffer =  init_word[103:96]; 
+                            11: send_buffer = init_word[95:88];  
+                            12: send_buffer = init_word[87:80];  
+                            13: send_buffer = init_word[79:72];  
+                            14: send_buffer = init_word[71:64];  
+                            15: send_buffer = init_word[63:56];  
+                            16: send_buffer = init_word[55:48];  
+                            17: send_buffer = init_word[47:40];  
+                            18: send_buffer = init_word[39:32];  
+                            19: send_buffer = init_word[31:24];  
+                            20: send_buffer = init_word[23:16];  
+                            21: send_buffer = init_word[15:8];   
+                            22: send_buffer = init_word[7:0];       
+                        endcase
+                        if(data_count == 0) rs = 0;
+                        else if(data_count > 0)begin
+                            if(data_count == 8)rs = 0;
+                            else rs = 1;
+                        end    
+                        send = 1;
+                        data_count = data_count + 1;
+                    end 
+                end
+            endcase
+        end
+    
+    end
+    
+    
+    
 endmodule
-
 
 //======================================================
 module servo_motor(
@@ -1233,202 +1244,4 @@ module timer_1m(
     fnd_cntr fnd(.clk(clk), .reset_p(reset_p), .value(timer_value),
                                       .com(com), .seg_7(seg_7));
 
-endmodule
-
-
-//================================================================
-module I2C_txtLCD_top(
-    input clk, reset_p,
-    input[3:0] btn,
-    output scl,sda );
-    
-    parameter IDLE = 6'b00_0001;
-    parameter INIT = 6'b00_0010;
-    parameter SEND_DATA = 6'b00_0100;
-    parameter SEND_COMMAND_LINE_D = 6'b00_1000;
-    parameter SEND_COMMAND_LINE_U = 6'b01_0000;
-    parameter SEND_COMMAND_STRING = 6'b10_0000;
-    
-    wire clk_microsec;
-    clock_div_100 microsec_clk(.clk(clk), .reset_p(reset_p),.clk_div_100_nedge(clk_microsec));
-    
-    reg[21:0] count_microsec;
-    reg count_microsec_enable;
-    always@(negedge clk or posedge reset_p)begin
-        if(reset_p) count_microsec = 0;
-        else if(clk_microsec && count_microsec_enable) count_microsec = count_microsec + 1;
-        else if(!count_microsec_enable)count_microsec = 0;
-    end
-    
-    wire[3:0]btn_pedge;
-    button_cntr btn0(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_pedge(btn_pedge[0]));
-    button_cntr btn1(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_pedge(btn_pedge[1]));
-    button_cntr btn2(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_pedge(btn_pedge[2]));
-    button_cntr btn3(.clk(clk), .reset_p(reset_p),.btn(btn[3]), .btn_pedge(btn_pedge[3]));
-    
-    reg[7:0] send_buffer;
-    reg rs,send;
-    
-    wire busy; 
-    I2C_lcd_send_byte lcd(.clk(clk),.reset_p(reset_p), .addr(7'h27), .send_buffer(send_buffer),.rs(rs),.send(send),.scl(scl),.sda(sda), .busy(busy));
-    
-    
-    reg[5:0] state, next_state;
-    always@(negedge clk or posedge reset_p)begin
-        if(reset_p) state = IDLE; 
-        else state = next_state;
-    end
-    
-    reg init_flag;
-    reg[5:0] data_count;
-    reg[8*14-1:0] init_word;
-    reg[3:0] cnt_string;
-    always@(posedge clk or posedge reset_p)begin
-        if(reset_p)begin
-            next_state = IDLE;
-            init_flag = 0;
-            data_count = 0;
-            count_microsec_enable = 0;
-            init_word = "Enter Passward";
-            cnt_string = 14;
-        end
-        else begin
-            case(state)
-                IDLE:begin
-                    if(init_flag)begin
-                        if(!busy)begin
-                            if(btn_pedge[0]) next_state = SEND_DATA;
-                            if(btn_pedge[1]) next_state = SEND_COMMAND_LINE_D;
-                            if(btn_pedge[2]) next_state = SEND_COMMAND_LINE_U;
-                            if(btn_pedge[3]) next_state = SEND_COMMAND_STRING;
-                        end
-                    end
-                    else begin
-                        if(count_microsec <= 22'd80_000)begin
-                            count_microsec_enable = 1;
-                        end
-                        else begin
-                            next_state = INIT;    
-                            count_microsec_enable = 0;
-                        end
-                    end
-                end
-                INIT:begin
-                     if(busy)begin
-                        send = 0;
-                        if(data_count > 21)begin
-                            next_state = IDLE;
-                            init_flag = 1;        
-                            data_count = 0;    
-                            rs = 0;     
-                        end
-                    end
-                    else if(!send) begin //s
-                        case(data_count)
-                            0: send_buffer = 8'h33;
-                            1: send_buffer = 8'h32;
-                            2: send_buffer = 8'h28;
-                            3: send_buffer = 8'h0F;
-                            4: send_buffer = 8'h01;
-                            5: send_buffer = 8'h06;
-                            6: send_buffer =  init_word[111:104];
-                            7: send_buffer =  init_word[103:96]; 
-                            8: send_buffer =  init_word[95:88];  
-                            9: send_buffer =  init_word[87:80];  
-                            10: send_buffer = init_word[79:72];  
-                            11: send_buffer = init_word[71:64];  
-                            12: send_buffer = init_word[63:56];  
-                            13: send_buffer = init_word[55:48];  
-                            14: send_buffer = init_word[47:40];  
-                            15: send_buffer = init_word[39:32];  
-                            16: send_buffer = init_word[31:24];  
-                            17: send_buffer = init_word[23:16];  
-                            18: send_buffer = init_word[15:8];   
-                            19: send_buffer = init_word[7:0];                             
-                            20: send_buffer = 8'h06;                             
-                            21: send_buffer = 8'hC0;                             
-                        endcase
-                        if(data_count <= 5) rs=0;
-                        else if(data_count > 5 && data_count < 20)rs = 1;
-                        else if(data_count > 19)rs = 0;
-                        send = 1;
-                        data_count = data_count + 1;
-                    end
-                end
-                    SEND_DATA:begin
-                    if(busy)begin
-                        next_state = IDLE;
-                        send = 0;
-                        if(data_count >= 9) data_count = 0;
-                        else data_count = data_count + 1;
-                    end
-                    else begin
-                        send_buffer = "0" +data_count;
-                        rs = 1;
-                        send = 1;
-                    end
-                end
-                SEND_COMMAND_LINE_D:begin
-                    if(busy)begin
-                        next_state = IDLE;
-                        send = 0;
-                        if(data_count >= 9) data_count = 0;
-                        else data_count = data_count + 1;
-                    end
-                    else begin
-                        send_buffer = 8'hC0;
-                        rs = 0;
-                        send = 1;
-                    end 
-                end
-                SEND_COMMAND_LINE_U:begin
-                    if(busy)begin
-                        next_state = IDLE;
-                        send = 0;
-                        if(data_count >= 9) data_count = 0;
-                        else data_count = data_count + 1;
-                    end
-                    else begin
-                        send_buffer = 8'h80;
-                        rs = 0;
-                        send = 1;
-                    end 
-                end
-                SEND_COMMAND_STRING:begin
-                    if(busy)begin
-                        send = 0;
-                        if(cnt_string < 1)begin
-                            next_state = IDLE;
-                            cnt_string = 14;    
-                        end
-                    end
-                    else if(!send) begin //s
-                        case(cnt_string)
-                            14: send_buffer = init_word[111:104];
-                            13: send_buffer = init_word[103:96]; 
-                            12: send_buffer = init_word[95:88];  
-                            11: send_buffer = init_word[87:80];  
-                            10: send_buffer = init_word[79:72];  
-                            9: send_buffer =  init_word[71:64];  
-                            8: send_buffer =  init_word[63:56];  
-                            7: send_buffer =  init_word[55:48];  
-                            6: send_buffer =  init_word[47:40];  
-                            5: send_buffer =  init_word[39:32];  
-                            4: send_buffer =  init_word[31:24];  
-                            3: send_buffer =  init_word[23:16];  
-                            2: send_buffer =  init_word[15:8];   
-                            1: send_buffer =  init_word[7:0];    
-                        endcase
-                        rs = 1;
-                        send = 1;
-                        cnt_string = cnt_string - 1;
-                    end
-                end
-            endcase
-        end
-    
-    end
-    
-    
-    
 endmodule

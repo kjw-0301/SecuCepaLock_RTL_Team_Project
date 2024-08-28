@@ -1,0 +1,205 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 13292
+License: Customer
+
+Current time: 	Wed Aug 28 15:37:38 KST 2024
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 69 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	minkyu
+User home directory: C:/Users/minkyu
+User working directory: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL
+User country: 	KR
+User language: 	ko
+User locale: 	ko_KR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/minkyu/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/minkyu/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/minkyu/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.log
+Vivado journal file location: 	C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.jou
+Engine tmp dir: 	C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/.Xil/Vivado-13292-DESKTOP-VQQPT2C
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_SDK: C:/Xilinx/Vitis/2019.2
+XILINX_VITIS: C:/Xilinx/Vitis/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	199 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 725 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\minkyu\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 797 MB. GUI used memory: 50 MB. Current time: 8/28/24, 3:37:40 PM KST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 68 MB (+69272kb) [00:00:20]
+// [Engine Memory]: 1,007 MB (+904858kb) [00:00:20]
+// [GUI Memory]: 73 MB (+1629kb) [00:00:20]
+// [GUI Memory]: 85 MB (+7968kb) [00:00:22]
+// WARNING: HEventQueue.dispatchEvent() is taking  3558 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// [GUI Memory]: 108 MB (+20123kb) [00:00:23]
+// Tcl Message: open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:15 . Memory (MB): peak = 1080.266 ; gain = 391.621 
+// Project name: SPL; location: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL; part: xc7a35tcpg236-1
+// [GUI Memory]: 115 MB (+1755kb) [00:00:24]
+// [Engine Memory]: 1,085 MB (+28941kb) [00:00:24]
+dismissDialog("Open Project"); // bB (cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,091 MB. GUI used memory: 57 MB. Current time: 8/28/24, 3:37:55 PM KST
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, keypad_test_top (TEST_TOP.v)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, keypad_test_top (TEST_TOP.v), clk_us : clock_div_100 (SUB_CODE.v)]", 2, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// Elapsed time: 15 seconds
+selectCodeEditor("TEST_TOP.v", 14, 337); // ch (w, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtlcd_top (SUB_CODE.v)]", 14, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtlcd_top (SUB_CODE.v), clock_div_100 (SUB_CODE.v)]", 15, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtLCD_top (SUB_CODE.v)]", 13, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtLCD_top (SUB_CODE.v), btn0 : button_cntr (SUB_CODE.v)]", 15, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 1,138 MB. GUI used memory: 60 MB. Current time: 8/28/24, 3:38:25 PM KST
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtLCD_top (SUB_CODE.v)]", 13); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtlcd_top (SUB_CODE.v)]", 14, true); // B (F, cr) - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtlcd_top (SUB_CODE.v)]", 14); // B (F, cr)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtLCD_top (SUB_CODE.v)]", 13); // B (F, cr)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtLCD_top (SUB_CODE.v)]", 13); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtLCD_top (SUB_CODE.v)]", 13, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtLCD_top (SUB_CODE.v), microsec_clk : clock_div_100 (SUB_CODE.v)]", 14, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+selectCodeEditor("SUB_CODE.v", 2, 211); // ch (w, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtLCD_top (SUB_CODE.v), btn0 : button_cntr (SUB_CODE.v)]", 15, true); // B (F, cr) - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, I2C_txtLCD_top (SUB_CODE.v)]", 13); // B (F, cr)
+// Elapsed time: 21 seconds
+selectCodeEditor("SUB_CODE.v", 0, 141); // ch (w, cr)
+// WARNING: HTimer (StateMonitor Timer) is taking 740ms to process. Increasing delay to 4000 ms.
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectCodeEditor("SUB_CODE.v", 102, 220); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 102, 220, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 1); // i (h, cr)
+selectCodeEditor("TEST_TOP.v", 84, 332); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 84, 332, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "TEST_TOP.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 41 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 2); // i (h, cr)
+selectCodeEditor("SUB_CODE.v", 107, 247); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 107, 247, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 1); // i (h, cr)
+typeControlKey((HResource) null, "TEST_TOP.v", 'v'); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 583, 283); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 583, 283, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "TEST_TOP.v", 'c'); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 596, 270); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 596, 270, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "TEST_TOP.v", 'c'); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 579, 335); // ch (w, cr)
+typeControlKey((HResource) null, "TEST_TOP.v", 'v'); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 2); // i (h, cr)
+selectCodeEditor("SUB_CODE.v", 111, 285); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 111, 285, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 123, 275); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 123, 275, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 1); // i (h, cr)
+typeControlKey((HResource) null, "TEST_TOP.v", 'v'); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 101, 420); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 101, 420, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 106, 410); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 106, 410, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "TEST_TOP.v", 'c'); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 750, 337); // ch (w, cr)
+typeControlKey((HResource) null, "TEST_TOP.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TEST_TOP.v", 354, 341); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TEST_TOP.v", 151, 408); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 59, 195); // ch (w, cr)
+typeControlKey((HResource) null, "TEST_TOP.v", 'v'); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 61, 200); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+selectButton(RDIResource.AbstractSearchablePanel_SHOW_SEARCH, "Sources_search"); // x (f, cr): TRUE
+setText("PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE_SEARCH_FIELD", "xdc", true); // OverlayTextField (C, cr)
+setText("PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE_SEARCH_FIELD", "xdc"); // OverlayTextField (C, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys-3-Master.xdc]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Basys-3-Master.xdc]", 2, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectCodeEditor("Basys-3-Master.xdc", 7, 267); // ch (w, cr)
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Basys-3-Master.xdc", 482, 283); // ch (w, cr)
+selectCodeEditor("Basys-3-Master.xdc", 513, 258); // ch (w, cr)
+selectCodeEditor("Basys-3-Master.xdc", 513, 258, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("Basys-3-Master.xdc", 529, 276); // ch (w, cr)
