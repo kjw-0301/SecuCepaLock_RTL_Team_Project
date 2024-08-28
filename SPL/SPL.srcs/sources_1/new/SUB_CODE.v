@@ -864,11 +864,6 @@ module I2C_txtlcd_top(
 endmodule
 
 
-//=======================================================================
-
-
-
-
 //======================================================
 module servo_motor(
     input clk,reset_p,
@@ -884,9 +879,9 @@ module servo_motor(
         else clk_div = clk_div +1;
     end
 
-    wire clk_div_26_nedge;                                      
+    wire clk_div_26_n;                                      
     edge_detector_n ed(.clk(clk), .reset_p(reset_p),
-                                                      .cp(clk_div[22]), .n_edge(clk_div_26_nedge));    
+                                                      .cp(clk_div[22]), .n_edge(clk_div_26_n));    
 
     reg[6:0] duty;
     reg up_down;
@@ -896,21 +891,22 @@ module servo_motor(
         end
         
        else if(spi_keypad_data) begin 
-            if(clk_div_26_nedge) begin
+            if(clk_div_26_n) begin
                if(duty<50)
                   duty =duty +1;
             end
        end
                           
         else if(ultra_data) begin
-            if(clk_div_26_nedge) begin
+            if(clk_div_26_n) begin
                if(duty >12)
                   duty =duty -1;
             end
         end   
      end
    
-
+    pwm_Nstep_freq #(.duty_step(400), .pwm_freq(50))
+    pwm_b(.clk(clk), .reset_p(reset_p), .duty(duty), .pwm(motor_pwm));
                                                                         
     wire [15:0] duty_bcd;  
     bin_to_dec bcd_humi(.bin({5'b0, duty}),  .bcd(duty_bcd));
@@ -1136,7 +1132,7 @@ module key_pad_cntr_FSM(
         
         always @(posedge clk) clk_div = clk_div +1;
         wire clk_8msec_p, clk_8msec_n;
-        edge_detector_p ed(.clk(clk), .reset_p(reset_p), .cp(clk_div[19]), .p_edge(clk_8msec_p), .n_edge(clk_8msec_n));
+        edge_detector_n ed(.clk(clk), .reset_p(reset_p), .cp(clk_div[19]), .p_edge(clk_8msec_p), .n_edge(clk_8msec_n));
     
     
         reg [4:0] state , next_state;
