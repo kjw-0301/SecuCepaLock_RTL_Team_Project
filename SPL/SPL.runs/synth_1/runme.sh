@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1'
+HD_PWD='C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log keypad_test_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source keypad_test_top.tcl
+EAStep vivado -log safe_box_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source safe_box_top.tcl
