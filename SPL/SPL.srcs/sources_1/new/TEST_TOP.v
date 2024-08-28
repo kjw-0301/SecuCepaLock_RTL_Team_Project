@@ -29,7 +29,7 @@
                                                             
                                                                    
                                                                    
-     
+     reg stop_start;
           /////////////////////
      //ÃÊÀ½ÆÄ
      wire [50:0] distance;
@@ -50,12 +50,11 @@
     reg [15:0] key_count;
     
     //I2C 
-//    I2C_txtLCD_top(clk, reset_p,btn,scl,sda,led);
+    I2C_txtLCD_top lcd(.clk(clk),.reset_p(reset_p),.scl(scl),.sda(sda),.key_valid(key_valid_p),.start_stop(stop_start));
     
     
     
    reg [2:0] state; 
-    reg stop_start;
     
     always @(posedge clk or posedge reset_p) begin
         if (reset_p) begin
