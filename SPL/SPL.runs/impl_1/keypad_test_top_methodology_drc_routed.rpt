@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Aug 28 13:49:00 2024
+| Date         : Wed Aug 28 14:51:32 2024
 | Host         : DESKTOP-KKVBLF0 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file keypad_test_top_methodology_drc_routed.rpt -pb keypad_test_top_methodology_drc_routed.pb -rpx keypad_test_top_methodology_drc_routed.rpx
 | Design       : keypad_test_top
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 24
+             Violations found: 25
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay | 24         |
+| TIMING-18 | Warning  | Missing input or output delay | 25         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -150,6 +150,11 @@ Related violations: <none>
 TIMING-18#24 Warning
 Missing input or output delay  
 An output delay is missing on seg_7[7] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#25 Warning
+Missing input or output delay  
+An output delay is missing on servo_motor_pwm relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 
