@@ -8,7 +8,7 @@
         output [7:0] seg_7,
         output led_key_valid,
         output scl,sda,
-        output reg open , ERROR,
+        output reg open,ERROR,
         output servo_motor_pwm,
         input close);
         
@@ -52,7 +52,7 @@
     reg [15:0] key_count;
     
     //I2C 
-    I2C_txtLCD_top lcd(.clk(clk),.reset_p(reset_p),.scl(scl),.sda(sda),.key_valid(key_valid_p),.start_stop(stop_start));
+    I2C_txtLCD_top lcd(.clk(clk),.reset_p(reset_p),.scl(scl),.sda(sda),.key_valid(key_valid_p),.open(open),.error(ERROR));
     
     
     
@@ -122,6 +122,7 @@ always @(negedge clk or posedge reset_p) begin
                 3'd4: begin
                     if (key_value == 4) begin
                         open <= 1;   // 올바른 시퀀스 완료 시 open 설정
+                        
                         if(close) begin
                             open <= 0;                        
                             state <= 3'd0;                 

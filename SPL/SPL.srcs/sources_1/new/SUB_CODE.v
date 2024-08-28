@@ -52,15 +52,15 @@ module edge_detector_n(
 endmodule
 
 //======================================================
-module fnd_cntr(     //ì»¨íŠ¸ë¡¤ëŸ¬  //fnd 0ì¼ë•Œ ì¼œì§„ë‹¤.  
+module fnd_cntr(     //ì»¨íŠ¸ë¡¤ëŸ¬  //fnd 0?¼?•Œ ì¼œì§„?‹¤.  
         input clk, reset_p,
         input [15:0] value,
-        output [3:0] com,       //ê³µí†µë‹¨ì  //LEDì˜ ì „ì› ë‹´ë‹¹
+        output [3:0] com,       //ê³µí†µ?‹¨?  //LED?˜ ? „?› ?‹´?‹¹
         output [7:0] seg_7);
         
         ring_counter_fnd rc(clk, reset_p, com);
-         // ëª¨ë“ˆëª…         ì¸ìŠ¤í„´ìŠ¤ëª…
-        reg [3:0] hex_value;     //decoder_7segì— ë“¤ì–´ê°ˆ reg
+         // ëª¨ë“ˆëª?         ?¸?Š¤?„´?Š¤ëª?
+        reg [3:0] hex_value;     //decoder_7seg?— ?“¤?–´ê°? reg
         always @(posedge clk) begin
                 case(com)  
                     4'b1110 : hex_value = value[3:0];   
@@ -85,13 +85,13 @@ module button_cntr(
          always @(posedge clk)clk_div = clk_div +1;
        
        
-         //ì±„í„°ë§ ê³¼ì • ìŠ¤íƒ€íŠ¸
+         //ì±„í„°ë§? ê³¼ì • ?Š¤???Š¸
          wire clk_div_nedge;  
     edge_detector_n ed(.clk(clk), .reset_p(reset_p),
                                                .cp(clk_div[16]), .n_edge(clk_div_nedge)); 
                       
                       
-         //ì±„í„°ë§ ì¡ëŠ” ê³¼ì •                         
+         //ì±„í„°ë§? ?¡?Š” ê³¼ì •                         
          reg debounced_btn;
          always @(posedge clk or posedge reset_p)begin
             if(reset_p) debounced_btn =0;
@@ -179,7 +179,7 @@ module decoder_7seg(
 endmodule
 //=====================================================================
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Tí”Œë¦½í”Œë¡­ (ìƒìŠ¹ì—£ì§€)
+// T?”Œë¦½í”Œë¡? (?ƒ?Š¹?—£ì§?)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 module T_flip_flop_positive(
     input clk, reset_p,
@@ -190,8 +190,8 @@ module T_flip_flop_positive(
     always @(posedge clk or posedge reset_p) begin
         if (reset_p) q = 0;
         else begin
-            if (t) q = ~q; // tê°€ 1ì´ë©´ qëŠ” ë°˜ì „
-            else q = q; // ìƒëµ ê°€ëŠ¥
+            if (t) q = ~q; // tê°? 1?´ë©? q?Š” ë°˜ì „
+            else q = q; // ?ƒ?µ ê°??Š¥
         end 
     end
      
@@ -202,7 +202,7 @@ module clock_div_100(
        output clk_div_100,     
        output clk_div_100_nedge);
        
-       reg  [6:0] cnt_sysclk;       //sysclk :ì‹œìŠ¤í…œ í´ë½   10-6
+       reg  [6:0] cnt_sysclk;       //sysclk :?‹œ?Š¤?…œ ?´?½   10-6
        
        always @(negedge clk or posedge reset_p)begin
             if(reset_p) cnt_sysclk =0;
@@ -215,10 +215,10 @@ module clock_div_100(
        end   
                 assign clk_div_100 = (cnt_sysclk < 50) ? 0 : 1;     
                 
-    edge_detector_n ed1(        //ë‹¤ìš´ ì—£ì§€ ë””í…í„°ì— 100ë¶„ì£¼ í´ëŸ­+ë‹¤ìš´ì—£ì§€    
-                                                         //ì „ì— ì½”ë“œì—ì„œ ë¶ˆëŸ¬ì˜¤ê¸°
+    edge_detector_n ed1(        //?‹¤?š´ ?—£ì§? ?””?…?„°?— 100ë¶„ì£¼ ?´?Ÿ­+?‹¤?š´?—£ì§?    
+                                                         //? „?— ì½”ë“œ?—?„œ ë¶ˆëŸ¬?˜¤ê¸?
         .clk(clk),
-        .reset_p(reset_p),    //(ì—£ì§€ëŠ” ckëë‚˜ê³  1í´ëŸ­ë’¤ì— ë‚˜ì˜¨ë‹¤)
+        .reset_p(reset_p),    //(?—£ì§??Š” ck??‚˜ê³? 1?´?Ÿ­?’¤?— ?‚˜?˜¨?‹¤)
         .cp(clk_div_100),  
         .n_edge(clk_div_100_nedge));
       
@@ -230,17 +230,17 @@ endmodule
 module clock_div_60(
        input clk, reset_p,
        input clk_source,            //1us clock
-       output clk_div_60,     //100ë¶„ì£¼(ê¸°)
+       output clk_div_60,     //100ë¶„ì£¼(ê¸?)
        output clk_div_60_nedge);
        
-       reg  [9:0] cnt_clksource;       //sysclk :ì‹œìŠ¤í…œ í´ë½       10-9
-     //ë¶€ì¡±í•˜ë©´ ëŠ˜ë ¤ì•¼í•˜ì§€ë§Œ ë„˜ì¹˜ë©´ ì¤„ì´ëŠ”ê±´ ì„ íƒì´ë‹¤.
-     // ê³ ì¹ êº¼ë©´ 5ë¡œ ë°”ê¾¸ë©´ ëœë‹¤.
-     // ì£¼ë¡œ integer cnt_clksourceë¡œ ì“°ê¸°ë„í•œë‹¤ (32ë¹„íŠ¸)
-     // 32ë¹„íŠ¸ë¥¼ ë„˜ì–´ê°€ë©´ ì €ë ‡ê²Œ ì“°ê¸°ë„ ì„¤ì •í•´ì¤˜ì•¼í•œë‹¤.
+       reg  [9:0] cnt_clksource;       //sysclk :?‹œ?Š¤?…œ ?´?½       10-9
+     //ë¶?ì¡±í•˜ë©? ?Š˜? ¤?•¼?•˜ì§?ë§? ?„˜ì¹˜ë©´ ì¤„ì´?Š”ê±? ?„ ?ƒ?´?‹¤.
+     // ê³ ì¹ êº¼ë©´ 5ë¡? ë°”ê¾¸ë©? ?œ?‹¤.
+     // ì£¼ë¡œ integer cnt_clksourceë¡? ?“°ê¸°ë„?•œ?‹¤ (32ë¹„íŠ¸)
+     // 32ë¹„íŠ¸ë¥? ?„˜?–´ê°?ë©? ??? ‡ê²? ?“°ê¸°ë„ ?„¤? •?•´ì¤˜ì•¼?•œ?‹¤.
      
      
-       wire clk_source_nedge;         //ì—ì§€ ë””í…í„° í•˜ê°•ì—£ì§€ ë¶ˆëŸ¬ì˜¤ê¸°
+       wire clk_source_nedge;         //?—ì§? ?””?…?„° ?•˜ê°•ì—£ì§? ë¶ˆëŸ¬?˜¤ê¸?
                edge_detector_n ed1(.clk(clk), 
                                                         .reset_p(reset_p),    
                                                         .cp(clk_source),  
@@ -248,18 +248,18 @@ module clock_div_60(
        
        
        always @(negedge clk or posedge reset_p)begin
-            if(reset_p) cnt_clksource =0;       //ì´ˆê¸°ê°’ ì„¸íŒ…
+            if(reset_p) cnt_clksource =0;       //ì´ˆê¸°ê°? ?„¸?Œ…
           
-          else  if(clk_source_nedge) begin        //clk_sourceê°€ 1ë“¤ì–´ì˜¬ë•Œë§ˆë‹¤
+          else  if(clk_source_nedge) begin        //clk_sourceê°? 1?“¤?–´?˜¬?•Œë§ˆë‹¤
                    if(cnt_clksource >= 59) cnt_clksource = 0; 
-               else cnt_clksource = cnt_clksource +1;         //1usì— 1ì”©ì¦ê°€í•´ì„œ 1msë¡œ
+               else cnt_clksource = cnt_clksource +1;         //1us?— 1?”©ì¦ê??•´?„œ 1msë¡?
             
             end  
        end   
                 assign clk_div_60 = (cnt_clksource < 30) ? 0 : 1;     
                 
-    edge_detector_n ed2(              //ë‹¤ìš´ ì—£ì§€ ë””í…í„°ì— 100ë¶„ì£¼ í´ëŸ­+ë‹¤ìš´ì—£ì§€
-        .clk(clk), .reset_p(reset_p),    //(ì—£ì§€ëŠ” ckëë‚˜ê³  1í´ëŸ­ë’¤ì— ë‚˜ì˜¨ë‹¤)
+    edge_detector_n ed2(              //?‹¤?š´ ?—£ì§? ?””?…?„°?— 100ë¶„ì£¼ ?´?Ÿ­+?‹¤?š´?—£ì§?
+        .clk(clk), .reset_p(reset_p),    //(?—£ì§??Š” ck??‚˜ê³? 1?´?Ÿ­?’¤?— ?‚˜?˜¨?‹¤)
         .cp(clk_div_60),  .n_edge(clk_div_60_nedge));
     
 endmodule
@@ -269,12 +269,12 @@ endmodule
 module clock_div_1000(
        input clk, reset_p,
        input clk_source,            //1us clock
-       output clk_div_1000,     //100ë¶„ì£¼(ê¸°)
+       output clk_div_1000,     //100ë¶„ì£¼(ê¸?)
        output clk_div_1000_nedge);
        
-       reg  [9:0] cnt_clksource;       //sysclk :ì‹œìŠ¤í…œ í´ë½       10-9
+       reg  [9:0] cnt_clksource;       //sysclk :?‹œ?Š¤?…œ ?´?½       10-9
      
-       wire clk_source_nedge;         //ì—ì§€ ë””í…í„° í•˜ê°•ì—£ì§€ ë¶ˆëŸ¬ì˜¤ê¸°
+       wire clk_source_nedge;         //?—ì§? ?””?…?„° ?•˜ê°•ì—£ì§? ë¶ˆëŸ¬?˜¤ê¸?
                edge_detector_n ed1(.clk(clk), 
                                                         .reset_p(reset_p),    
                                                         .cp(clk_source),  
@@ -282,43 +282,43 @@ module clock_div_1000(
        
        
        always @(negedge clk or posedge reset_p)begin
-            if(reset_p) cnt_clksource =0;       //ì´ˆê¸°ê°’ ì„¸íŒ…
+            if(reset_p) cnt_clksource =0;       //ì´ˆê¸°ê°? ?„¸?Œ…
           
-          else  if(clk_source_nedge) begin        //clk_source_nedgeê°€ 1ë“¤ì–´ì˜¬ë•Œë§ˆë‹¤
+          else  if(clk_source_nedge) begin        //clk_source_nedgeê°? 1?“¤?–´?˜¬?•Œë§ˆë‹¤
                    if(cnt_clksource >= 999) cnt_clksource = 0; 
-               else cnt_clksource = cnt_clksource +1;         //1usì— 1ì”©ì¦ê°€í•´ì„œ 1msë¡œ
+               else cnt_clksource = cnt_clksource +1;         //1us?— 1?”©ì¦ê??•´?„œ 1msë¡?
             
             end  
        end   
                 assign clk_div_1000 = (cnt_clksource < 500) ? 0 : 1;     
                 
-    edge_detector_n ed2(              //ë‹¤ìš´ ì—£ì§€ ë””í…í„°ì— 100ë¶„ì£¼ í´ëŸ­+ë‹¤ìš´ì—£ì§€
-        .clk(clk), .reset_p(reset_p),    //(ì—£ì§€ëŠ” ckëë‚˜ê³  1í´ëŸ­ë’¤ì— ë‚˜ì˜¨ë‹¤)
+    edge_detector_n ed2(              //?‹¤?š´ ?—£ì§? ?””?…?„°?— 100ë¶„ì£¼ ?´?Ÿ­+?‹¤?š´?—£ì§?
+        .clk(clk), .reset_p(reset_p),    //(?—£ì§??Š” ck??‚˜ê³? 1?´?Ÿ­?’¤?— ?‚˜?˜¨?‹¤)
         .cp(clk_div_1000),  .n_edge(clk_div_1000_nedge));
     
 endmodule
 //==============================================================
-//ë¡œë“œê°€ ê°€ëŠ¥í•œ 60ì§„ ì¹´ìš´í„° (156~160)
+//ë¡œë“œê°? ê°??Š¥?•œ 60ì§? ì¹´ìš´?„° (156~160)
 //==============================================================
 module loadable_counter_bcd_60(
       input clk,reset_p,
       input clk_time,
       input load_enable,
       input [3:0] load_bcd1, load_bcd10,
-      output reg [3:0] bcd1, bcd10); //1ì˜ ìë¦¬ , 10ì˜ ìë¦¬
+      output reg [3:0] bcd1, bcd10); //1?˜ ?ë¦? , 10?˜ ?ë¦?
       
       wire clk_time_nedge;
           edge_detector_n ed_clk(.clk(clk), .reset_p(reset_p),   
                                      .cp(clk_time),  .n_edge(clk_time_nedge));
       
       always @(posedge clk or posedge reset_p) begin
-        if(reset_p) begin       //ë¦¬ì…‹ ê°’ 
+        if(reset_p) begin       //ë¦¬ì…‹ ê°? 
             bcd1 = 0;
             bcd10= 0;
         end
         else begin
-                            //ë³€ê²½ì 
-                            //bcd1ê³¼ 10ì˜ ë¡œë“œëœê°’ì„ ë‹¤ì‹œ ë„£ëŠ”ë‹¤.
+                            //ë³?ê²½ì 
+                            //bcd1ê³? 10?˜ ë¡œë“œ?œê°’ì„ ?‹¤?‹œ ?„£?Š”?‹¤.
                     if(load_enable)begin
                         bcd1 = load_bcd1;
                         bcd10 = load_bcd10;
@@ -326,7 +326,7 @@ module loadable_counter_bcd_60(
                         else if(clk_time_nedge) begin
                             if(bcd1 >= 9) begin
                                 bcd1 =0;
-                          if(bcd10 >= 5) bcd10 = 0;       //60ë¶„ì£¼ë‹ˆê¹Œ 60ì´ë©´ 0ìœ¼ë¡œ ê°€ì
+                          if(bcd10 >= 5) bcd10 = 0;       //60ë¶„ì£¼?‹ˆê¹? 60?´ë©? 0?œ¼ë¡? ê°??
                                 else bcd10 = bcd10 +1;
                             end
                               else  bcd1 = bcd1 +1;
@@ -340,9 +340,9 @@ endmodule
 module I2C_controller(
     input clk,reset_p,
     input [6:0] addr,
-    input rd_wr,        //ì£¼ì†Œ ì½ê±°ë‚˜ ì“°ê±°ë‚˜
+    input rd_wr,        //ì£¼ì†Œ ?½ê±°ë‚˜ ?“°ê±°ë‚˜
     input [7:0] data,
-    input comm_go,  //ì´ê²Œ 0->1ë“¤ì–´ì˜¤ë©´ í†µì‹ ì‹œì‘
+    input comm_go,  //?´ê²? 0->1?“¤?–´?˜¤ë©? ?†µ?‹ ?‹œ?‘
     output reg  scl, sda,
     output reg [15:0] led_debug);
      
@@ -354,13 +354,13 @@ module I2C_controller(
     parameter  SEND_ADDR=  7'b000_0100;
     parameter  RD_ACK=  7'b000_1000;
     parameter  SEND_DATA=  7'b001_0000;
-    parameter  SCL_STOP=  7'b010_0000;      //í´ë½ ìŠ¤íƒ‘ (ì†ë„ 100KHZì •ë„) 10us
+    parameter  SCL_STOP=  7'b010_0000;      //?´?½ ?Š¤?ƒ‘ (?†?„ 100KHZ? •?„) 10us
     parameter  COMM_STOP=  7'b100_0000;
 
 
    //CLOCK US       
    wire clk_usec;
-    //usì´ˆ
+    //usì´?
    clock_div_100 usec_clk( .clk(clk), .reset_p(reset_p), .clk_div_100_nedge(clk_usec));     
 
    //EDGE_DETECTOR  
@@ -373,17 +373,17 @@ module I2C_controller(
                                                          .p_edge(comm_go_pedge));
 
 
-    //ë¸”ë¡œê·¸ ADDRESS PACKET  FORMAT ì°¸ì¡°
-    //10usì‚¬ìš© í•˜ëŠ”ë° enì‹ í˜¸ë¥¼ ì¶”ê°€í•œ ê°œë…ì´ë‹¤.(SCLì œì–´)
+    //ë¸”ë¡œê·? ADDRESS PACKET  FORMAT ì°¸ì¡°
+    //10us?‚¬?š© ?•˜?Š”?° en?‹ ?˜¸ë¥? ì¶”ê??•œ ê°œë…?´?‹¤.(SCL? œ?–´)
     reg [2:0] count_usec5;
     reg scl_e;  //clock_enable 
     always @(posedge clk or posedge reset_p) begin
         if(reset_p)  begin
             count_usec5 = 0; 
-            scl =1;         //sclì€ ì²˜ìŒì— 1
+            scl =1;         //scl?? ì²˜ìŒ?— 1
         end
         
-        else if(scl_e)begin         //scl_eëŠ” scl ì´ 1ì¼Â‹Âšë§Œ ë™ì‘ 
+        else if(scl_e)begin         //scl_e?Š” scl ?´ 1?¼Â‹Âšë§? ?™?‘ 
             if(clk_usec) begin
                 if(count_usec5 >= 4)begin
                     count_usec5 =0;
@@ -393,22 +393,22 @@ module I2C_controller(
             end
         end   
         
-            else if(!scl_e) begin    //scl_e ì´ 0ì´ë¼ë©´
-                scl =1;                 //sclì€ ëë‚ Â‹Âš 1ë¡œ ëë‚œë‹¤.
+            else if(!scl_e) begin    //scl_e ?´ 0?´?¼ë©?
+                scl =1;                 //scl?? ??‚ Â‹Âš 1ë¡? ??‚œ?‹¤.
                 count_usec5 = 0;
             end   
     end                                               
    
    
-   //state, ì£¼ì†Œ ì„ ì–¸
+   //state, ì£¼ì†Œ ?„ ?–¸
     reg [6:0] state ,next_state;     
     wire [7:0] addr_rw;
-    assign addr_rw = {addr, rd_wr}; //ì£¼ì†Œ, Read/Write í•©ì³ì„œ 8ë¹„íŠ¸ 
+    assign addr_rw = {addr, rd_wr}; //ì£¼ì†Œ, Read/Write ?•©ì³ì„œ 8ë¹„íŠ¸ 
     
     reg [2:0] cnt_bit;
-    reg stop_flag;  //ë°ì´í„° ë³´ë‚´ê³  ë‚˜ë©´ 1ë¡œ(RD_ACKì—ì„œ ì‚¬ìš©)
+    reg stop_flag;  //?°?´?„° ë³´ë‚´ê³? ?‚˜ë©? 1ë¡?(RD_ACK?—?„œ ?‚¬?š©)
     
-    //MAIN CODE(í”„ë¡œí† ì½œ êµ¬í˜„)
+    //MAIN CODE(?”„ë¡œí† ì½? êµ¬í˜„)
     always @(negedge clk or posedge reset_p) begin
         if(reset_p) state = IDLE;
         else  state = next_state;
@@ -417,9 +417,9 @@ module I2C_controller(
     always @(posedge clk or posedge reset_p) begin
         if(reset_p) begin
             next_state =IDLE;
-            scl_e =0;   //clk ì€ 0ìœ¼ë¡œ
+            scl_e =0;   //clk ?? 0?œ¼ë¡?
             sda =1;
-            cnt_bit =7; //ìµœìƒìœ„ ë¹„íŠ¸ ë³´ë‚¼êº¼ë‹ˆê¹Œ 7ë¡œ ì´ˆê¸°í™”
+            cnt_bit =7; //ìµœìƒ?œ„ ë¹„íŠ¸ ë³´ë‚¼êº¼ë‹ˆê¹? 7ë¡? ì´ˆê¸°?™”
             stop_flag =0; 
             led_debug = 0;  
         end
@@ -429,34 +429,34 @@ module I2C_controller(
                 led_debug[0] = 1;
                     scl_e =0;
                     sda =1;
-                    if(comm_go_pedge) next_state = COMM_START;   //comm_goê°€ 1ë“¤ì–´ì˜¤ë©´ ë„˜ì–´ê°
+                    if(comm_go_pedge) next_state = COMM_START;   //comm_goê°? 1?“¤?–´?˜¤ë©? ?„˜?–´ê°?
                 end
                 
-                COMM_START : begin  //SCLì€ 1ì¸ìƒíƒœì—ì„œ SDAê°€ 0ìœ¼ë¡œ ë–¨ì–´ì§, í†µì‹ ì‹œì‘>>clockì›€ì§ì„
+                COMM_START : begin  //SCL?? 1?¸?ƒ?ƒœ?—?„œ SDAê°? 0?œ¼ë¡? ?–¨?–´ì§?, ?†µ?‹ ?‹œ?‘>>clock??ì§ì„
                     led_debug[1] = 1;
                     sda =0;
-                    scl_e =1;   //clock ì›€ì§ì„ >>5usí›„ì— 0ì´ ëœë‹¤.
+                    scl_e =1;   //clock ??ì§ì„ >>5us?›„?— 0?´ ?œ?‹¤.
                     next_state = SEND_ADDR;
                 end 
                 
                 SEND_ADDR : begin
                 led_debug[2] = 1;
-                    if(scl_nedge) sda =addr_rw[cnt_bit]; //ì²˜ìŒì— 7ë²ˆë¹„íŠ¸ ì¤€ë‹¤.
+                    if(scl_nedge) sda =addr_rw[cnt_bit]; //ì²˜ìŒ?— 7ë²ˆë¹„?Š¸ ì¤??‹¤.
                     else if(scl_pedge) begin
                         if(cnt_bit ==0) begin 
                             cnt_bit =7;
-                            next_state =RD_ACK;  //0ì´ ë˜ë©´ next_stateë¡œ
+                            next_state =RD_ACK;  //0?´ ?˜ë©? next_stateë¡?
                         end
-                        else cnt_bit = cnt_bit -1; //p_edgeì—ì„  ì•„ë¬´ê²ƒë„ ì•ˆí•˜ë‹ˆê¹Œ ê·¸ë‹¤ìŒë¹„íŠ¸ì—ì„œ ëº„êº¼ ë¯¸ë¦¬ ì¤€ë¹„
-                    end                                          //ì¦‰ 7ë¶€í„° 0ê¹Œì§€  ì­‰ ë¹¼ëŠ” ë°˜ë³µë¬¸ ì„¤ì •í•œê±°ì„
+                        else cnt_bit = cnt_bit -1; //p_edge?—?„  ?•„ë¬´ê²ƒ?„ ?•ˆ?•˜?‹ˆê¹? ê·¸ë‹¤?Œë¹„íŠ¸?—?„œ ëº„êº¼ ë¯¸ë¦¬ ì¤?ë¹?
+                    end                                          //ì¦? 7ë¶??„° 0ê¹Œì?  ì­? ë¹¼ëŠ” ë°˜ë³µë¬? ?„¤? •?•œê±°ì„
                 end 
                 
-                RD_ACK : begin  //RD_ACKë‹¤ìŒì€ SEND_DATAë¡œ ê°ˆì§€ SCL_STOPìœ¼ë¡œ ê°ˆì§€ ì •í•´ì¤˜ì•¼í•¨(2ê°€ì§€ ê²½ìš°)
+                RD_ACK : begin  //RD_ACK?‹¤?Œ?? SEND_DATAë¡? ê°ˆì? SCL_STOP?œ¼ë¡? ê°ˆì? ? •?•´ì¤˜ì•¼?•¨(2ê°?ì§? ê²½ìš°)
                     led_debug[3] = 1;
                     if(scl_nedge) sda ='bz; 
-                    else if(scl_pedge) begin        //pedgeë“¤ì–´ì˜¤ë©´ 1í´ë½ ëë‚œê±°ì„, clkì€ ë³´ë‚´ì•¼í•˜ë‹ˆê¹Œ ì”€
-                        if(stop_flag) begin //ì´ˆê¸°í™” ê°’ì€ 0
-                            stop_flag =0;   //SCL ëê³¼ì •
+                    else if(scl_pedge) begin        //pedge?“¤?–´?˜¤ë©? 1?´?½ ??‚œê±°ì„, clk?? ë³´ë‚´?•¼?•˜?‹ˆê¹? ??
+                        if(stop_flag) begin //ì´ˆê¸°?™” ê°’ì? 0
+                            stop_flag =0;   //SCL ?ê³¼ì •
                             next_state =SCL_STOP;
                         end
                         else begin
@@ -468,13 +468,13 @@ module I2C_controller(
                 
                 SEND_DATA : begin
                 led_debug[4] = 1;
-                if(scl_nedge) sda =data[cnt_bit]; //ì²˜ìŒì— 7ë²ˆë¹„íŠ¸ ì¤€ë‹¤.
+                if(scl_nedge) sda =data[cnt_bit]; //ì²˜ìŒ?— 7ë²ˆë¹„?Š¸ ì¤??‹¤.
                     if(scl_pedge) begin
                         if(cnt_bit == 0) begin 
                             cnt_bit =7;
-                            next_state =RD_ACK; //0ì´ ë˜ë©´ next_stateë¡œ
+                            next_state =RD_ACK; //0?´ ?˜ë©? next_stateë¡?
                         end
-                        else cnt_bit = cnt_bit -1; //p_edgeì—ì„  ì•„ë¬´ê²ƒë„ ì•ˆí•˜ë‹ˆê¹Œ ê·¸ë‹¤ìŒë¹„íŠ¸ì—ì„œ ëº„êº¼ ë¯¸ë¦¬ ì¤€ë¹„
+                        else cnt_bit = cnt_bit -1; //p_edge?—?„  ?•„ë¬´ê²ƒ?„ ?•ˆ?•˜?‹ˆê¹? ê·¸ë‹¤?Œë¹„íŠ¸?—?„œ ëº„êº¼ ë¯¸ë¦¬ ì¤?ë¹?
                     end         
                 end 
                 
@@ -484,10 +484,10 @@ module I2C_controller(
                     else if(scl_pedge) next_state = COMM_STOP;
                 end 
                 
-                COMM_STOP : begin   //high ìƒíƒœì—ì„œ ì¡°ê¸ˆìˆë”°ê°€ ì¤€ë‹¤.
+                COMM_STOP : begin   //high ?ƒ?ƒœ?—?„œ ì¡°ê¸ˆ?ˆ?”°ê°? ì¤??‹¤.
                     led_debug[6] = 1;
-                    if(count_usec5 >= 3)begin//3usë§Œ ê¸°ë‹¤ë¦¬ë‹¤ê°€
-                        scl_e =0;   //  í´ë½ì´ highë¡œ ìœ ì§€ë˜ë©° 
+                    if(count_usec5 >= 3)begin//3usë§? ê¸°ë‹¤ë¦¬ë‹¤ê°?
+                        scl_e =0;   //  ?´?½?´ highë¡? ?œ ì§??˜ë©? 
                         sda = 1;
                         next_state =IDLE;
                     end
@@ -503,10 +503,10 @@ endmodule
 module I2C_lcd_send_byte(
     input clk,reset_p,
     input [6:0] addr,
-    input rs, send,     //sendê°€ 1ì¼Â‹Âš comm_goì— 1Â‹Âšë ¤ì„œ ìƒìœ„ 4ë¹„íŠ¸ ë³´ë‚´ê³ / enable í•˜ìœ„ 4ë¹„íŠ¸ë³´ë‚´ê³  /enable
-    input [7:0] send_buffer,    //dataì„
+    input rs, send,     //sendê°? 1?¼Â‹Âš comm_go?— 1Â‹Âš? ¤?„œ ?ƒ?œ„ 4ë¹„íŠ¸ ë³´ë‚´ê³?/ enable ?•˜?œ„ 4ë¹„íŠ¸ë³´ë‚´ê³? /enable
+    input [7:0] send_buffer,    //data?„
     output scl, sda,
-    output reg busy  //busyê°€ 0ì¼ë•Œë§Œ sendë¥¼ ë³´ë‚¼ìˆ˜ìˆê²Œ (ì‹œê°„ì´ ì¢€ ê±¸ë¦¬ë‹ˆê¹Œ)
+    output reg busy  //busyê°? 0?¼?•Œë§? sendë¥? ë³´ë‚¼?ˆ˜?ˆê²? (?‹œê°„ì´ ì¢? ê±¸ë¦¬?‹ˆê¹?)
 );
 
 
@@ -514,21 +514,21 @@ module I2C_lcd_send_byte(
                     //NIBBLE= 4ë¹„íŠ¸
     reg [5:0] state, next_state;
     parameter IDLE                                        = 6'b00_0001; 
-    parameter SEND_HIGH_NIBBLE_DISABLE = 6'b00_0010;//ìƒìœ„ 4ë¹„íŠ¸ë¥¼ ë³´ë‚¼ê±´ë° disableë¡œ í•œë²ˆë³´ë‚´ê³ 
-    parameter SEND_HIGH_NIBBLE_ENABLE  = 6'b00_0100; //ìƒìœ„ 4ë¹„íŠ¸ë¥¼ ë³´ë‚¼ê±´ë° enableë¡œ í•œë²ˆë³´ë‚´ê³ 
-    parameter SEND_LOW_NIBBLE_DISABLE  = 6'b00_1000;//í•˜ìœ„ 4ë¹„íŠ¸ë¥¼ ë³´ë‚¼ê±´ë° disableë¡œ í•œë²ˆë³´ë‚´ê³ 
-    parameter SEND_LOW_NIBBLE_ENABLE   = 6'b01_0000;//í•˜ìœ„ 4ë¹„íŠ¸ë¥¼ ë³´ë‚¼ê±´ë° enableë¡œ í•œë²ˆë³´ë‚´ê³ 
-    parameter SEND_DISABLE                        = 6'b10_0000;//disableì‹ í˜¸ë¥¼ ë³´ë‚´ì„œ ê°’ì„ ëª»ì½ê²Œ í•œë‹¤.
-                          // LCDê¸°ì¤€ 1ë°”ì´íŠ¸(8ë¹„íŠ¸) ë°›ëŠ”ê±°ì„ 
+    parameter SEND_HIGH_NIBBLE_DISABLE = 6'b00_0010;//?ƒ?œ„ 4ë¹„íŠ¸ë¥? ë³´ë‚¼ê±´ë° disableë¡? ?•œë²ˆë³´?‚´ê³?
+    parameter SEND_HIGH_NIBBLE_ENABLE  = 6'b00_0100; //?ƒ?œ„ 4ë¹„íŠ¸ë¥? ë³´ë‚¼ê±´ë° enableë¡? ?•œë²ˆë³´?‚´ê³?
+    parameter SEND_LOW_NIBBLE_DISABLE  = 6'b00_1000;//?•˜?œ„ 4ë¹„íŠ¸ë¥? ë³´ë‚¼ê±´ë° disableë¡? ?•œë²ˆë³´?‚´ê³?
+    parameter SEND_LOW_NIBBLE_ENABLE   = 6'b01_0000;//?•˜?œ„ 4ë¹„íŠ¸ë¥? ë³´ë‚¼ê±´ë° enableë¡? ?•œë²ˆë³´?‚´ê³?
+    parameter SEND_DISABLE                        = 6'b10_0000;//disable?‹ ?˜¸ë¥? ë³´ë‚´?„œ ê°’ì„ ëª»ì½ê²? ?•œ?‹¤.
+                          // LCDê¸°ì? 1ë°”ì´?Š¸(8ë¹„íŠ¸) ë°›ëŠ”ê±°ì„ 
     
     reg [7:0] data;
-    reg comm_go; //ì´ê²Œ 0->1ë“¤ì–´ì˜¤ë©´ í†µì‹ ì‹œì‘
+    reg comm_go; //?´ê²? 0->1?“¤?–´?˜¤ë©? ?†µ?‹ ?‹œ?‘
     I2C_controller(.clk(clk) , .reset_p(reset_p) ,
-                           .addr(addr) , .rd_wr(0) , // .rd_wr(0) : ì“°ê¸°ë§Œ
+                           .addr(addr) , .rd_wr(0) , // .rd_wr(0) : ?“°ê¸°ë§Œ
                            .data(data), .comm_go(comm_go), 
                            .scl(scl), .sda(sda), .led_debug(led_debug));
     
-   //CLOCK US(usì´ˆ)
+   //CLOCK US(usì´?)
    wire clk_usec;
    clock_div_100 usec_clk( .clk(clk), .reset_p(reset_p), .clk_div_100_nedge(clk_usec));     
     
@@ -572,9 +572,9 @@ module I2C_lcd_send_byte(
                   end 
                   
                  SEND_HIGH_NIBBLE_DISABLE : begin
-                    if(count_usec <= 22'd200)  begin            //200us //start, I2Cê³¼ì •(18)  , stop í•´ì„œ ì—¬ìœ ë¡­ê²Œ 200us
-                        data= {send_buffer[7:4], 3'b100, rs};   // [d7 d6 d5 d4], BT, E, RW, RS (13~ 4ê¹Œì§€)
-                        comm_go =1;                                     //BTë§Œ 1ì¸ê±°ì„
+                    if(count_usec <= 22'd200)  begin            //200us //start, I2Cê³¼ì •(18)  , stop ?•´?„œ ?—¬?œ ë¡?ê²? 200us
+                        data= {send_buffer[7:4], 3'b100, rs};   // [d7 d6 d5 d4], BT, E, RW, RS (13~ 4ê¹Œì?)
+                        comm_go =1;                                     //BTë§? 1?¸ê±°ì„
                         count_usec_e =1;
                     end
                     else begin
@@ -585,9 +585,9 @@ module I2C_lcd_send_byte(
                  end 
 
                  SEND_HIGH_NIBBLE_ENABLE : begin
-                    if(count_usec <= 22'd200)  begin  //200us //start, I2Cê³¼ì •(18)  , stop í•´ì„œ ì—¬ìœ ë¡­ê²Œ 200us
-                        data= {send_buffer[7:4], 3'b110, rs}; // [d7 d6 d5 d4], BT, E, RW, RS (13~ 4ê¹Œì§€)
-                        comm_go =1;                  //BTë§Œ 1ì¸ê±°ì„
+                    if(count_usec <= 22'd200)  begin  //200us //start, I2Cê³¼ì •(18)  , stop ?•´?„œ ?—¬?œ ë¡?ê²? 200us
+                        data= {send_buffer[7:4], 3'b110, rs}; // [d7 d6 d5 d4], BT, E, RW, RS (13~ 4ê¹Œì?)
+                        comm_go =1;                  //BTë§? 1?¸ê±°ì„
                         count_usec_e =1;
                     end
                     else begin
@@ -598,9 +598,9 @@ module I2C_lcd_send_byte(
                   end 
                  
                  SEND_LOW_NIBBLE_DISABLE : begin
-                    if(count_usec <= 22'd200)  begin  //200us //start, I2Cê³¼ì •(18)  , stop í•´ì„œ ì—¬ìœ ë¡­ê²Œ 200us
-                        data= {send_buffer[3:0], 3'b100, rs}; // [d7 d6 d5 d4], BT, E, RW, RS (13~ 4ê¹Œì§€)
-                        comm_go =1;                  //BTë§Œ 1ì¸ê±°ì„
+                    if(count_usec <= 22'd200)  begin  //200us //start, I2Cê³¼ì •(18)  , stop ?•´?„œ ?—¬?œ ë¡?ê²? 200us
+                        data= {send_buffer[3:0], 3'b100, rs}; // [d7 d6 d5 d4], BT, E, RW, RS (13~ 4ê¹Œì?)
+                        comm_go =1;                  //BTë§? 1?¸ê±°ì„
                         count_usec_e =1;
                     end
                     else begin
@@ -611,9 +611,9 @@ module I2C_lcd_send_byte(
                  end                      
                  
                  SEND_LOW_NIBBLE_ENABLE : begin
-                    if(count_usec <= 22'd200)  begin  //200us //start, I2Cê³¼ì •(18)  , stop í•´ì„œ ì—¬ìœ ë¡­ê²Œ 200us
-                        data= {send_buffer[3:0], 3'b110, rs}; // [d7 d6 d5 d4], BT, E, RW, RS (13~ 4ê¹Œì§€)
-                        comm_go =1;                  //BTë§Œ 1ì¸ê±°ì„
+                    if(count_usec <= 22'd200)  begin  //200us //start, I2Cê³¼ì •(18)  , stop ?•´?„œ ?—¬?œ ë¡?ê²? 200us
+                        data= {send_buffer[3:0], 3'b110, rs}; // [d7 d6 d5 d4], BT, E, RW, RS (13~ 4ê¹Œì?)
+                        comm_go =1;                  //BTë§? 1?¸ê±°ì„
                         count_usec_e =1;
                     end
                     else begin
@@ -624,17 +624,17 @@ module I2C_lcd_send_byte(
                  end
                  
                  SEND_DISABLE : begin
-                    if(count_usec <= 22'd200)  begin  //200us //start, I2Cê³¼ì •(18)  , stop í•´ì„œ ì—¬ìœ ë¡­ê²Œ 200us
-                        data= {send_buffer[3:0], 3'b100, rs}; // [d7 d6 d5 d4], BT, E, RW, RS (13~ 4ê¹Œì§€)
-                        comm_go =1;                  //BTë§Œ 1ì¸ê±°ì„
+                    if(count_usec <= 22'd200)  begin  //200us //start, I2Cê³¼ì •(18)  , stop ?•´?„œ ?—¬?œ ë¡?ê²? 200us
+                        data= {send_buffer[3:0], 3'b100, rs}; // [d7 d6 d5 d4], BT, E, RW, RS (13~ 4ê¹Œì?)
+                        comm_go =1;                  //BTë§? 1?¸ê±°ì„
                         count_usec_e =1;
                     end
                     else begin
                         count_usec_e =0;
                         comm_go =0;
                         next_state = IDLE;   
-                        busy =0;    //IDLEë¡œ ê°ˆÂ‹Âš busyê°€ 1 , ë‚˜ë¨¸ì§€ì—ì„  0
-                     end               //ë‹¤ ë³´ë‚´ê³  ë‚˜ë©´ busyê°€ 0ì´ë¼ê³  ìƒê° 
+                        busy =0;    //IDLEë¡? ê°ˆÂ‹Â? busyê°? 1 , ?‚˜ë¨¸ì??—?„  0
+                     end               //?‹¤ ë³´ë‚´ê³? ?‚˜ë©? busyê°? 0?´?¼ê³? ?ƒê°? 
                  end
             endcase
           end
@@ -682,9 +682,9 @@ endmodule
 
 
 //==========================================================================
-module pwm_Nstep_freq     //ê³µì‹í™”
+module pwm_Nstep_freq     //ê³µì‹?™”
 #( parameter sys_clk_freq = 100_000_000,    
-    parameter pwm_freq = 10_000,                //ledëŠ” 10000hzì—ì„œ ë™ì‘
+    parameter pwm_freq = 10_000,                //led?Š” 10000hz?—?„œ ?™?‘
     parameter duty_step = 100,
     parameter temp = (sys_clk_freq/pwm_freq )/ duty_step,
     parameter temp_half = temp/2)
@@ -720,13 +720,13 @@ module pwm_Nstep_freq     //ê³µì‹í™”
             end  
        end   
                 assign pwm = (count_duty <= duty) ? 1 : 0;  
-                                                     //ê°™ë‹¤ ê¹Œì§€ ë¼ë©´ dutyê°€ 0ì¼ë•Œë„ 1ì´ ì¶œë ¥ëœë‹¤,  
+                                                     //ê°™ë‹¤ ê¹Œì? ?¼ë©? dutyê°? 0?¼?•Œ?„ 1?´ ì¶œë ¥?œ?‹¤,  
 endmodule
 
 
 //===========================================================
-//ì´ˆìŒíŒŒì„¼ì„œ slack ì¡ê¸°
-//ì‹œìŠ¤í…œì„¤ê³„í• ë• ë‚˜ëˆ„ê¸° í•˜ë©´ ê¼¬ì„
+//ì´ˆìŒ?ŒŒ?„¼?„œ slack ?¡ê¸?
+//?‹œ?Š¤?…œ?„¤ê³„í• ?• ?‚˜?ˆ„ê¸? ?•˜ë©? ê¼¬ì„
 //===========================================================
 module ultrasonic_sensor_cntr(
         input clk,reset_p,
@@ -746,7 +746,7 @@ module ultrasonic_sensor_cntr(
         
         reg [3:0] state, next_state;
 
-        //msë‹¨ìœ„
+        //ms?‹¨?œ„
       wire clk_usec;
     clock_div_100 usec_clk( .clk(clk), .reset_p(reset_p),
                                                                .clk_div_100_nedge(clk_usec));
@@ -761,10 +761,10 @@ module ultrasonic_sensor_cntr(
     edge_detector_n ed13(.clk(clk), .reset_p(reset_p), .cp(echo1), 
                                                   .p_edge(echo_p_edge), .n_edge(echo_n_edge));   
       
-         reg[21:0] count_usec;  //3ì´ˆ ì¹´ìš´íŠ¸í•˜ê¸° ìœ„í•´ 22ë¹„íŠ¸
+         reg[21:0] count_usec;  //3ì´? ì¹´ìš´?Š¸?•˜ê¸? ?œ„?•´ 22ë¹„íŠ¸
          reg count_usec_en;   //enable
          
-         reg[21:0] echo_time;   //ë‚˜ëˆ—ì…ˆ ì²˜ë¦¬ë¥¼ ìœ„í•´ ì‹œê°„ì„ ì €ì¥í•  ë³€ìˆ˜
+         reg[21:0] echo_time;   //?‚˜?ˆ—?…ˆ ì²˜ë¦¬ë¥? ?œ„?•´ ?‹œê°„ì„ ???¥?•  ë³??ˆ˜
          
           always @(posedge clk or posedge reset_p)begin
              if(reset_p) count_usec =0;
@@ -773,7 +773,7 @@ module ultrasonic_sensor_cntr(
           end       
        
        //S_IDLE 
-       //nì—ì„œ stateë°”ê¾¸ê³ 
+       //n?—?„œ stateë°”ê¾¸ê³?
        always @(posedge clk or posedge reset_p)begin
            if(reset_p) state = S_IDLE;
            else state = next_state;
@@ -792,7 +792,7 @@ module ultrasonic_sensor_cntr(
             case(state)
    
             S_IDLE : begin
-                if(count_usec < 22'd1_000_000)  begin   //1ì´ˆ
+                if(count_usec < 22'd1_000_000)  begin   //1ì´?
                    count_usec_en = 1;
                    
                 end
@@ -828,7 +828,7 @@ module ultrasonic_sensor_cntr(
             ECHO_L : begin
                 if(echo_n_edge) begin
                     count_en =0;
-                    distance = cm;      //distance ê°’ì„ valueê°’ì— ë„£ì—ˆìœ¼ë‹ˆê¹Œ cm
+                    distance = cm;      //distance ê°’ì„ valueê°’ì— ?„£?—ˆ?œ¼?‹ˆê¹? cm
                    /* echo_time =count_usec; */
                    /* distance = count_usec / 58;   */         
                     next_state = S_IDLE;
@@ -839,17 +839,17 @@ module ultrasonic_sensor_cntr(
         end
      end   
                 assign led_debug[3:0] =state;
-     //ë‚˜ëˆ—ì…ˆ ì œì–´(ë¨¹ìŠ¤ë¡œ êµ¬ì„±) 
+     //?‚˜?ˆ—?…ˆ ? œ?–´(ë¨¹ìŠ¤ë¡? êµ¬ì„±) 
      always @(posedge clk or posedge reset_p)begin
         if(reset_p)distance =0;
-        else begin  //58ì˜ ë°°ìˆ˜
+        else begin  //58?˜ ë°°ìˆ˜
       
         end
      end
 endmodule
 
 //===============================================================
-//58ë¶„ì£¼ ì—£ì§€íŠ¸ë¦¬ê±°ë¥¼ ì‚¬ìš©í•˜ì§€ ì•Šê³  ì“°ëŠë°©ë²•
+//58ë¶„ì£¼ ?—£ì§??Š¸ë¦¬ê±°ë¥? ?‚¬?š©?•˜ì§? ?•Šê³? ?“°?Šë°©ë²•
 //===============================================================
 module clock_div_58(
        input clk, reset_p,
@@ -859,7 +859,7 @@ module clock_div_58(
        reg  [5:0] count;       
        
        always @(negedge clk or posedge reset_p)begin
-            if(reset_p) begin       //ì´ˆê¸°ê°’ ì„¸íŒ…
+            if(reset_p) begin       //ì´ˆê¸°ê°? ?„¸?Œ…
             count = 0;
             cm = 0;
           end 
@@ -1005,7 +1005,7 @@ module timer_1m(
       end
     
     
-    //countì™€ timerì˜ ë¹„íŠ¸ìˆ˜ëŠ” ê±´ë“œë¦¬ì§€ì•Šìœ¼ë©° fnd ì˜¤ë¥¸ìª½ 2ê°œë§Œ ê°’ì„ ë³´ì—¬ì£¼ê³ ì‹¶ì„ë•Œ
+    //count?? timer?˜ ë¹„íŠ¸?ˆ˜?Š” ê±´ë“œë¦¬ì??•Š?œ¼ë©? fnd ?˜¤ë¥¸ìª½ 2ê°œë§Œ ê°’ì„ ë³´ì—¬ì£¼ê³ ?‹¶?„?•Œ
     wire [15:0] timer_value;
     bin_to_dec timer(.bin({6'b0, count[5:0]}), .bcd(timer_value)); 
     fnd_cntr fnd(.clk(clk), .reset_p(reset_p), .value(timer_value),
@@ -1017,15 +1017,16 @@ endmodule
 module I2C_txtLCD_top(
     input clk, reset_p,
     input key_valid,
-    input key_value,
-    input start_stop,
+    input open,
+    input error,
     output scl,sda);
     
-    parameter IDLE = 5'b0_0001;
-    parameter INIT = 5'b0_0010;
-    parameter SEND_PASSWARD = 5'b0_0100;
-    parameter SEND_ENTER = 5'b0_1000;
-    parameter SEND_ERROR = 5'b1_0000;
+    parameter IDLE          = 6'b00_0001;
+    parameter INIT          = 6'b00_0010;
+    parameter SEND_PASSWARD = 6'b00_0100;
+    parameter SEND_ENTER    = 6'b00_1000;
+    parameter SEND_ERROR    = 6'b01_0000;
+    parameter SEC_5_WAIT     = 6'b10_0000;
     
     wire clk_microsec;
     clock_div_100 microsec_clk(.clk(clk), .reset_p(reset_p),.clk_div_100_nedge(clk_microsec));
@@ -1083,8 +1084,8 @@ module I2C_txtLCD_top(
                         if(!busy)begin
                             if(key_valid)begin
                                 next_state = SEND_PASSWARD;
-                                //if(start_stop == 1) next_state = SEND_ENTER;
-                                //else if(start_stop == 0) next_state = SEND_ENTER;
+                                if(open) next_state = SEND_ENTER;
+                                else if(error) next_state = SEND_ERROR;
                             end
                             
                         end
@@ -1157,15 +1158,10 @@ module I2C_txtLCD_top(
                 
                 SEND_ENTER:begin
                     if(busy)begin
-                        send = 0;
+                        send = 0; 
                         if(data_count > 8)begin
-                            if(count_microsec <=23'd5_000_000)
-                                count_microsec_enable = 1;
-                            else begin
-                                next_state = IDLE;
-                                init_flag = 0;
-                                data_count = 0;
-                            end
+                            next_state = SEC_5_WAIT;      
+                            data_count = 0;        
                         end
                     end
                     else if(!send)begin
@@ -1188,16 +1184,11 @@ module I2C_txtLCD_top(
                 end
                 
                 SEND_ERROR:begin
-                     if(busy)begin
-                        send = 0;
-                        if(data_count > 23)begin
-                            if(count_microsec <=23'd5_000_000)
-                                count_microsec_enable = 1;
-                            else begin
-                                next_state = IDLE;
-                                init_flag = 0;
-                                data_count = 0;
-                            end
+                    if(busy)begin
+                        send = 0; 
+                        if(data_count > 22)begin
+                            next_state = SEC_5_WAIT;        
+                            data_count = 0;       
                         end
                     end
                     else if(!send)begin
@@ -1234,6 +1225,14 @@ module I2C_txtLCD_top(
                         send = 1;
                         data_count = data_count + 1;
                     end 
+                end
+                SEC_5_WAIT:begin
+//                    if(count_microsec<= 23'd5_000_000) count_microsec_enable = 1;
+//                    else begin 
+//                        count_microsec_enable = 0;
+//                        next_state = IDLE;
+//                        init_flag = 0;        
+//                    end
                 end
             endcase
         end
