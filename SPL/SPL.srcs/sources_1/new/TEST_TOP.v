@@ -32,7 +32,7 @@
                                                             
                                                                    
                                                                    
-     
+     reg stop_start;
           /////////////////////
      //ÃÊÀ½ÆÄ
      wire [50:0] distance;

@@ -79,7 +79,8 @@ set_property -dict { PACKAGE_PIN G2   IOSTANDARD LVCMOS33 } [get_ports {irq}];#S
 set_property -dict { PACKAGE_PIN H1   IOSTANDARD LVCMOS33 } [get_ports {echo}];#Sch name = JA7
 set_property -dict { PACKAGE_PIN K2   IOSTANDARD LVCMOS33 } [get_ports {trig}];#Sch name = JA8
 set_property -dict { PACKAGE_PIN H2   IOSTANDARD LVCMOS33 } [get_ports {scl}];#Sch name = JA9
-set_property -dict { PACKAGE_PIN G3   IOSTANDARD LVCMOS33 PULLUP TRUE} [get_ports {sda}];#Sch name = JA10
+set_property -dict { PACKAGE_PIN G3   IOSTANDARD LVCMOS33 } [get_ports {sda}];#Sch name = JA10
+
 
 ##Pmod Header JB
 set_property -dict { PACKAGE_PIN A14   IOSTANDARD LVCMOS33 } [get_ports {col[0]}];#Sch name = JB1
