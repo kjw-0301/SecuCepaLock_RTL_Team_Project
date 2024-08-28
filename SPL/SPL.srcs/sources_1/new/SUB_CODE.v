@@ -1197,15 +1197,14 @@ module key_pad_cntr_FSM(
                         8'b1000_0001: key_value = 4'h4;
                         8'b1000_0010: key_value = 4'h8;
                         8'b1000_0100: key_value = 4'hb;
-                        8'b1000_1000: 
-key_value = 4'hf;
+                        8'b1000_1000: key_value = 4'hf;
                        
                         endcase
                     end
                 endcase
             end
        end
-   endmodule
+   endmodule   
    
 //======================================================================
 module timer_1m(

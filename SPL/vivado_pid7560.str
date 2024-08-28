@@ -1,0 +1,154 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 7560
+License: Customer
+
+Current time: 	Wed Aug 28 11:34:49 KST 2024
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 70 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	kcci
+User home directory: C:/Users/kcci
+User working directory: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL
+User country: 	KR
+User language: 	ko
+User locale: 	ko_KR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/kcci/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/kcci/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/kcci/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.log
+Vivado journal file location: 	C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.jou
+Engine tmp dir: 	C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/.Xil/Vivado-7560-DESKTOP-KKVBLF0
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_SDK: C:/Xilinx/Vitis/2019.2
+XILINX_VITIS: C:/Xilinx/Vitis/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	317 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 832 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\kcci\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 916 MB. GUI used memory: 49 MB. Current time: 8/28/24, 11:34:51 AM KST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 62 MB (+62800kb) [00:00:17]
+// [Engine Memory]: 1,012 MB (+909527kb) [00:00:17]
+// [GUI Memory]: 81 MB (+16106kb) [00:00:17]
+// [GUI Memory]: 106 MB (+22480kb) [00:00:18]
+// WARNING: HEventQueue.dispatchEvent() is taking  3232 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:12 . Memory (MB): peak = 1084.602 ; gain = 266.695 
+// Project name: SPL; location: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bB (cr)
+// [Engine Memory]: 1,068 MB (+5873kb) [00:00:24]
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,091 MB. GUI used memory: 55 MB. Current time: 8/28/24, 11:35:06 AM KST
+// WARNING: HTimer (StateMonitor Timer) is taking 726ms to process. Increasing delay to 4000 ms.
+// Elapsed time: 165 seconds
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Compile Order", 2); // i (N, cr)
+// PAPropertyPanels.initPanels (TEST_TOP.v) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TEST_TOP.v]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TEST_TOP.v]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TEST_TOP.v]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TEST_TOP.v]", 2, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 443, 303); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 433, 296); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 297, 202); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 252, 257); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 301, 366); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 164, 301); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 255, 359); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 0, 47); // ch (w, cr)
+// Elapsed time: 14 seconds
+selectCodeEditor("TEST_TOP.v", 70, 84); // ch (w, cr)
+typeControlKey((HResource) null, "TEST_TOP.v", 'v'); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 57, 108); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 57, 108, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 57, 108, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ai (ao, Popup.HeavyWeightWindow)
+selectCodeEditor("SUB_CODE.v", 1, 29); // ch (w, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("SUB_CODE.v", 119, 181); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 106, 181); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 425, 301); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 1); // i (h, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+selectCodeEditor("TEST_TOP.v", 255, 128); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// D (cr): Invalid Top Module: addNotify
