@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Wed Aug 28 15:50:44 2024
-| Host         : DESKTOP-KKVBLF0 running 64-bit major release  (build 9200)
+| Date         : Wed Aug 28 17:23:28 2024
+| Host         : DESKTOP-VQQPT2C running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file keypad_test_top_control_sets_placed.rpt
 | Design       : keypad_test_top
 | Device       : xc7a35t
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    14 |
-|    Minimum number of control sets                        |    14 |
+| Total control sets                                       |    21 |
+|    Minimum number of control sets                        |    21 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    47 |
+| Unused register locations in slices containing registers |    54 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    14 |
-| >= 0 to < 4        |     2 |
+| Total control sets |    21 |
+| >= 0 to < 4        |     0 |
 | >= 4 to < 6        |     6 |
-| >= 6 to < 8        |     0 |
-| >= 8 to < 10       |     1 |
+| >= 6 to < 8        |     5 |
+| >= 8 to < 10       |     2 |
 | >= 10 to < 12      |     2 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     3 |
+| >= 16              |     6 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              37 |           10 |
-| No           | No                    | Yes                    |              59 |           24 |
+| No           | No                    | No                     |              39 |           12 |
+| No           | No                    | Yes                    |             127 |           47 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               4 |            2 |
-| Yes          | No                    | Yes                    |              85 |           23 |
+| Yes          | No                    | No                     |              12 |            6 |
+| Yes          | No                    | Yes                    |             160 |           45 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,23 +70,30 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+-------------------------------------+------------------+------------------+----------------+
-|  Clock Signal  |            Enable Signal            | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+----------------+-------------------------------------+------------------+------------------+----------------+
-| ~clk_IBUF_BUFG | keypad/ERROR0_out                   | reset_p_IBUF     |                1 |              1 |
-|  clk_IBUF_BUFG |                                     | reset_p_IBUF     |                2 |              3 |
-|  clk_IBUF_BUFG | fnd/rc/E[0]                         |                  |                2 |              4 |
-|  clk_IBUF_BUFG | keypad/ed/col_reg[0][0]             | reset_p_IBUF     |                1 |              4 |
-|  clk_IBUF_BUFG | ed_clk/E[0]                         | reset_p_IBUF     |                1 |              5 |
-|  clk_IBUF_BUFG | fnd/rc/ed/E[0]                      | reset_p_IBUF     |                1 |              5 |
-|  clk_IBUF_BUFG | keypad/ed/ff_old_reg_1[0]           | reset_p_IBUF     |                2 |              5 |
-| ~clk_IBUF_BUFG | ed/E[0]                             | reset_p_IBUF     |                1 |              5 |
-|  clk_IBUF_BUFG | keypad/ed/E[0]                      | reset_p_IBUF     |                3 |              8 |
-| ~clk_IBUF_BUFG | clk_us/ed1/ff_old_reg_0[0]          | reset_p_IBUF     |                3 |             10 |
-| ~clk_IBUF_BUFG | clk_ms/ed2/E[0]                     | reset_p_IBUF     |                2 |             10 |
-| ~clk_IBUF_BUFG | smmt/pwm_b/ed_n1/clk_freqx100_nedge | reset_p_IBUF     |                8 |             32 |
-|  clk_IBUF_BUFG |                                     |                  |               10 |             37 |
-| ~clk_IBUF_BUFG |                                     | reset_p_IBUF     |               22 |             56 |
-+----------------+-------------------------------------+------------------+------------------+----------------+
++----------------+--------------------------------------+------------------+------------------+----------------+
+|  Clock Signal  |             Enable Signal            | Set/Reset Signal | Slice Load Count | Bel Load Count |
++----------------+--------------------------------------+------------------+------------------+----------------+
+|  clk_IBUF_BUFG | fnd/rc/E[0]                          |                  |                1 |              4 |
+|  clk_IBUF_BUFG | keypad/ed/col_reg[0][0]              | reset_p_IBUF     |                1 |              4 |
+|  clk_IBUF_BUFG | ed_clk/E[0]                          | reset_p_IBUF     |                1 |              5 |
+|  clk_IBUF_BUFG | fnd/rc/ed/E[0]                       | reset_p_IBUF     |                2 |              5 |
+|  clk_IBUF_BUFG | keypad/ed/ff_old_reg_1[0]            | reset_p_IBUF     |                2 |              5 |
+| ~clk_IBUF_BUFG | ed/E[0]                              | reset_p_IBUF     |                1 |              5 |
+|  clk_IBUF_BUFG | lcd/lcd/SCL_P_N/E[0]                 | reset_p_IBUF     |                1 |              6 |
+|  clk_IBUF_BUFG | lcd/lcd/send_reg[0]                  | reset_p_IBUF     |                2 |              6 |
+|  clk_IBUF_BUFG | lcd/lcd/count_microsec_reg[16][0]    | reset_p_IBUF     |                2 |              6 |
+|  clk_IBUF_BUFG | lcd/lcd/data                         | reset_p_IBUF     |                3 |              7 |
+|  clk_IBUF_BUFG | lcd/lcd/nolabel_line526/SCL_P_N/E[0] | reset_p_IBUF     |                3 |              7 |
+|  clk_IBUF_BUFG | lcd/lcd/E[0]                         |                  |                5 |              8 |
+|  clk_IBUF_BUFG | keypad/ed/E[0]                       | reset_p_IBUF     |                1 |              8 |
+| ~clk_IBUF_BUFG | clk_us/ed1/ff_old_reg_0[0]           | reset_p_IBUF     |                3 |             10 |
+| ~clk_IBUF_BUFG | clk_ms/ed2/E[0]                      | reset_p_IBUF     |                3 |             10 |
+|  clk_IBUF_BUFG |                                      | reset_p_IBUF     |               10 |             18 |
+| ~clk_IBUF_BUFG | lcd/lcd/usec_clk/ed1/ff_cur_reg_0    | reset_p_IBUF     |                6 |             22 |
+| ~clk_IBUF_BUFG | lcd/microsec_clk/ed1/ff_cur_reg_0    | reset_p_IBUF     |                6 |             22 |
+| ~clk_IBUF_BUFG | smmt/pwm_b/ed_n1/clk_freqx100_nedge  | reset_p_IBUF     |                8 |             32 |
+|  clk_IBUF_BUFG |                                      |                  |               12 |             39 |
+| ~clk_IBUF_BUFG |                                      | reset_p_IBUF     |               37 |            109 |
++----------------+--------------------------------------+------------------+------------------+----------------+
 
 

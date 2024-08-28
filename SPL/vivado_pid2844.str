@@ -1,0 +1,1484 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 2844
+License: Customer
+
+Current time: 	Wed Aug 28 16:10:54 KST 2024
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 69 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	minkyu
+User home directory: C:/Users/minkyu
+User working directory: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL
+User country: 	KR
+User language: 	ko
+User locale: 	ko_KR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/minkyu/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/minkyu/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/minkyu/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.log
+Vivado journal file location: 	C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.jou
+Engine tmp dir: 	C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/.Xil/Vivado-2844-DESKTOP-VQQPT2C
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_SDK: C:/Xilinx/Vitis/2019.2
+XILINX_VITIS: C:/Xilinx/Vitis/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	191 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 713 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\minkyu\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 777 MB. GUI used memory: 50 MB. Current time: 8/28/24, 4:10:56 PM KST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 68 MB (+69006kb) [00:00:19]
+// [Engine Memory]: 1,014 MB (+911821kb) [00:00:19]
+// [GUI Memory]: 73 MB (+1642kb) [00:00:20]
+// [GUI Memory]: 83 MB (+6635kb) [00:00:21]
+// WARNING: HEventQueue.dispatchEvent() is taking  3472 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// [GUI Memory]: 110 MB (+23436kb) [00:00:22]
+// Tcl Message: open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 1082.758 ; gain = 403.887 
+// Project name: SPL; location: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL; part: xc7a35tcpg236-1
+// [Engine Memory]: 1,067 MB (+1887kb) [00:00:23]
+dismissDialog("Open Project"); // bB (cr)
+// Tcl Message: update_compile_order -fileset sources_1 
+// WARNING: HTimer (StateMonitor Timer) is taking 714ms to process. Increasing delay to 4000 ms.
+// PAPropertyPanels.initPanels (TEST_TOP.v) elapsed time: 0.2s
+// Elapsed time: 370 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, keypad_test_top (TEST_TOP.v)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, keypad_test_top (TEST_TOP.v), clk_us : clock_div_100 (SUB_CODE.v)]", 2, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 1,098 MB. GUI used memory: 59 MB. Current time: 8/28/24, 4:17:21 PM KST
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 1); // i (h, cr)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 1, false, true); // i (h, cr) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // P (aI, cr)
+selectCodeEditor("TEST_TOP.v", 232, 324); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 232, 324, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 190, 333); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 190, 333, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 215, 356); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 215, 356, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 416, 339); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 434, 337); // ch (w, cr)
+// Elapsed time: 59 seconds
+selectCodeEditor("TEST_TOP.v", 159, 252); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 159, 252, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 20 seconds
+selectCodeEditor("TEST_TOP.v", 179, 157); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 201, 154); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 202, 154, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "TEST_TOP.v", 'c'); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 82, 637, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectCodeEditor("TEST_TOP.v", 78, 637); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 78, 637, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 78, 638, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_INDENT_SELECTION, "Indent Selection"); // ai (ao, Popup.HeavyWeightWindow)
+typeControlKey(null, null, 'z');
+selectCodeEditor("TEST_TOP.v", 81, 632); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 81, 632, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 81, 632, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ai (ao, Popup.HeavyWeightWindow)
+selectCodeEditor("TEST_TOP.v", 81, 635, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ai (ao, Popup.HeavyWeightWindow)
+// Elapsed time: 12 seconds
+selectCodeEditor("SUB_CODE.v", 161, 131); // ch (w, cr)
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 10 seconds
+selectCodeEditor("SUB_CODE.v", 85, 313); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 85, 313, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+// Elapsed time: 11 seconds
+selectCodeEditor("SUB_CODE.v", 235, 114); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 237, 126); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 321, 128); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 321, 128, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 350, 128); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 84, 66); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 84, 66, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 353, 336); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("SUB_CODE.v", 143, 94); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 143, 94, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 454, 536); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 454, 536, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 261, 522); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 261, 522, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 296, 534); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 296, 534, false, false, false, false, true); // ch (w, cr) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 1); // i (h, cr)
+selectCodeEditor("TEST_TOP.v", 696, 637); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 696, 636, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 788, 639); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 146, 156); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 146, 156, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "TEST_TOP.v", 'c'); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 731, 191); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 732, 191, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "TEST_TOP.v", 'v'); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 186, 162); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 186, 162, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "TEST_TOP.v", 'c'); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 796, 327); // ch (w, cr)
+typeControlKey((HResource) null, "TEST_TOP.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 1); // i (h, cr)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 1, false, true); // i (h, cr) - Double Click
+unmaximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // P (aI, cr)
+// [GUI Memory]: 119 MB (+3756kb) [00:10:31]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 2); // i (h, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("SUB_CODE.v", 226, 201); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 224, 215); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 17, false); // u (O, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,118 MB. GUI used memory: 61 MB. Current time: 8/28/24, 4:21:36 PM KST
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// [Engine Memory]: 1,125 MB (+4806kb) [00:10:53]
+// TclEventType: RUN_MODIFY
+// bB (cr):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 16:21:38 2024] Launched synth_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 16:21:38 2024] Launched impl_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bB (cr)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 175 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a (Q, aj)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bB (cr):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// WARNING: HEventQueue.dispatchEvent() is taking  1082 ms.
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+dismissDialog("Open Hardware Manager"); // bB (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (ds, cr)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// bB (cr):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2019.2   **** Build date : Nov  6 2019 at 22:12:23     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042 
+// Tcl Message: INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ****** Xilinx cs_server v2019.2.0   **** Build date : Nov 07 2019-14:28:22     ** Copyright 2017-2019 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1165.301 ; gain = 21.078 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  6111 ms.
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BB7F95A 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,346 MB. GUI used memory: 67 MB. Current time: 8/28/24, 4:24:53 PM KST
+// Tcl Message: open_hw_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2391.805 ; gain = 1226.504 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 2,347 MB (+1223065kb) [00:14:08]
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Elapsed time: 15 seconds
+dismissDialog("Auto Connect"); // bB (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 55 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("SUB_CODE.v", 280, 93); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 280, 93, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 381, 99); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 381, 99, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 35 seconds
+selectCodeEditor("SUB_CODE.v", 237, 250); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 233, 264); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 16:26:46 2024] Launched synth_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 16:26:46 2024] Launched impl_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,386 MB. GUI used memory: 67 MB. Current time: 8/28/24, 4:26:51 PM KST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 176 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 31 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 0); // i (h, cr)
+selectCodeEditor("TEST_TOP.v", 724, 192); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 724, 192, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 143, 111); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 143, 111, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 124, 158); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Aug 28 16:30:40 2024] Launched synth_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 16:30:40 2024] Launched impl_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("SUB_CODE.v", 441, 381); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 441, 381, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 446, 382); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 446, 382, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 300, 321); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 300, 321, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 282, 324); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 282, 324, false, false, false, false, true); // ch (w, cr) - Double Click
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// aj (cr): Synthesis Failed: addNotify
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 13 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Synthesis Failed"); // aj (cr)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Synth 8-2576] procedural assignment to a non-register open is not permitted [C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/sources_1/new/TEST_TOP.v:85]. ]", 1, true); // ah (O, cr) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\minkyu\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.srcs\sources_1\new\TEST_TOP.v;-;;-;16;-;line;-;85;-;;-;16;-;"); // ah (O, cr)
+selectCodeEditor("TEST_TOP.v", 105, 160); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectCodeEditor("TEST_TOP.v", 195, 128); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 195, 128, false, false, false, false, true); // ch (w, cr) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+selectCodeEditor("SUB_CODE.v", 153, 90); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 153, 90, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 159, 78); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 159, 78, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 23 seconds
+selectCodeEditor("SUB_CODE.v", 269, 204); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 269, 204, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 331, 143); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 192, 110); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 192, 110, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 257, 220); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 257, 220, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 15 seconds
+selectCodeEditor("SUB_CODE.v", 268, 325); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 268, 325, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("SUB_CODE.v", 291, 85); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 21 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Aug 28 16:33:15 2024] Launched synth_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 16:33:15 2024] Launched impl_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 0); // i (h, cr)
+selectCodeEditor("TEST_TOP.v", 152, 162); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 182, 157); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 184, 157, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 172, 158); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TEST_TOP.v", 168, 158); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+typeControlKey(null, null, 'z');
+// [GUI Memory]: 127 MB (+2395kb) [00:22:55]
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TEST_TOP.v", 167, 113); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TEST_TOP.v", 143, 112); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 143, 112, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 189, 68); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 189, 68, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 95, 369); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 95, 369, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 91, 372, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ai (ao, Popup.HeavyWeightWindow)
+selectCodeEditor("SUB_CODE.v", 79, 130); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 79, 130, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 85, 143); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 85, 143, false, false, false, false, true); // ch (w, cr) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 0); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 0); // i (h, cr)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 95 seconds
+selectCodeEditor("TEST_TOP.v", 167, 165); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 167, 165, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 131, 179); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 131, 179, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("TEST_TOP.v", 115, 184); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 115, 184, false, false, false, false, true); // ch (w, cr) - Double Click
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectCodeEditor("TEST_TOP.v", 106, 305); // ch (w, cr)
+// Elapsed time: 47 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 0); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("SUB_CODE.v", 155, 259); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 155, 259, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 172, 72); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 172, 72, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("SUB_CODE.v", 298, 54); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 298, 54, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 324, 64); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 324, 65, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 285, 86); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 292, 57); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 292, 57, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 387, 54); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 383, 327); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 328, 312); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 369, 283); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 380, 244); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// bB (cr):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Aug 28 16:38:28 2024] Launched synth_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 16:38:28 2024] Launched impl_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bB (cr)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 178 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 36 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+selectTab((HResource) null, "PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1, false, true); // i (h, cr) - Double Click
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // M (aI, cr)
+selectCodeEditor("SUB_CODE.v", 214, 271); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 214, 271, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 250, 247); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 250, 247, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 13 seconds
+selectCodeEditor("SUB_CODE.v", 330, 81); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 330, 81, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 261, 111); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 261, 111, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 261, 101); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 261, 101, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 257, 125); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 256, 125, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 42 seconds
+selectCodeEditor("SUB_CODE.v", 159, 154); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 151, 341); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 151, 341, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 190, 263); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 359, 165); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 299, 523); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 299, 523, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 304, 556); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 318, 548); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 318, 548, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 366, 181); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 299, 586); // ch (w, cr)
+// Elapsed time: 16 seconds
+selectCodeEditor("SUB_CODE.v", 289, 297); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 289, 297, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 251, 206); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 251, 206, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 256, 219); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 256, 219, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 17 seconds
+selectCodeEditor("SUB_CODE.v", 179, 264); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 178, 264, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 250, 211); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 250, 211, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 288, 209); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 374, 224); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 255, 205); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 255, 205, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 263, 168); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 263, 168, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 384, 170); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 384, 170, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 300, 175); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 300, 175, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 262, 232); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 262, 232, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 275, 216); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 275, 216, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 261, 248); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 261, 248, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 188, 131); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 188, 131, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 21 seconds
+selectCodeEditor("SUB_CODE.v", 190, 88); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 190, 88, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 19 seconds
+selectCodeEditor("SUB_CODE.v", 240, 136); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 240, 135, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 239, 129); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 239, 129, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 154, 127); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 250, 131); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 163, 350); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 164, 349, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 167, 349); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 169, 348, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 0); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+selectCodeEditor("SUB_CODE.v", 97, 131); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 97, 131, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 97, 130, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectMenuItem(PAResourceOtoP.PACodeEditor_GOTO_DEFINITION, "Go to Definition"); // ai (ao, Popup.HeavyWeightWindow)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 0); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+// Elapsed time: 14 seconds
+selectCodeEditor("SUB_CODE.v", 172, 213); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 163, 227); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 163, 227, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 166, 218); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 165, 218, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 179, 501); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 179, 501, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 14 seconds
+selectCodeEditor("SUB_CODE.v", 217, 365); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 217, 365, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 234, 363); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 234, 363, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 337, 368); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 337, 368, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 336, 381); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 336, 381, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 230, 379); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 230, 379, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("SUB_CODE.v", 298, 595); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 298, 595, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 212, 592); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 212, 592, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 18 seconds
+selectCodeEditor("SUB_CODE.v", 172, 172); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 172, 173, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 43 seconds
+selectCodeEditor("SUB_CODE.v", 170, 393); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 0); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+// Elapsed time: 15 seconds
+selectCodeEditor("SUB_CODE.v", 123, 123); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 123, 123, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 0); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 0); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 1); // i (h, cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("SUB_CODE.v", 273, 489); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 273, 489, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 197, 588); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 197, 588, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 196, 607); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 196, 607, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 112 seconds
+selectCodeEditor("SUB_CODE.v", 320, 171); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 320, 171, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("SUB_CODE.v", 376, 121); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 178, 79); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 178, 79, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 149, 603); // ch (w, cr)
+// Elapsed time: 36 seconds
+selectCodeEditor("SUB_CODE.v", 266, 287); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 108, 306); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 108, 306, false, false, false, false, true); // ch (w, cr) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 153, 234); // ch (w, cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("SUB_CODE.v", 208, 232, false, true, false, false, false); // ch (w, cr) - Control Key
+selectCodeEditor("SUB_CODE.v", 212, 234); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 227, 231); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 223, 238); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 224, 241); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 224, 233); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 224, 233, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 224, 233, false, true, false, false, false); // ch (w, cr) - Control Key
+selectCodeEditor("SUB_CODE.v", 224, 233, false, true, false, false, false); // ch (w, cr) - Control Key
+selectCodeEditor("SUB_CODE.v", 243, 212); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 230, 235, false, true, false, false, false); // ch (w, cr) - Control Key
+selectCodeEditor("SUB_CODE.v", 557, 148); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 240, 307); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 134 MB (+496kb) [00:42:28]
+selectCodeEditor("SUB_CODE.v", 367, 310); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 348, 308); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 310, 315); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 107, 306); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 410, 289); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 119, 311); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 119, 311, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 151, 599); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 149, 606); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("SUB_CODE.v", 198, 37); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 143, 597); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+typeControlKey(null, null, 'z');
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 220, 500); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 190, 521); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 219, 537); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 224, 527); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 229, 520); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("SUB_CODE.v", 386, 486); // ch (w, cr)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("SUB_CODE.v", 166, 503); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 151, 519); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 139, 536); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 181, 504); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 145, 520); // ch (w, cr)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("SUB_CODE.v", 215, 100); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 215, 100, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 134, 98); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 148, 529); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 128, 538); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 128, 545); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 133, 575); // ch (w, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("SUB_CODE.v", 262, 203); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 262, 203, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 170, 594); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 170, 594, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 300, 590); // ch (w, cr)
+// Elapsed time: 11 seconds
+selectCodeEditor("SUB_CODE.v", 322, 116); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 260, 578); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 435, 576); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 403, 219); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 198, 573); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("SUB_CODE.v", 582, 521); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 164, 579); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 282, 568); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 285, 571); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 440, 566); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 440, 566, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 282, 583); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 176, 579); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 136, 588); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 328, 593); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectCodeEditor("SUB_CODE.v", 178, 100); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 178, 100, false, false, false, false, true); // ch (w, cr) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,405 MB. GUI used memory: 67 MB. Current time: 8/28/24, 4:56:51 PM KST
+// Elapsed time: 15 seconds
+selectCodeEditor("SUB_CODE.v", 195, 259); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 13 seconds
+selectCodeEditor("SUB_CODE.v", 162, 530); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 162, 530, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 275, 36); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 175, 66); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 29 seconds
+selectCodeEditor("SUB_CODE.v", 367, 574); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+selectCodeEditor("SUB_CODE.v", 398, 584); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 109, 620); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 12 seconds
+selectCodeEditor("SUB_CODE.v", 179, 277); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 168, 586); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 267, 411); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 22 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug]", 19, true); // u (O, cr) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 16:58:41 2024] Launched synth_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 16:58:41 2024] Launched impl_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 13 seconds
+selectCodeEditor("SUB_CODE.v", 294, 162); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 294, 162, false, false, false, false, true); // ch (w, cr) - Double Click
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 193 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 25 seconds
+selectCodeEditor("SUB_CODE.v", 296, 114); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 296, 114, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 469, 517); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 469, 517, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 291, 563); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 291, 563, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 279, 561); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 279, 561, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 16 seconds
+selectCodeEditor("SUB_CODE.v", 215, 505); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 215, 505, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 137, 189); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 137, 189, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 357, 248); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 357, 248, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 256, 240); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 256, 240, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 261, 228); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 261, 228, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 368, 252); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 368, 252, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 432, 264); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 432, 264, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 17 seconds
+selectCodeEditor("SUB_CODE.v", 312, 637); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 312, 637, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 176, 593); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 176, 593, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 157, 128); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 157, 128, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 223, 153); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 223, 153, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 25 seconds
+selectCodeEditor("SUB_CODE.v", 365, 192); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 285, 235); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 286, 81); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 17:04:22 2024] Launched synth_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 17:04:22 2024] Launched impl_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 187 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 20 seconds
+selectCodeEditor("SUB_CODE.v", 91, 124); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 91, 124, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 133, 138); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 133, 138, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 200, 139); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 200, 139, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 162, 163); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 174, 157); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 174, 157, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 181, 173); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 181, 173, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 263, 190); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 263, 190, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 254, 99); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 254, 99, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 256, 98); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 256, 98); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 341, 115); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 255, 95); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 255, 95, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 261, 95); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 136, 100); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 136, 100, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 276, 382); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 276, 382, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 278, 439); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 278, 439, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 363, 444); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 363, 444, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 295, 383); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 295, 383, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 350, 383); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 351, 383, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 346, 444); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 346, 444, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 354, 446); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 354, 446, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 371, 446); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 371, 446, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 298, 442); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 298, 442, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 288, 380); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 288, 380, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 292, 450); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 292, 450, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 294, 447); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 294, 447); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 286, 383); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 286, 382, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 291, 445); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 291, 445, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 306, 380); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 306, 380, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 295, 445); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 295, 446, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 298, 383); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 298, 383, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 295, 553); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 295, 553, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 428, 513); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 428, 513, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 205, 254); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 205, 254, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 309, 460); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 309, 460, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 282, 401); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 282, 401, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 266, 444); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 266, 444, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 255, 486); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 255, 486, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 305, 487); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 305, 487, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 263, 353); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 263, 354, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 303, 356); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 303, 356, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 367, 289); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 366, 289, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 318, 278); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 318, 278, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 276, 259); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 276, 259, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 336, 276); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 337, 276, false, false, false, false, true); // ch (w, cr) - Double Click
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("SUB_CODE.v", 215, 401); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 215, 401, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 196, 379); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 196, 379, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 224, 292); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 224, 292, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 218, 115); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 218, 115, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 23 seconds
+selectCodeEditor("SUB_CODE.v", 255, 517); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 254, 517); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 305, 527); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 283, 564); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 277, 540); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+typeControlKey(null, null, 'z');
+selectCodeEditor("SUB_CODE.v", 253, 531); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 394, 504); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 135, 488); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 145, 414); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 17:10:44 2024] Launched synth_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 17:10:44 2024] Launched impl_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 188 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("SUB_CODE.v", 166, 62); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 166, 62, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 156, 81); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 282, 141); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 210, 155); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 210, 155, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("SUB_CODE.v", 288, 87); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 288, 87, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 189, 93); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("SUB_CODE.v", 166, 158); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+// Elapsed time: 11 seconds
+selectCodeEditor("SUB_CODE.v", 237, 503); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 270, 603); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 345, 630); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 332, 614); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 318, 614); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 318, 614, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 322, 623); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 322, 623, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 379, 624); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 295, 532); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 295, 532, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 291, 114); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 138, 395); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'c'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 137, 205); // ch (w, cr)
+typeControlKey((HResource) null, "SUB_CODE.v", 'v'); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 290, 231); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 291, 267); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 287, 566); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Aug 28 17:15:49 2024] Launched synth_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 17:15:49 2024] Launched impl_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 203 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 25 seconds
+selectCodeEditor("SUB_CODE.v", 159, 182); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 159, 182, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 10 seconds
+selectCodeEditor("SUB_CODE.v", 322, 110); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 322, 110, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 297, 130); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 310, 192); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("SUB_CODE.v", 257, 537); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 263, 101); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 257, 131); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 254, 118); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// bB (cr):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Aug 28 17:20:20 2024] Launched synth_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 17:20:20 2024] Launched impl_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bB (cr)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 40 seconds
+selectCodeEditor("SUB_CODE.v", 171, 595); // ch (w, cr)
+// Elapsed time: 11 seconds
+selectButton(RDIResourceCommand.RDICommands_LINE_COMMENT, (String) null); // E (f, cr)
+selectButton(PAResourceQtoS.SyntheticaStateMonitor_CANCEL, "Cancel"); // h (Q, cr)
+// bB (cr):  Resetting Runs : addNotify
+selectButton("OptionPane.button", "Cancel Process"); // JButton (A, G)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// al (cr): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (al)
+// bB (cr):  Save Constraints : addNotify
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Save Project"); // al (cr)
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Resetting Runs"); // bB (cr)
+// bB (cr):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Aug 28 17:21:20 2024] Launched synth_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Wed Aug 28 17:21:20 2024] Launched impl_1... Run output will be captured here: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bB (cr)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 181 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (aj)
+dismissDialog("Bitstream Generation Completed"); // aj (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/keypad_test_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// Elapsed time: 37 seconds
+selectCodeEditor("SUB_CODE.v", 162, 396); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 162, 396, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 179, 414); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 179, 414, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 45 seconds
+selectCodeEditor("SUB_CODE.v", 237, 138); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 237, 138, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("SUB_CODE.v", 228, 154); // ch (w, cr)
+selectCodeEditor("SUB_CODE.v", 228, 154, false, false, false, false, true); // ch (w, cr) - Double Click
