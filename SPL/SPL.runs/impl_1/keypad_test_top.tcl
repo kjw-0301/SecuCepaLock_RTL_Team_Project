@@ -65,20 +65,20 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 3
+  set_param chipscope.maxJobs 1
   set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
-  set_property board_part_repo_paths {C:/Users/kimhk/AppData/Roaming/Xilinx/Vivado/2019.2/xhub/board_store} [current_project]
+  set_property board_part_repo_paths {C:/Users/kcci/AppData/Roaming/Xilinx/Vivado/2019.2/xhub/board_store} [current_project]
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.cache/wt [current_project]
-  set_property parent.project_path C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr [current_project]
-  set_property ip_output_repo C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.cache/wt [current_project]
+  set_property parent.project_path C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr [current_project]
+  set_property ip_output_repo C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/safe_box.dcp
-  read_xdc C:/Users/kimhk/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc
-  link_design -top safe_box -part xc7a35tcpg236-1
+  add_files -quiet C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/keypad_test_top.dcp
+  read_xdc C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.srcs/constrs_1/imports/Desktop/Basys-3-Master.xdc
+  link_design -top keypad_test_top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -94,8 +94,8 @@ set ACTIVE_STEP opt_design
 set rc [catch {
   create_msg_db opt_design.pb
   opt_design 
-  write_checkpoint -force safe_box_opt.dcp
-  create_report "impl_1_opt_report_drc_0" "report_drc -file safe_box_drc_opted.rpt -pb safe_box_drc_opted.pb -rpx safe_box_drc_opted.rpx"
+  write_checkpoint -force keypad_test_top_opt.dcp
+  create_report "impl_1_opt_report_drc_0" "report_drc -file keypad_test_top_drc_opted.rpt -pb keypad_test_top_drc_opted.pb -rpx keypad_test_top_drc_opted.rpx"
   close_msg_db -file opt_design.pb
 } RESULT]
 if {$rc} {
@@ -114,10 +114,10 @@ set rc [catch {
     implement_debug_core 
   } 
   place_design 
-  write_checkpoint -force safe_box_placed.dcp
-  create_report "impl_1_place_report_io_0" "report_io -file safe_box_io_placed.rpt"
-  create_report "impl_1_place_report_utilization_0" "report_utilization -file safe_box_utilization_placed.rpt -pb safe_box_utilization_placed.pb"
-  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file safe_box_control_sets_placed.rpt"
+  write_checkpoint -force keypad_test_top_placed.dcp
+  create_report "impl_1_place_report_io_0" "report_io -file keypad_test_top_io_placed.rpt"
+  create_report "impl_1_place_report_utilization_0" "report_utilization -file keypad_test_top_utilization_placed.rpt -pb keypad_test_top_utilization_placed.pb"
+  create_report "impl_1_place_report_control_sets_0" "report_control_sets -verbose -file keypad_test_top_control_sets_placed.rpt"
   close_msg_db -file place_design.pb
 } RESULT]
 if {$rc} {
@@ -133,7 +133,7 @@ set ACTIVE_STEP phys_opt_design
 set rc [catch {
   create_msg_db phys_opt_design.pb
   phys_opt_design 
-  write_checkpoint -force safe_box_physopt.dcp
+  write_checkpoint -force keypad_test_top_physopt.dcp
   close_msg_db -file phys_opt_design.pb
 } RESULT]
 if {$rc} {
@@ -149,19 +149,19 @@ set ACTIVE_STEP route_design
 set rc [catch {
   create_msg_db route_design.pb
   route_design 
-  write_checkpoint -force safe_box_routed.dcp
-  create_report "impl_1_route_report_drc_0" "report_drc -file safe_box_drc_routed.rpt -pb safe_box_drc_routed.pb -rpx safe_box_drc_routed.rpx"
-  create_report "impl_1_route_report_methodology_0" "report_methodology -file safe_box_methodology_drc_routed.rpt -pb safe_box_methodology_drc_routed.pb -rpx safe_box_methodology_drc_routed.rpx"
-  create_report "impl_1_route_report_power_0" "report_power -file safe_box_power_routed.rpt -pb safe_box_power_summary_routed.pb -rpx safe_box_power_routed.rpx"
-  create_report "impl_1_route_report_route_status_0" "report_route_status -file safe_box_route_status.rpt -pb safe_box_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file safe_box_timing_summary_routed.rpt -pb safe_box_timing_summary_routed.pb -rpx safe_box_timing_summary_routed.rpx -warn_on_violation "
-  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file safe_box_incremental_reuse_routed.rpt"
-  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file safe_box_clock_utilization_routed.rpt"
-  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file safe_box_bus_skew_routed.rpt -pb safe_box_bus_skew_routed.pb -rpx safe_box_bus_skew_routed.rpx"
+  write_checkpoint -force keypad_test_top_routed.dcp
+  create_report "impl_1_route_report_drc_0" "report_drc -file keypad_test_top_drc_routed.rpt -pb keypad_test_top_drc_routed.pb -rpx keypad_test_top_drc_routed.rpx"
+  create_report "impl_1_route_report_methodology_0" "report_methodology -file keypad_test_top_methodology_drc_routed.rpt -pb keypad_test_top_methodology_drc_routed.pb -rpx keypad_test_top_methodology_drc_routed.rpx"
+  create_report "impl_1_route_report_power_0" "report_power -file keypad_test_top_power_routed.rpt -pb keypad_test_top_power_summary_routed.pb -rpx keypad_test_top_power_routed.rpx"
+  create_report "impl_1_route_report_route_status_0" "report_route_status -file keypad_test_top_route_status.rpt -pb keypad_test_top_route_status.pb"
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file keypad_test_top_timing_summary_routed.rpt -pb keypad_test_top_timing_summary_routed.pb -rpx keypad_test_top_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file keypad_test_top_incremental_reuse_routed.rpt"
+  create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file keypad_test_top_clock_utilization_routed.rpt"
+  create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file keypad_test_top_bus_skew_routed.rpt -pb keypad_test_top_bus_skew_routed.pb -rpx keypad_test_top_bus_skew_routed.rpx"
   close_msg_db -file route_design.pb
 } RESULT]
 if {$rc} {
-  write_checkpoint -force safe_box_routed_error.dcp
+  write_checkpoint -force keypad_test_top_routed_error.dcp
   step_failed route_design
   return -code error $RESULT
 } else {
@@ -173,10 +173,10 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  catch { write_mem_info -force safe_box.mmi }
-  write_bitstream -force safe_box.bit 
-  catch {write_debug_probes -quiet -force safe_box}
-  catch {file copy -force safe_box.ltx debug_nets.ltx}
+  catch { write_mem_info -force keypad_test_top.mmi }
+  write_bitstream -force keypad_test_top.bit 
+  catch {write_debug_probes -quiet -force keypad_test_top}
+  catch {file copy -force keypad_test_top.ltx debug_nets.ltx}
   close_msg_db -file write_bitstream.pb
 } RESULT]
 if {$rc} {

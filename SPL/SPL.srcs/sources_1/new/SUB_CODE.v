@@ -506,8 +506,8 @@ module I2C_lcd_send_byte(
     input rs, send,     //send가 1일떄 comm_go에 1떄려서 상위 4비트 보내고/ enable 하위 4비트보내고 /enable
     input [7:0] send_buffer,    //data임
     output scl, sda,
-    output reg busy,  //busy가 0일때만 send를 보낼수있게 (시간이 좀 걸리니까)
-    output [15:0] led_debug);
+    output reg busy  //busy가 0일때만 send를 보낼수있게 (시간이 좀 걸리니까)
+);
 
 
     //PARAMETER
@@ -1252,8 +1252,7 @@ endmodule
 module I2C_txtLCD_top(
     input clk, reset_p,
     input[3:0] btn,
-    output scl,sda,
-    output[15:0]led);
+    output scl,sda );
     
     parameter IDLE = 6'b00_0001;
     parameter INIT = 6'b00_0010;
@@ -1274,16 +1273,16 @@ module I2C_txtLCD_top(
     end
     
     wire[3:0]btn_pedge;
-    button_cntr btn0(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_posedge(btn_pedge[0]));
-    button_cntr btn1(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_posedge(btn_pedge[1]));
-    button_cntr btn2(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_posedge(btn_pedge[2]));
-    button_cntr btn3(.clk(clk), .reset_p(reset_p),.btn(btn[3]), .btn_posedge(btn_pedge[3]));
+    button_cntr btn0(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_pedge(btn_pedge[0]));
+    button_cntr btn1(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_pedge(btn_pedge[1]));
+    button_cntr btn2(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_pedge(btn_pedge[2]));
+    button_cntr btn3(.clk(clk), .reset_p(reset_p),.btn(btn[3]), .btn_pedge(btn_pedge[3]));
     
     reg[7:0] send_buffer;
     reg rs,send;
     
     wire busy; 
-    I2C_LCD_send_byte lcd(.clk(clk),.reset_p(reset_p), .addr(7'h27), .send_buffer(send_buffer),.rs(rs),.send(send),.scl(scl),.sda(sda), .busy(busy),.led(led));
+    I2C_lcd_send_byte lcd(.clk(clk),.reset_p(reset_p), .addr(7'h27), .send_buffer(send_buffer),.rs(rs),.send(send),.scl(scl),.sda(sda), .busy(busy));
     
     
     reg[5:0] state, next_state;

@@ -45,7 +45,7 @@
     reg [15:0] key_count;
     
     //I2C 
-    I2C_txtLCD_top(clk, reset_p,btn,scl,sda,led);
+//    I2C_txtLCD_top(clk, reset_p,btn,scl,sda,led);
     
     
     
@@ -56,7 +56,7 @@
         if (reset_p) begin
             count <= 10; 
             stop_start <= 0;
-        end else if (open) begin  // open 1일 때만 count 감소
+        end else if (state && !open) begin  // open 1일 때만 count 감소
             if (clk_sec_n) begin
                 if (count > 0 && !stop_start) begin
                     stop_start <= 0;
