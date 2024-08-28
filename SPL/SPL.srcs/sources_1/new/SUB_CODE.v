@@ -1026,7 +1026,7 @@ module I2C_txtLCD_top(
     parameter SEND_PASSWARD = 6'b00_0100;
     parameter SEND_ENTER    = 6'b00_1000;
     parameter SEND_ERROR    = 6'b01_0000;
-    parameter SEC_5_WAIT     = 6'b10_0000;
+    parameter SEC_5_WAIT    = 6'b10_0000;
     
     wire clk_microsec;
     clock_div_100 microsec_clk(.clk(clk), .reset_p(reset_p),.clk_div_100_nedge(clk_microsec));
@@ -1038,12 +1038,6 @@ module I2C_txtLCD_top(
         else if(clk_microsec && count_microsec_enable) count_microsec = count_microsec + 1;
         else if(!count_microsec_enable)count_microsec = 0;
     end
-    
-//    wire[3:0]btn_pedge;
-//    button_cntr btn0(.clk(clk), .reset_p(reset_p),.btn(btn[0]), .btn_posedge(btn_pedge[0]));
-//    button_cntr btn1(.clk(clk), .reset_p(reset_p),.btn(btn[1]), .btn_posedge(btn_pedge[1]));
-//    button_cntr btn2(.clk(clk), .reset_p(reset_p),.btn(btn[2]), .btn_posedge(btn_pedge[2]));
-//    button_cntr btn3(.clk(clk), .reset_p(reset_p),.btn(btn[3]), .btn_posedge(btn_pedge[3]));
     
     reg[7:0] send_buffer;
     reg rs,send;
@@ -1064,7 +1058,6 @@ module I2C_txtLCD_top(
     reg[8*8-1:0]   open_word;
     reg[8*7-1:0]   error_word;
     reg[8*14-1:0]  error2_word;
-    reg[3:0] cnt_string;
     always@(posedge clk or posedge reset_p)begin
         if(reset_p)begin
             next_state = IDLE;
@@ -1075,7 +1068,6 @@ module I2C_txtLCD_top(
             open_word = "Welcome!";
             error_word = "ERROR!!";
             error2_word = "Check Passward";
-            cnt_string = 14;
         end
         else begin
             case(state)
@@ -1157,7 +1149,7 @@ module I2C_txtLCD_top(
                 end
                 
                 SEND_ENTER:begin
-                    if(busy)begin
+                    if(!busy)begin
                         send = 0; 
                         if(data_count > 8)begin
                             next_state = SEC_5_WAIT;      
@@ -1184,12 +1176,10 @@ module I2C_txtLCD_top(
                 end
                 
                 SEND_ERROR:begin
-                    if(busy)begin
-                        send = 0; 
-                        if(data_count > 22)begin
-                            next_state = SEC_5_WAIT;        
-                            data_count = 0;       
-                        end
+                     if(data_count > 22)begin
+                        send = 0;
+                        next_state = SEC_5_WAIT;        
+                        data_count = 0;       
                     end
                     else if(!send)begin
                         case(data_count)
@@ -1227,12 +1217,13 @@ module I2C_txtLCD_top(
                     end 
                 end
                 SEC_5_WAIT:begin
-//                    if(count_microsec<= 23'd5_000_000) count_microsec_enable = 1;
-//                    else begin 
-//                        count_microsec_enable = 0;
-//                        next_state = IDLE;
-//                        init_flag = 0;        
-//                    end
+                    if(count_microsec <= 23'd5_000_000) count_microsec_enable = 1;
+                    else begin 
+                        count_microsec_enable = 0;
+                        next_state = IDLE;
+                        init_flag = 0;    
+                        data_count = 0;    
+                    end
                 end
             endcase
         end
