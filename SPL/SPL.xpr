@@ -60,32 +60,6 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-<<<<<<< Updated upstream
-=======
-      <File Path="$PSRCDIR/sources_1/new/SUB_CODE.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/PRIVATE.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/MAIN_CODE.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
->>>>>>> Stashed changes
       <File Path="$PSRCDIR/sources_1/new/SPI_3RD.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -123,11 +97,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-<<<<<<< Updated upstream
         <Option Name="TopModule" Val="safe_box"/>
-=======
-        <Option Name="TopModule" Val="servo_motor"/>
->>>>>>> Stashed changes
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

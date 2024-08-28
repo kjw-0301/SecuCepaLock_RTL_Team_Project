@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< Updated upstream
 <GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1724757446">
   <File Type="PA-TCL" Name="safe_box.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="safe_box_drc_synth.rpt"/>
@@ -10,18 +9,6 @@
   <File Type="RDS-DCP" Name="safe_box.dcp"/>
   <File Type="VDS-TIMINGSUMMARY" Name="safe_box_timing_summary_synth.rpt"/>
   <File Type="VDS-TIMING-PB" Name="safe_box_timing_summary_synth.pb"/>
-=======
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1724811392">
-  <File Type="PA-TCL" Name="keypad_test_top.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="keypad_test_top_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="keypad_test_top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="keypad_test_top.vds"/>
-  <File Type="RDS-UTIL" Name="keypad_test_top_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="keypad_test_top_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="keypad_test_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="keypad_test_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="keypad_test_top_timing_summary_synth.pb"/>
->>>>>>> Stashed changes
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/SUB_CODE.v">
