@@ -2,11 +2,11 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed Aug 28 10:54:15 2024
-# Process ID: 6740
-# Current directory: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1
-# Command line: vivado.exe -log keypad_test_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source keypad_test_top.tcl
-# Log file: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/keypad_test_top.vds
-# Journal file: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1\vivado.jou
+# Start of session at: Tue Aug 27 16:27:47 2024
+# Process ID: 12836
+# Current directory: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1
+# Command line: vivado.exe -log SPI_ADDR.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_ADDR.tcl
+# Log file: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/SPI_ADDR.vds
+# Journal file: C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source keypad_test_top.tcl -notrace
+source SPI_ADDR.tcl -notrace

@@ -910,8 +910,7 @@ module servo_motor(
         end   
      end
    
-    pwm_Nstep_freq #(.duty_step(400), .pwm_freq(50))
-    pwm_b(.clk(clk), .reset_p(reset_p), .duty(duty), .pwm(motor_pwm));
+
                                                                         
     wire [15:0] duty_bcd;  
     bin_to_dec bcd_humi(.bin({5'b0, duty}),  .bcd(duty_bcd));
@@ -1120,7 +1119,7 @@ module clock_div_58(
 endmodule
 
 //===========================================================
-    module key_pad_cntr_FSM(
+module key_pad_cntr_FSM(
         input clk, reset_p,
         input [3:0] row,
         output reg [3:0] col,
@@ -1137,7 +1136,7 @@ endmodule
         
         always @(posedge clk) clk_div = clk_div +1;
         wire clk_8msec_p, clk_8msec_n;
-        edge_detector_n ed(.clk(clk), .reset_p(reset_p), .cp(clk_div[19]), .p_edge(clk_8msec_p), .n_edge(clk_8msec_n));
+        edge_detector_p ed(.clk(clk), .reset_p(reset_p), .cp(clk_div[19]), .p_edge(clk_8msec_p), .n_edge(clk_8msec_n));
     
     
         reg [4:0] state , next_state;
@@ -1202,14 +1201,15 @@ endmodule
                         8'b1000_0001: key_value = 4'h4;
                         8'b1000_0010: key_value = 4'h8;
                         8'b1000_0100: key_value = 4'hb;
-                        8'b1000_1000: key_value = 4'hf;
+                        8'b1000_1000: 
+key_value = 4'hf;
                        
                         endcase
                     end
                 endcase
             end
        end
-   endmodule   
+   endmodule
    
 //======================================================================
 module timer_1m(
