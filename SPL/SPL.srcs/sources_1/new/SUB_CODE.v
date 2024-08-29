@@ -681,6 +681,38 @@ module servo_motor(
 
 endmodule
 
+module servo_motor_test(
+    input clk,
+    input reset_p,
+    input open_close,    // open°ú close¸¦ ÅëÇÕÇÑ ½ÅÈ£
+    output servo_motor_pwm,
+    output btn_close
+);
+
+    reg [30:0] clk_div;
+    wire clk_div_n;
+
+    always @(posedge clk) clk_div = clk_div + 1;
+    edge_detector_n n(.clk(clk), .reset_p(reset_p), .cp(clk_div[23]), .n_edge(clk_div_n));
+
+    reg [6:0] duty;
+
+    always @(posedge clk or posedge reset_p) begin
+        if (reset_p) begin
+            duty = 12; // ÃÊ±â »óÅÂ´Â ´İÈû
+        end else if (open_close) begin
+            duty = 12; // open »óÅÂ
+        end else begin
+            duty = 27; // close »óÅÂ
+        end
+    end
+
+    pwm_Nstep_freq #(.duty_step(400), .pwm_freq(50))
+    pwm_b(.clk(clk), .reset_p(reset_p), .duty(duty), .pwm(servo_motor_pwm));
+
+endmodule
+
+
 
 //==========================================================================
 module pwm_Nstep_freq     //ê³µì‹?™”
@@ -729,125 +761,199 @@ endmodule
 //ì´ˆìŒ?ŒŒ?„¼?„œ slack ?¡ê¸?
 //?‹œ?Š¤?…œ?„¤ê³„í• ?• ?‚˜?ˆ„ê¸? ?•˜ë©? ê¼¬ì„
 //===========================================================
-module ultrasonic_sensor_cntr(
-        input clk,reset_p,
-        input echo,
-        output reg trig,
-        output reg [50:0] distance,
-        output [7:0] led_debug);
- 
-
+module HC_SR04_cntr (
+    input clk, reset_p, 
+    input hc_sr04_echo,
+    output reg hc_sr04_trig,
+    output reg [21:0] distance);
+    
+    reg [3:0] state, next_state;
+    // For Test
+    
+    // Define state 
+    parameter S_IDLE              = 4'b0001;
+    parameter S_10US_TTL          = 4'b0010;
+    parameter S_WAIT_PEDGE        = 4'b0100;
+    parameter S_CALC_DIST         = 4'b1000;
         
-        parameter S_IDLE     = 4'b0001;
-        parameter TRIGGER = 4'b0010;
-        parameter ECHO_H   = 4'b0100;
-        parameter ECHO_L   = 4'b1000;
-
-
+    // Define state, next_state value.
+    
+    
+    // ¾ğÁ¦ next_state¸¦ state º¯¼ö¿¡ ³Ö´Â°¡?
+    always @(posedge clk or posedge reset_p) begin
+        if(reset_p) state = S_IDLE;
+        else state = next_state;
+    end
+    
+    // get 10us negative one cycle pulse
+    wire clk_usec;
+    clock_div_100   usec_clk( .clk(clk), .reset_p(reset_p), .clk_div_100_nedge(clk_usec));     // 1us
+    wire [11:0] cm;
+    sr04_div_58 sro(.clk(clk), .reset_p(reset_p), .clk_usec(clk_usec), .cnt_e(cnt_e), .cm(cm));
+     
         
-        reg [3:0] state, next_state;
-
-        //ms?‹¨?œ„
-      wire clk_usec;
-    clock_div_100 usec_clk( .clk(clk), .reset_p(reset_p),
-                                                               .clk_div_100_nedge(clk_usec));
-      
-      
-      reg count_en;
-      wire [11:0] cm;                                                         
-     clock_div_58 div58(.clk(clk), .reset_p(reset_p), .clk_usec(clk_usec),
-                                           .count_en(count_en), .cm(cm));                                                          
-                                                               
-     wire echo_p_edge, echo_n_edge;
-    edge_detector_n ed13(.clk(clk), .reset_p(reset_p), .cp(echo), 
-                                                  .p_edge(echo_p_edge), .n_edge(echo_n_edge));   
-      
-         reg[21:0] count_usec;  //3ì´? ì¹´ìš´?Š¸?•˜ê¸? ?œ„?•´ 22ë¹„íŠ¸
-         reg count_usec_en;   //enable
-         
-         reg[21:0] echo_time;   //?‚˜?ˆ—?…ˆ ì²˜ë¦¬ë¥? ?œ„?•´ ?‹œê°„ì„ ???¥?•  ë³??ˆ˜
-         
-          always @(posedge clk or posedge reset_p)begin
-             if(reset_p) count_usec =0;
-               else if(clk_usec && count_usec_en) count_usec = count_usec +1;
-               else if(!count_usec_en) count_usec = 0;               
-          end       
-       
-       //S_IDLE 
-       //n?—?„œ stateë°”ê¾¸ê³?
-       always @(posedge clk or posedge reset_p)begin
-           if(reset_p) state = S_IDLE;
-           else state = next_state;
-       end       
-       
-          
-    always @(negedge clk or posedge reset_p)begin
-          if(reset_p)begin
-              next_state = S_IDLE;
-              count_usec_en = 0;
-              trig = 0;
-              echo_time=0;
-              count_en =0;
-            end
-            else begin
+        
+    reg [21:0] counter_usec;    
+    reg counter_usec_en;
+    reg cnt_e;
+    
+    always @(posedge clk or posedge reset_p) begin
+        if(reset_p) begin counter_usec = 0;
+        end else if(clk_usec && counter_usec_en) counter_usec = counter_usec + 1;
+        else if(!counter_usec_en) counter_usec = 0;
+    end
+    
+    
+    // hc_sr04_dataÀÇ Negative edge, Positive edge ¾ò±â.
+    wire hc_sr04_echo_n_edge, hc_sr04_echo_p_edge;
+    edge_detector_n edge_detector_0 (.clk(clk), .reset_p(reset_p), .cp(hc_sr04_echo), .n_edge(hc_sr04_echo_n_edge), .p_edge(hc_sr04_echo_p_edge));
+    
+    // »óÅÂ ÃµÀÌµµ¿¡ µû¸¥ case¹® Á¤ÀÇ
+    // °¢ »óÅÂ¿¡ µû¸¥ µ¿ÀÛ Á¤ÀÇ
+    
+    reg[21:0] echo_time;
+    
+    always @(negedge clk or posedge reset_p) begin
+        if(reset_p) begin
+            next_state = S_IDLE;
+            counter_usec_en = 0;  
+            echo_time =0;
+            cnt_e =0;
+        end else begin
             case(state)
-   
-            S_IDLE : begin
-                if(count_usec < 22'd1_000_000)  begin   //1ì´?
-                   count_usec_en = 1;
-                   
+                S_IDLE : begin        
+                    if(counter_usec < 22'd3_000_000) begin
+                        counter_usec_en = 1;  
+                        hc_sr04_trig = 0;
+                    end
+                    else begin
+                        counter_usec_en = 0;
+                        next_state = S_10US_TTL;
+                    end
                 end
-                   else begin
-                     count_usec_en = 0;
-                     next_state = TRIGGER;
-                     end    
-            end
-            
-            
-            TRIGGER : begin
-                if(count_usec < 22'd10) begin
-                    count_usec_en = 1;
-                    trig =1;
-                end
-                else begin   
-                    trig = 0;
-                    count_usec_en =0;
-                    next_state = ECHO_H;
-                end         
-            end
-            
-            
-            ECHO_H : begin
-                if(echo_p_edge) begin
-                    count_usec_en = 1;
-                    next_state = ECHO_L;
-                    count_en =1;
-                end
-            end
-            
                 
-            ECHO_L : begin
-                if(echo_n_edge) begin
-                    count_en =0;
-                    distance = cm;      //distance ê°’ì„ valueê°’ì— ?„£?—ˆ?œ¼?‹ˆê¹? cm
-                   /* echo_time =count_usec; */
-                   /* distance = count_usec / 58;   */         
-                    next_state = S_IDLE;
-                end            
-                      else next_state = ECHO_L;
+                
+                
+                S_10US_TTL : begin
+                    if(counter_usec < 22'd10) begin
+                        counter_usec_en = 1;
+                        hc_sr04_trig = 1;
+                    end
+                    else begin
+                        hc_sr04_trig = 0;
+                        counter_usec_en = 0;
+                        next_state = S_WAIT_PEDGE;
+                    end
+                end
+                
+                
+                
+                S_WAIT_PEDGE :  
+                    if(hc_sr04_echo_p_edge) begin
+                         next_state = S_CALC_DIST;    
+                         cnt_e = 1;
+                    end     
+                
+                
+                
+                S_CALC_DIST : begin          
+                     if(hc_sr04_echo_n_edge) begin
+                                distance = cm ;
+                                cnt_e =0;
+                                counter_usec_en = 0;
+                                next_state = S_IDLE;
+                      end
+                      else next_state = S_CALC_DIST;
                 end
             endcase
         end
-     end   
-                assign led_debug[3:0] =state;
-     //?‚˜?ˆ—?…ˆ ? œ?–´(ë¨¹ìŠ¤ë¡? êµ¬ì„±) 
-     always @(posedge clk or posedge reset_p)begin
-        if(reset_p)distance =0;
-        else begin  //58?˜ ë°°ìˆ˜
-      
-        end
-     end
+    end
+    
+//    always @(posedge clk or posedge reset_p)begin
+//        if(reset_p)distance = 0;
+//        else begin
+//           if(echo_time < 174)distance = 2;
+//           else if(echo_time < 232)distance = 3;
+//           else if(echo_time <290) distance = 4;
+//           else if(echo_time <348) distance = 5;
+//           else if(echo_time <406) distance = 6;
+//           else if(echo_time <464) distance = 7;
+//           else if(echo_time <522) distance = 8;
+//           else if(echo_time <580) distance = 9;
+//           else if(echo_time <638) distance = 10;
+//           else if(echo_time <696) distance = 11;
+//           else if(echo_time <754) distance = 12;
+//           else if(echo_time <812) distance = 13;
+//           else if(echo_time <870) distance = 14;
+//           else if(echo_time <928) distance = 15;
+//           else if(echo_time <986) distance = 16;
+//           else if(echo_time < 1044) distance <= 17;
+//            else if(echo_time < 1102) distance <= 18;
+//            else if(echo_time < 1160) distance <= 19;
+//            else if(echo_time < 1218) distance <= 20;
+//            else if(echo_time < 1276) distance <= 21;
+//            else if(echo_time < 1334) distance <= 22;
+//            else if(echo_time < 1392) distance <= 23;
+//            else if(echo_time < 1450) distance <= 24;
+//            else if(echo_time < 1508) distance <= 25;
+//            else if(echo_time < 1566) distance <= 26;
+//            else if(echo_time < 1624) distance <= 27;
+//            else if(echo_time < 1682) distance <= 28;
+//            else if(echo_time < 1740) distance <= 29;
+//            else if(echo_time < 1798) distance <= 30;
+//            else if(echo_time < 1856) distance <= 31;
+//            else if(echo_time < 1914) distance <= 32;
+//            else if(echo_time < 1972) distance <= 33;
+//            else if(echo_time < 2030) distance <= 34;
+//            else if(echo_time < 2088) distance <= 35;
+//            else if(echo_time < 2146) distance <= 36;
+//            else if(echo_time < 2204) distance <= 37;
+//            else if(echo_time < 2262) distance <= 38;
+//            else distance <= 39; // for any echo_time larger than 2262, default to 39
+ //       end
+//    end
+endmodule           
+
+module sr04_div_58(
+    input clk, reset_p,
+    input clk_usec,cnt_e,
+    output reg [11:0] cm);
+
+ reg [5:0] cnt;
+ 
+    always @(negedge clk or posedge reset_p)begin
+         if(reset_p)begin
+            cnt = 0;
+            cm=0;
+         end
+         else if(clk_usec) begin
+           if(cnt_e)begin
+                if (cnt >= 57) begin
+                cnt = 0;  //Ä«¿îÅÍ°¡ 99¸¦ ¼¼¸é 0À¸·Î ÃÊ±âÈ­
+                cm = cm +1;
+             end
+                else cnt = cnt + 1;      //1¾¿ Áõ°¡ 
+            end
+          end
+          else if(!cnt_e)begin
+            cnt =0;
+            cm = 0;
+    end
+ end       
+
 endmodule
+
+
+
+
+
+
+
+
+
+
+
+
 
 //===============================================================
 //58ë¶„ì£¼ ?—£ì§??Š¸ë¦¬ê±°ë¥? ?‚¬?š©?•˜ì§? ?•Šê³? ?“°?Šë°©ë²•

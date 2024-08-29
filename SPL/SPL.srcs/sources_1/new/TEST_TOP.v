@@ -12,7 +12,9 @@
        output [3:0] com,
        output [7:0] seg_7,                     
        output reg led_pw_push,  //비밀번호를 누를때 on되는 led
-       output reg [7:5] led);       //state 3'd5~7 확인이 어려우니까 임시led
+       output reg [7:5] led,
+       input  hc_sr04_echo,
+       output  hc_sr04_trig);       //state 3'd5~7 확인이 어려우니까 임시led
                                                 //나중에 reset_p상태와 state에서 제거 하기 
       
        //REG + WIRE
@@ -25,7 +27,7 @@
        wire [3:0] key_value;
        wire key_valid;
        wire clk_usec, clk_msec, clk_sec, clk_sec_n;
-       wire [50:0] distance;
+       wire [21:0] distance;
        wire [15:0]timer_value;
      
        //CLOCK
@@ -41,12 +43,12 @@
                                        .p_edge(key_valid_p), .n_edge(clk_8msec_n));
        
       //서보모터                                                               
-      servo_motor smmt(.clk(clk), .reset_p(reset_p), .open(open),  .close(close), .btn_close(btn_close),
+      servo_motor_test smmt(.clk(clk), .reset_p(reset_p), .open_close(open && (distance_bcd < 30) ? 1'b1 : 1'b0),  .btn_close(btn_close),
                                    .servo_motor_pwm(servo_motor_pwm));
                                                             
       //초음파
-      ultrasonic_sensor_cntr ultra(.clk(clk), .reset_p(reset_p), .echo(echo),
-                                                     .trig(trig),.distance(distance));
+      HC_SR04_cntr hc_sr04_instance (.clk(clk),.reset_p(reset_p),
+        .hc_sr04_echo(hc_sr04_echo), .hc_sr04_trig(hc_sr04_trig), .distance(distance));
    
      
       //키패드 
@@ -65,7 +67,7 @@
               count <= 0; 
           end 
           
-          else if((count_on ==1) && (key_value == 8'd12)) begin
+          else if((count_on ==1) && (key_value == 8'd12)) begin 
                 count =10;
           end
           
@@ -75,7 +77,7 @@
             end 
           end
           
-          else if ((open == 1) | (state == 3'd7))begin  //오픈시+3'd7갈떄 타이머 0초로 만들기
+          else if ((open == 1) | (state == 3'd7))begin  //오픈시+3'd7갈떄 타이머 0초로 만들기   오픈이 1이거나 3'd7 상태면 카운트 0 
                count <= 0;
           end
       end
@@ -178,7 +180,7 @@
                     3'd5: begin  
                       led[5] =1;
                       led_pw_push =0;
-                        if ((key_value == 8'd15 && open) | (distance >30)) begin 
+                        if ((key_value == 8'd15 && open) | (distance_bcd >30)) begin 
                             open = 0; close = 1;
                             count_on =1;
                             state <= 3'd6;
@@ -222,7 +224,15 @@
 
       assign led_key_valid = key_valid;
      
-      bin_to_dec timer(.bin({6'b0, count[5:0]}), .bcd(timer_value)); 
-      fnd_cntr fnd(.clk(clk), .reset_p(reset_p), .value(timer_value),.com(com), .seg_7(seg_7));
+      wire [15:0] distance_bcd;
+   bin_to_dec bcd_dstc(.bin({4'b0,distance}), .bcd(distance_bcd));
+
+
+   wire [15:0] value;
+      assign value[8:0] = {distance_bcd[8:0]};
+     fnd_cntr fnd(.clk(clk),.reset_p(reset_p), 
+    .value(value), .com(com), .seg_7(seg_7));
+//      bin_to_dec timer(.bin({6'b0, count[5:0]}), .bcd(timer_value)); 
+//      fnd_cntr fnd(.clk(clk), .reset_p(reset_p), .value(timer_value),.com(com), .seg_7(seg_7));
                                            
 endmodule
