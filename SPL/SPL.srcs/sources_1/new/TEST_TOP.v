@@ -4,6 +4,7 @@
        input clk, reset_p,
        input btn_close, //문 오픈시에 버튼 누르면 문 강제 off
        input [3:0] row,
+       input  hc_sr04_echo,
        output [3:0] col,
        output scl,sda,
        output led_key_valid,
@@ -14,9 +15,7 @@
        output [7:0] seg_7,                     
        output reg led_pw_push,  //비밀번호를 누를때 on되는 led
        output reg [7:5] led,
-       input  hc_sr04_echo,
-       output  hc_sr04_trig);       //state 3'd5~7 확인이 어려우니까 임시led
-                                                //나중에 reset_p상태와 state에서 제거 하기 
+       output  hc_sr04_trig);       
       
        //REG + WIRE
        reg stop_start;
@@ -78,7 +77,7 @@
             end 
           end
           
-          else if ((open == 1) | (state == 3'd7))begin  //오픈시+3'd7갈떄 타이머 0초로 만들기   오픈이 1이거나 3'd7 상태면 카운트 0 
+          else if (open == 1)begin  //오픈시+3'd7갈떄 타이머 0초로 만들기   오픈이 1이거나 3'd7 상태면 카운트 0 
                count <= 0;
           end
       end
@@ -91,7 +90,6 @@
             open <= 0;
             state <= 0;
             ERROR <= 0; 
-            go_state_7 <=0;
             led_pw_push <= 0;
             led[5] <=0;
             led[6] <=0;
@@ -122,7 +120,7 @@
                         ERROR <=0;
                         led_pw_push =1;
                         if((go_state_7 == 1) && (count ==0)) begin//타이머가 0이되면(제한시간 못지키면) 3'd7
-                            state <= 3'd7;
+                             state <= 3'd0;
                         end                         
                         else if (key_value == 1) begin  //비밀번호 입력
                             state <= 3'd2;
@@ -136,7 +134,7 @@
                     3'd2: begin
                       led_pw_push =1;
                       if((go_state_7 == 1) && (count ==0)) begin //타이머가 0이되면(제한시간 못지키면) 3'd7
-                        state <= 3'd7;
+                            state <= 3'd0;
                       end                          
                       else if (key_value == 2) begin //비밀번호 입력
                          state <= 3'd3;
@@ -150,7 +148,7 @@
                     3'd3: begin
                        led_pw_push =1;
                        if((go_state_7 == 1) && (count ==0)) begin //타이머가 0이되면(제한시간 못지키면) 3'd7
-                           state <= 3'd7;
+                            state <= 3'd0;
                        end               
                        else if (key_value == 3) begin //비밀번호 입력
                            state <= 3'd4;
@@ -164,7 +162,8 @@
                     3'd4: begin
                        led_pw_push =1;
                        if((go_state_7 == 1) && (count ==0)) begin //타이머가 0이되면(제한시간 못지키면) 3'd7
-                           state <= 3'd7;  
+                           ERROR <= 1;
+                           state <= 3'd0;  
                        end                         
                        else if (key_value ==4 && close) begin //비밀번호 입력
                           open <= 1; close <=0;
@@ -208,17 +207,6 @@
                             state <= 3'd6;
                         end
                     end   
-                    
-                    //스타트버튼(key_value == 8'd12)을 누르고 실패한 경우에 여기에 오게된다.
-                    //문이 닫히고 에러는 체크되며 빠져나갈수 없다.
-                    //도난방지
-                    //시간이 남는다면 타이머나 비밀번호 오류시에 count를 세고 3번이 넘어갈때 오게하면 좋은데...만들 시간이 없다.
-                    3'd7: begin
-                      led[6] =0;
-                      led[7] =1;
-                      open <= 0; close <= 1;
-                      ERROR <= 1;
-                    end
                   endcase
             end
        end    
