@@ -7,6 +7,7 @@
        output [3:0] col,
        output scl,sda,
        output led_key_valid,
+       output led_wait,
        output servo_motor_pwm,
        output reg open , close, ERROR,
        output [3:0] com,

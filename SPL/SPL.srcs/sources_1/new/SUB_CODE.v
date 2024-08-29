@@ -1126,7 +1126,8 @@ module I2C_txtLCD_top(
     input key_valid,
     input open,
     input error,
-    output scl,sda);
+    output scl,sda,
+    output reg[15:0] led_debug);
     
     parameter IDLE          = 6'b00_0001;
     parameter INIT          = 6'b00_0010;
@@ -1146,7 +1147,7 @@ module I2C_txtLCD_top(
         else if(!count_microsec_enable)count_microsec = 0;
     end
     
-    reg[7:0] send_buffer;
+    reg[9:0] send_buffer;
     reg rs,send;
     
     wire busy; 
@@ -1160,14 +1161,16 @@ module I2C_txtLCD_top(
     end
     
     reg init_flag;
-    reg[5:0] data_count;
+    reg[6:0] data_count;
     reg[8*14-1:0]  init_word;
     reg[8*8-1:0]   open_word;
     reg[8*7-1:0]   error_word;
     reg[8*14-1:0]  error2_word;
+    
     always@(posedge clk or posedge reset_p)begin
         if(reset_p)begin
             next_state = IDLE;
+            led_debug = 0;
             init_flag = 0;
             data_count = 0;
             count_microsec_enable = 0;
@@ -1181,12 +1184,9 @@ module I2C_txtLCD_top(
                 IDLE:begin
                     if(init_flag)begin
                         if(!busy)begin
-                            if(key_valid)begin
-                                next_state = SEND_PASSWARD;
-                                if(open) next_state = SEND_ENTER;
-                                else if(error) next_state = SEND_ERROR;
-                            end
-                            
+                            if(key_valid)next_state = SEND_PASSWARD;
+                            else if(open) next_state = SEND_ENTER;
+                            else if(error) next_state = SEND_ERROR;                           
                         end
                     end
                     else begin
@@ -1245,8 +1245,8 @@ module I2C_txtLCD_top(
                     if(busy)begin
                         next_state = IDLE;
                         send = 0;
-                        if(data_count >= 9) data_count = 0;
-                        else data_count = data_count + 1;
+                        //if(data_count >= 9) data_count = 0;
+                       //else data_count = data_count + 1;
                     end
                     else begin
                         send_buffer = 8'h2A;
@@ -1256,81 +1256,121 @@ module I2C_txtLCD_top(
                 end
                 
                 SEND_ENTER:begin
-                    if(!busy)begin
+                    if(busy)begin
                         send = 0; 
-                        if(data_count > 8)begin
+                        if(data_count > 9)begin
+                            data_count = 0;      
                             next_state = SEC_5_WAIT;      
-                            data_count = 0;        
                         end
                     end
                     else if(!send)begin
                         case(data_count)
                             0: send_buffer = 8'h01;
-                            1: send_buffer = open_word[63:56];
-                            2: send_buffer = open_word[55:48];
-                            3: send_buffer = open_word[47:40];
-                            4: send_buffer = open_word[39:32];
-                            5: send_buffer = open_word[31:24];
-                            6: send_buffer = open_word[23:16];
-                            7: send_buffer = open_word[15:8];
-                            8: send_buffer = open_word[7:0];
+                            1: send_buffer = 8'h06;
+                            2: send_buffer = open_word[63:56];
+                            3: send_buffer = open_word[55:48];
+                            4: send_buffer = open_word[47:40];
+                            5: send_buffer = open_word[39:32];
+                            6: send_buffer = open_word[31:24];
+                            7: send_buffer = open_word[23:16];
+                            8: send_buffer = open_word[15:8];
+                            9: send_buffer = open_word[7:0];
                         endcase
-                        if(data_count == 0) rs = 0;
-                        else if(data_count > 0)rs = 1;
+                        if(data_count == 0 || data_count == 1)rs = 0;
+                        else rs = 1;
                         send = 1;
                         data_count = data_count + 1;
                     end 
                 end
                 
                 SEND_ERROR:begin
-                     if(data_count > 22)begin
+                    if(busy)begin
                         send = 0;
-                        next_state = SEC_5_WAIT;        
-                        data_count = 0;       
+                        if(data_count > 23)begin
+                            data_count = 0; 
+                            next_state = SEC_5_WAIT;        
+                        end      
                     end
                     else if(!send)begin
                         case(data_count)
                             0: send_buffer = 8'h01;
-                            1: send_buffer = error_word[55:48];
-                            2: send_buffer = error_word[47:40];
-                            3: send_buffer = error_word[39:32];
-                            4: send_buffer = error_word[31:24];
-                            5: send_buffer = error_word[23:16];
-                            6: send_buffer = error_word[15:8];
-                            7: send_buffer = error_word[7:0];
-                            8: send_buffer = 8'hc0;
-                            9: send_buffer =  init_word[111:104];
-                            10: send_buffer =  init_word[103:96]; 
-                            11: send_buffer = init_word[95:88];  
-                            12: send_buffer = init_word[87:80];  
-                            13: send_buffer = init_word[79:72];  
-                            14: send_buffer = init_word[71:64];  
-                            15: send_buffer = init_word[63:56];  
-                            16: send_buffer = init_word[55:48];  
-                            17: send_buffer = init_word[47:40];  
-                            18: send_buffer = init_word[39:32];  
-                            19: send_buffer = init_word[31:24];  
-                            20: send_buffer = init_word[23:16];  
-                            21: send_buffer = init_word[15:8];   
-                            22: send_buffer = init_word[7:0];       
+                            1: send_buffer = 8'h06;
+                            2: send_buffer = error_word[55:48];
+                            3: send_buffer = error_word[47:40];
+                            4: send_buffer = error_word[39:32];
+                            5: send_buffer = error_word[31:24];
+                            6: send_buffer = error_word[23:16];
+                            7: send_buffer = error_word[15:8];
+                            8: send_buffer = error_word[7:0];
+                            9: send_buffer = 8'hc0;
+                            10: send_buffer = error2_word[111:104];
+                            11:send_buffer = error2_word[103:96]; 
+                            12:send_buffer = error2_word[95:88];  
+                            13:send_buffer = error2_word[87:80];  
+                            14:send_buffer = error2_word[79:72];  
+                            15:send_buffer = error2_word[71:64];  
+                            16:send_buffer = error2_word[63:56];  
+                            17:send_buffer = error2_word[55:48];  
+                            18:send_buffer = error2_word[47:40];  
+                            19:send_buffer = error2_word[39:32];  
+                            20:send_buffer = error2_word[31:24];  
+                            21:send_buffer = error2_word[23:16];  
+                            22:send_buffer = error2_word[15:8];   
+                            23:send_buffer = error2_word[7:0];      
                         endcase
-                        if(data_count == 0) rs = 0;
-                        else if(data_count > 0)begin
-                            if(data_count == 8)rs = 0;
-                            else rs = 1;
-                        end    
+                        if(data_count == 0 || data_count == 1) rs = 0;
+                        else if(data_count > 1 && data_count < 9) rs = 1;
+                        else if(data_count == 9)rs = 0;
+                        else rs = 1; 
                         send = 1;
                         data_count = data_count + 1;
                     end 
                 end
                 SEC_5_WAIT:begin
-                    if(count_microsec <= 23'd5_000_000) count_microsec_enable = 1;
-                    else begin 
-                        count_microsec_enable = 0;
-                        next_state = IDLE;
-                        init_flag = 0;    
-                        data_count = 0;    
+                    led_debug[14] = 1;
+                    if(count_microsec <= 22'd2_000_000)begin 
+                        led_debug[14] = 0;
+                        count_microsec_enable = 1;
                     end
+                    else begin 
+                        led_debug[14] = 1;
+                        count_microsec_enable = 0;
+                        init_flag = 0;
+                        next_state = INIT;
+//                        if(busy)begin
+//                            send = 0;
+//                            if(data_count > 16)begin
+//                                next_state = IDLE;       
+//                                data_count = 0;        
+//                            end
+//                        end
+//                        else if(!send) begin //s
+//                            case(data_count)
+//                                0: send_buffer = 8'h01;
+//                                1: send_buffer =  init_word[111:104];
+//                                2: send_buffer =  init_word[103:96]; 
+//                                3: send_buffer =  init_word[95:88];  
+//                                4: send_buffer =  init_word[87:80];  
+//                                5: send_buffer = init_word[79:72];  
+//                                6: send_buffer = init_word[71:64];  
+//                                7: send_buffer = init_word[63:56];  
+//                                8: send_buffer = init_word[55:48];  
+//                                9: send_buffer = init_word[47:40];  
+//                                10: send_buffer = init_word[39:32];  
+//                                11: send_buffer = init_word[31:24];  
+//                                12: send_buffer = init_word[23:16];  
+//                                13: send_buffer = init_word[15:8];   
+//                                14: send_buffer = init_word[7:0];                             
+//                                15: send_buffer = 8'h06;                             
+//                                16: send_buffer = 8'hC0;                             
+//                            endcase
+//                            if(data_count==0) rs=0;
+//                            else if(data_count > 0 && data_count < 15)rs = 1;
+//                            else if(data_count > 14)rs = 0;
+//                            send = 1;
+//                            data_count = data_count + 1;
+//                        end   
+                   end
                 end
             endcase
         end
