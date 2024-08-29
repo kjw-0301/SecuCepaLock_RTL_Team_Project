@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Thu Aug 29 11:38:02 2024">
+<application name="pa" timeStamp="Thu Aug 29 11:53:57 2024">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="757b6df418914ea185ede736197a26c2" type="ProjectID"/>
-<property name="ProjectIteration" value="292" type="ProjectIteration"/>
+<property name="ProjectIteration" value="293" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -28,7 +28,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="OpenHardwareManager" value="134" type="JavaHandler"/>
 <property name="OpenTarget" value="1" type="JavaHandler"/>
 <property name="RefreshDevice" value="1" type="JavaHandler"/>
-<property name="RunBitgen" value="293" type="JavaHandler"/>
+<property name="RunBitgen" value="294" type="JavaHandler"/>
 <property name="SaveFileProxyHandler" value="24" type="JavaHandler"/>
 <property name="SetTopNode" value="47" type="JavaHandler"/>
 <property name="ShowView" value="30" type="JavaHandler"/>
@@ -40,7 +40,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ViewTaskRTLAnalysis" value="1" type="JavaHandler"/>
 </item>
 <item name="Gui Handlers">
-<property name="AbstractSearchablePanel_SHOW_SEARCH" value="17" type="GuiHandlerData"/>
+<property name="AbstractSearchablePanel_SHOW_SEARCH" value="19" type="GuiHandlerData"/>
 <property name="AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES" value="1" type="GuiHandlerData"/>
 <property name="BaseDialog_CANCEL" value="58" type="GuiHandlerData"/>
 <property name="BaseDialog_OK" value="205" type="GuiHandlerData"/>
@@ -51,9 +51,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ConfirmSaveTextEditsDialog_YES" value="1" type="GuiHandlerData"/>
 <property name="ConstraintsChooserPanel_ADD_FILES" value="1" type="GuiHandlerData"/>
 <property name="CreateSrcFileDialog_FILE_NAME" value="13" type="GuiHandlerData"/>
-<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="555" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="562" type="GuiHandlerData"/>
 <property name="FloatingTopDialog_IGNORE_AND_CONTINUE_WITH_INVALID_TOP" value="1" type="GuiHandlerData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="333" type="GuiHandlerData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="334" type="GuiHandlerData"/>
 <property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="45" type="GuiHandlerData"/>
 <property name="HInputHandler_INDENT_SELECTION" value="1" type="GuiHandlerData"/>
 <property name="HPopupTitle_CLOSE" value="1" type="GuiHandlerData"/>
