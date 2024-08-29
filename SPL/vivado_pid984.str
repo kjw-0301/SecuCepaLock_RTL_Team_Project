@@ -1,0 +1,308 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 984
+License: Customer
+
+Current time: 	Thu Aug 29 12:00:15 KST 2024
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 70 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	kcci
+User home directory: C:/Users/kcci
+User working directory: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL
+User country: 	KR
+User language: 	ko
+User locale: 	ko_KR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/kcci/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/kcci/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/kcci/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.log
+Vivado journal file location: 	C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/vivado.jou
+Engine tmp dir: 	C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/.Xil/Vivado-984-DESKTOP-KKVBLF0
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_SDK: C:/Xilinx/Vitis/2019.2
+XILINX_VITIS: C:/Xilinx/Vitis/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	189 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 734 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\kcci\Documents\GitHub\SecuCepaLock_RTL_Team_Project\SPL\SPL.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 817 MB. GUI used memory: 50 MB. Current time: 8/29/24, 12:00:17 PM KST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/minkyu/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 108 MB (+110611kb) [00:00:16]
+// [Engine Memory]: 1,005 MB (+902810kb) [00:00:16]
+// WARNING: HEventQueue.dispatchEvent() is taking  2806 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// Project name: SPL; location: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL; part: xc7a35tcpg236-1
+// [Engine Memory]: 1,056 MB (+298kb) [00:00:19]
+// Tcl Message: open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1066.664 ; gain = 410.008 
+dismissDialog("Open Project"); // bB (cr)
+// PAPropertyPanels.initPanels (TEST_TOP.v) elapsed time: 0.2s
+// Elapsed time: 55 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_top (TEST_TOP.v)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, safe_box_top (TEST_TOP.v), clk_us : clock_div_100 (SUB_CODE.v)]", 2, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+selectCodeEditor("TEST_TOP.v", 297, 212); // ch (w, cr)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Compile Order", 2); // i (N, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SUB_CODE.v]", 1, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SUB_CODE.v]", 1, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 1); // i (h, cr)
+selectCodeEditor("TEST_TOP.v", 128, 69); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 128, 69, false, false, false, false, true); // ch (w, cr) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "SUB_CODE.v", 2); // i (h, cr)
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "TEST_TOP.v", 1); // i (h, cr)
+selectCodeEditor("TEST_TOP.v", 108, 219); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 311, 300); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 292, 302); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 237, 296); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 237, 296, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 226, 294); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 254, 312); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 259, 311); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 349, 416); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 386, 460); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 372, 420); // ch (w, cr)
+// Elapsed time: 14 seconds
+selectCodeEditor("TEST_TOP.v", 198, 139); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 201, 123); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 204, 101); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 214, 68); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 215, 101); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 212, 87); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 308, 130); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 309, 187); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 295, 109); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 318, 214); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 321, 263); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 316, 240); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 309, 219); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 298, 239); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 211, 218); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 178, 215); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 127, 221); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 133, 249); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 183, 216); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 167, 253); // ch (w, cr)
+// Elapsed time: 210 seconds
+selectCodeEditor("TEST_TOP.v", 541, 207); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 649, 254); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 330, 187); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 297, 128); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 215, 98); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 241, 179); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 268, 161); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 278, 139); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 306, 119); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 288, 93); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 263, 101); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 263, 101, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 288, 104); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 288, 104, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 256, 102); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 256, 102, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 252, 110); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 232, 103); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 232, 103, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 251, 118); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 257, 104); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 257, 104, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 277, 104); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 277, 104, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 271, 124); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 270, 102); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 270, 102, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("TEST_TOP.v", 246, 150); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 315, 198); // ch (w, cr)
+// Elapsed time: 16 seconds
+selectCodeEditor("TEST_TOP.v", 73, 120); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 197, 142); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 241, 389); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("TEST_TOP.v", 235, 369); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 239, 402); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 235, 386); // ch (w, cr)
+// Elapsed time: 22 seconds
+selectCodeEditor("TEST_TOP.v", 244, 405); // ch (w, cr)
+// Elapsed time: 18 seconds
+selectCodeEditor("TEST_TOP.v", 318, 322); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 115 MB (+1653kb) [00:07:56]
+selectCodeEditor("TEST_TOP.v", 15, 424); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 18, 451); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 279, 385); // ch (w, cr)
+selectCodeEditor("TEST_TOP.v", 294, 410); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("TEST_TOP.v", 226, 272); // ch (w, cr)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+dismissDialog("No Implementation Results Available"); // A (cr)
+dismissDialog("Resetting Runs"); // bB (cr)
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// bB (cr):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Thu Aug 29 12:08:20 2024] Launched synth_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/synth_1/runme.log [Thu Aug 29 12:08:21 2024] Launched impl_1... Run output will be captured here: C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bB (cr)
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,076 MB. GUI used memory: 58 MB. Current time: 8/29/24, 12:08:22 PM KST
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Hierarchy", 0); // i (N, cr)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// aj (cr): Bitstream Generation Completed: addNotify
+// Elapsed time: 251 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER, "Open Hardware Manager"); // a (Q, aj)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bB (cr):  Open Hardware Manager : addNotify
+// TclEventType: HW_SESSION_OPEN
+// WARNING: HEventQueue.dispatchEvent() is taking  1035 ms.
+// Tcl Message: open_hw_manager 
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+dismissDialog("Open Hardware Manager"); // bB (cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,102 MB. GUI used memory: 63 MB. Current time: 8/29/24, 12:12:37 PM KST
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (ds, cr)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// Tcl Message: connect_hw_server -allow_non_jtag 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// bB (cr):  Auto Connect : addNotify
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2019.2   **** Build date : Nov  6 2019 at 22:12:23     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042 
+// Tcl Message: INFO: [Labtools 27-3417] Launching cs_server... 
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:   ****** Xilinx cs_server v2019.2.0   **** Build date : Nov 07 2019-14:28:22     ** Copyright 2017-2019 Xilinx, Inc. All Rights Reserved.    
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1138.977 ; gain = 16.914 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  6110 ms.
+// Tcl Message: open_hw_target 
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BB7568A 
+// Tcl Message: open_hw_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2366.008 ; gain = 1227.031 
+// TclEventType: HW_DEVICE_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,321 MB. GUI used memory: 63 MB. Current time: 8/29/24, 12:12:53 PM KST
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/safe_box_top.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 2,321 MB (+1271330kb) [00:12:46]
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// Elapsed time: 13 seconds
+dismissDialog("Auto Connect"); // bB (cr)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cr): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bB (cr):  Program Device : addNotify
+// TclEventType: HW_DEVICE_CHANGE
+dismissDialog("Program Device"); // bC (cr)
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/kcci/Documents/GitHub/SecuCepaLock_RTL_Team_Project/SPL/SPL.runs/impl_1/safe_box_top.bit} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [GUI Memory]: 122 MB (+1065kb) [00:12:49]
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+dismissDialog("Program Device"); // bB (cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 2,346 MB. GUI used memory: 64 MB. Current time: 8/29/24, 12:15:07 PM KST
