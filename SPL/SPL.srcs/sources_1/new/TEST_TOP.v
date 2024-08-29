@@ -129,7 +129,7 @@
                         end 
                         else begin
                             ERROR <= 1; // 잘못된 입력 시 에러 표시
-                            state <= 3'd7;
+                            state <= 3'd0;
                         end
                     end
         
@@ -143,7 +143,7 @@
                       end 
                       else begin
                           ERROR <= 1;
-                          state <= 3'd7;
+                          state <= 3'd0;
                       end
                     end
         
@@ -157,7 +157,7 @@
                        end
                        else begin
                            ERROR <= 1;
-                           state <= 3'd7;
+                           state <= 3'd0;
                        end
                     end
             
@@ -174,7 +174,7 @@
                        end
                        else begin
                           ERROR <= 1;
-                          state <= 3'd7;
+                          state <= 3'd0;
                        end
                     end
                     
@@ -202,7 +202,7 @@
                         if(key_value == 8'd12) begin
                             go_state_7 =1;
                             count_on =0;
-                            state <= 3'd1;
+                            state <= 3'd0;
                         end
                         else /*if(key_value != 8'd12)*/ begin
                             state <= 3'd6;
@@ -231,9 +231,8 @@
 
    wire [15:0] value;
       assign value[8:0] = {distance_bcd[8:0]};
-     fnd_cntr fnd(.clk(clk),.reset_p(reset_p), 
-    .value(value), .com(com), .seg_7(seg_7));
-//      bin_to_dec timer(.bin({6'b0, count[5:0]}), .bcd(timer_value)); 
-//      fnd_cntr fnd(.clk(clk), .reset_p(reset_p), .value(timer_value),.com(com), .seg_7(seg_7));
+
+      bin_to_dec timer(.bin({6'b0, count[5:0]}), .bcd(timer_value)); 
+     fnd_cntr fnd(.clk(clk), .reset_p(reset_p), .value(timer_value),.com(com), .seg_7(seg_7));
                                            
 endmodule
