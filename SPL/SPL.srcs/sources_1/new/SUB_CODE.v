@@ -701,9 +701,9 @@ module servo_motor_test(
         if (reset_p) begin
             duty = 12; // 초기 상태는 닫힘
         end else if (open_close) begin
-            duty = 12; // open 상태
+            duty = 27; // open 상태
         end else begin
-            duty = 27; // close 상태
+            duty = 12; // close 상태
         end
     end
 
